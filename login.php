@@ -45,7 +45,7 @@
 <base href="/blockchain/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Blockchain</title>
+        <title>Blockchain | Login</title>
         <meta name="description" content="Login page example">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

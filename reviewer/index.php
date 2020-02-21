@@ -24,7 +24,7 @@
 <base href="/blockchain/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Reviewer - BlockChain</title>
+        <title>Reviewer - Reward Tip</title>
         <meta name="description" content="Base form control examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

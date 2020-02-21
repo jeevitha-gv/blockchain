@@ -72,7 +72,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 <base href="/blockchain/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Nix Whistle | blower</title>
+        <title>NixWhistle | blower</title>
         <meta name="description" content="Base form control examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

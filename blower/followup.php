@@ -12,7 +12,7 @@ include "../php/common/config.php";
 <base href="/blockchain/"><!--end::Base Path -->
                <meta charset="utf-8"/>
 
-        <title> View Whistle - BlockChain</title>
+        <title>View Whistle</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">

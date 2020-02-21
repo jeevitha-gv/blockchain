@@ -47,9 +47,9 @@
                 <li class="kt-menu__item " aria-haspopup="true"><a href="investigator/dashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text" style="text-align: center;">Investigator</span></a>
                 </li>
              
-                  <li class="kt-menu__item " aria-haspopup="true"><a href="reviewer/dashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-mail-1"></i><span class="kt-menu__link-text">Reviewer</span></a>
+                <li class="kt-menu__item " aria-haspopup="true"><a href="idea/ideadashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Idea Analyst</span></a>
                 </li>
-                <li class="kt-menu__item " aria-haspopup="true"><a href="idea/ideadashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">IdeaAnalyst</span></a>
+                  <li class="kt-menu__item " aria-haspopup="true"><a href="reviewer/dashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-mail-1"></i><span class="kt-menu__link-text">Reviewer</span></a>
                 </li>
            
               </ul>
