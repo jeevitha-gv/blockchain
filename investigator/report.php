@@ -11,7 +11,7 @@
 <base href="/blockchain/"><!--end::Base Path -->
                <meta charset="utf-8"/>
 
-        <title>Investigator-Blockchain</title>
+        <title>Investigator | Report</title>
         <meta name="description" content="Buttons examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

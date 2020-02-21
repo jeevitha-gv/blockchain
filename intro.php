@@ -103,7 +103,19 @@
     -ms-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
   }
-  
+    .idea1:hover{
+    background-color:#07bbf7;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+  }
 
 </style>
     <!-- end::Body -->
