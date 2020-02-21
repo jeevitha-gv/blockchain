@@ -206,7 +206,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 </div>
 
 
-  <form class="kt-form kt-form" method="POST" enctype="multipart/form-data" >
+  <form class="kt-form kt-form" method="POST" enctype="multipart/form-data" target="_blank">
         <div class="kt-portlet__body" style="margin-left: 100px; margin-top:-100px;" >
           <div class="container">
            <h3 style="text-align: center;color: white;"> Want to SpeakUp for an Issue?</h3>
