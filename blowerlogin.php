@@ -129,7 +129,23 @@ input[type=text] {
 
       }
     </script> -->
+    <script type="text/javascript">
+      var phone = document.getElementById('ran'),
+    cleanPhoneNumber;
 
+cleanPhoneNumber= function(e) {
+    e.preventDefault();
+    var pastedText = '';
+    if (window.clipboardData && window.clipboardData.getData) { // IE
+        pastedText = window.clipboardData.getData('Text');
+      } else if (e.clipboardData && e.clipboardData.getData) {
+        pastedText = e.clipboardData.getData('text/plain');
+      }
+    this.value = pastedText.replace(/\D/g, '');
+};
+
+phone.onpaste = cleanPhoneNumber;
+    </script>
  <script type="text/javascript">
              var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
