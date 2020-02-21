@@ -66,12 +66,13 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 
          
-            <div class="" style="width: 50%; margin-left: 550px; margin-top: 60px;">
+            <div class="" style="width: 50%; margin-left: 500px; margin-top: 60px;">
 <!--                 <div class="" style="text-align: center;font-size: 20px;"><strong>WhistleBlower - Remember this is for future use</strong></div> -->
               <div class="modal-body">
                <div class="form-group">
                 <label style="font-size: 20px;"><b>Idea Number</b></label><br>
-                <span class="no" id="quantity" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo $row['tipno'];?></span>
+                <span class="no" id="quantity" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo substr($row['tipno'], 0, 4) . " - " . substr($row['tipno'], 4, 4) . " - " . substr($row['tipno'],8,4) . " - " . substr($row['tipno'], 12, 4);?></span>
+                <!-- <span class="no" id="quantity" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo  $row['tipno'];?></span> -->
                 <input type="text" id="copy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['tipno']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
                 <button id="cpybtn" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
             </div>
@@ -79,7 +80,7 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="form-group">
                <label style="font-size: 20px;"><b>Secret code</b></label><br>
                <span id="quantity" class="no" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo $row['passkey'];?></span>
-               <input type="text" id="secCopy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['passkey']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="text" id="secCopy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['passkey']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <button id="cpySec" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
               </div>
               </div>
