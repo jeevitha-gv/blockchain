@@ -163,7 +163,7 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <div class="container">
 <label style="font-size: 14px;"><strong>Idea Update</strong></label>
 <div class="">
-<textarea type="text" class="form-control" id="MUpdate" placeholder="Ask WhistleBlower for more Info" style="height: 150px;" disabled>sdds </textarea>
+<textarea type="text" class="form-control" style="height: 150px;" disabled><?php echo $rows['WBU'];?></textarea>
 
 </div>
 </div>
