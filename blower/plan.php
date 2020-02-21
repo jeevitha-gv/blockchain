@@ -6,8 +6,8 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
   if(isset($_POST['submit']))
    {
-     $company=$_POST['company'];
-      $category=$_POST['category'];
+     $company=$_POST['company1'];
+      $category=$_POST['category1'];
        $relationship=$_POST['relationship'];
         $encounter=$_POST['encounter'];
          $department=$_POST['department'];
@@ -216,7 +216,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
           <div class="form-group row" style="color: white;">
             <label for="example-text-input" class="col-2 col-form-label">Category</label>
              <div class="col-10">
-              <input list="company" id="searchbox" name="company" class="text-line" placeholder="Select or Enter Business Unit......" style="width: 88%;">
+              <input list="company" id="searchbox" name="company1" class="text-line" placeholder="Select or Enter Business Unit......" style="width: 88%;">
         <datalist id="company" name="company">
           <option>Accounting and Other Financial Impropriety</option>
           <option>Bribery or Corruption</option>
@@ -233,7 +233,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
           <div class="form-group row" id="div2" style="display: none; color: white;">
             <label for="example-search-input" class="col-2 col-form-label">Business Unit</label>
               <div class="col-10">
-                <input list="category" name="category" id="searchbox1" class="text-line" placeholder="Select Category ......" style="width: 88%;">
+                <input list="category" name="category1" id="searchbox1" class="text-line" placeholder="Select Category ......" style="width: 88%;">
         <datalist id="category" name="category">
        <option value="Pied_Piper">Pied Piper</option>
           <option value="Hooli">Hooli</option>

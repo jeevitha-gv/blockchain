@@ -2,7 +2,7 @@
   include "../php/common/config.php";
     if(isset($_POST['submit']))
     {
-         $category=$_POST['category'];
+         $category=$_POST['category1'];
             $Description=$_POST['Description'];
                $name=$_POST['name'];
                   $email=$_POST['email'];
@@ -124,11 +124,12 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
 </div><br><br>
 
   <form class="kt-form kt-form" method="post" action="" target="_blank">
+
 <div class="conatiner" style="margin-left: 200px;" >
           <div class="form-group row">
             <label for="example-text-input" class="col-2 col-form-label" style="color: white;">Category :</label>
              <div class="col-10">
-         <input list="category" id="box" name="category" class="text-line" style="width: 80%;">
+         <input list="category" id="box" name="category1" class="text-line" style="width: 80%;">
                      <datalist id="category">
                        <option>Employee Engagement</option>
                        <option>Strategy</option>
