@@ -123,7 +123,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
  <h3 style="text-align: center;color: white;"> Want to transform 'Inc.' with your Idea?</h3>
 </div><br><br>
 
-  <form class="kt-form kt-form" method="post" action="">
+  <form class="kt-form kt-form" method="post" action="" target="_blank">
 <div class="conatiner" style="margin-left: 200px;" >
           <div class="form-group row">
             <label for="example-text-input" class="col-2 col-form-label" style="color: white;">Category :</label>
