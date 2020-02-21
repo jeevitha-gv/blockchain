@@ -26,7 +26,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
   }
   else
   {
-    
+   
   }
 
     }
@@ -128,7 +128,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
           <div class="form-group row">
             <label for="example-text-input" class="col-2 col-form-label" style="color: white;">Category :</label>
              <div class="col-10">
-         <input list="category" id="box" name="category" class="text-line" style="width: 80%;"> 
+         <input list="category" id="box" name="category" class="text-line" style="width: 80%;">
                      <datalist id="category">
                        <option>Employee Engagement</option>
                        <option>Strategy</option>
@@ -137,11 +137,10 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
                        <option>Design</option>
                        <option>Continuous Improvement</option>
                        <option>Enterprise Transformation</option>
-                     </datalist>     
+                     </datalist>    
     </div>
           </div>
-
-                    <div class="form-group row"  name="Description" style="display: none;">
+                    <div class="form-group row" id="div1" name="Description" style="display: none;">
             <label for="example-text-input" class="col-2 col-form-label" style="color: white;">Description :</label>
              <div class="col-9">
          
@@ -246,7 +245,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
                                       <input type="text" id="BAN" name="BAN" placeholder="Bank Account No." class="form-control" style="background:transparent;color: white;">
                                   </div>
                                 </div>
-                                
+                               
                            
                                   <div class="form-group row">
                                        <div class="col-11">
@@ -254,7 +253,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
                                    </div>  
                                  </div>
                                   <div class="form-group row">
-                                    
+                                   
                                
                                    <div class="col-10">
                                         <input type="text" placeholder="BitCoin Address" id="BTC" name="BTC"  class="form-control" style="background:transparent;color: white; margin-left: -7px; "><br>
@@ -264,10 +263,10 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
                                       <div class="col-10">
                                         <input type="text" placeholder="Ethereum Address" id="ETC" name="ETC" class="form-control" style="background:transparent;color: white; margin-left: -8px;">
                                       </div>
-                                   <img src="./blower/ETC.png" height="38px" width="38px" style="margin-left: 10px;"> 
+                                   <img src="./blower/ETC.png" height="38px" width="38px" style="margin-left: 10px;">
 
                                          </div>
-                              
+                             
                                
                         </div>
                       </div>
@@ -286,22 +285,22 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
     if($('#box').on('change', function() {
       $('#div1').show();
      
-      
+     
     }));
        if($('#div1').on('change', function() {
       $('#div2').show();
      
-      
+     
     }));
          if($('#div2').on('change', function() {
       $('#div3').show();
      
-      
+     
     }));
                if($('#div4').on('change', function() {
       $('#div5').show();
      
-      
+     
     }));
    
   });
