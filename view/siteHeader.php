@@ -114,7 +114,7 @@
      
            <a href="view/policy/ModuleSelection.php?i=1" class="kt-header__topbar-icon" title="Setup Guide">
            <i class="flaticon-globe"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
-             <a href="view/common/payment.php" class="kt-header__topbar-icon" title="Payment">
+             <a href="view/common/paymentoverview.php" class="kt-header__topbar-icon" title="Payment">
            <i class="flaticon-presentation-1"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
 

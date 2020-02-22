@@ -238,10 +238,32 @@ include 'siteHeader2.php';
 <div id="" class="">
 <div class="row">
   <div class="input-group" style="margin: 20px;">
-    <textarea class="form-control" rows="8" style="background:transparent;color: white;border:none;"></textarea>
+<a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;color: white;"><?php echo $rows['Artifacts'];?></a>
     </div>
   </div>
 </div>
+</div>
+</div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+   <div class="col-md-11">
+  <button class="collapsible btn btn-success">Interaction</button>
+
+  <div id="" class="collapse"><br>
+    <h5 style="color: #fff;">Chat History</h5>
+  <div style="min-height: 200px; width: 1119px; max-height: 100px; overflow: auto;border:1px solid #C3C8C6;">
+        <div class="conversations"></div>
+     
+      </div>
+   </div>
+</div>
+<div class="col-md-1">
+    <div class="img" style="float: right;">
+       
+          <a href="" data-toggle="modal" data-target="#myModal"><i class='fa fa-comments' style="color:  red; font-size: 38px;" title="Review"></i></a>
+            </div>
 </div>
 </div>
 </div>

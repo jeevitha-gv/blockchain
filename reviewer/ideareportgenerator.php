@@ -102,7 +102,7 @@
 <i class="kt-font-btipnod flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;font-size: 20px;">
-Idea-<?php echo $_GET['id'];?>
+Idea - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . "  " . substr($_GET['id'],8,4) . "  " . substr($_GET['id'], 12, 4); ?>
 </h3>
 </div>
 </div>
@@ -216,6 +216,15 @@ Idea-<?php echo $_GET['id'];?>
    <span id="apdate" style="color: red;"></span>
 </div>
    </div>
+   <br>
+   <div class="container">
+<div class="form-group">
+  <label style="font-size: 14px;  background-color: coral;">Artifacts</label>
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
+      </div>
+   </div>
+ </div>  
 </div>
 
           </div>  

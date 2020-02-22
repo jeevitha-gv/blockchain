@@ -232,7 +232,9 @@ Idea - <?php echo $_GET['id'];?>
    <div class="row form-group">
 <div class="col-md-12">
 <label style="  background-color: coral;"><b>Artifacts</b></label>
-<textarea id="nature" rows="7" class="form-control" disabled style="height: 150px; border-color:#A1E6EA"></textarea>
+<div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
+      </div>
 </div>
 
     </div>

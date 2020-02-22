@@ -99,7 +99,7 @@
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;font-size: 20px;">
-Tip - <?php echo $_GET['id']; ?>
+Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . "  " . substr($_GET['id'],8,4) . "  " . substr($_GET['id'], 12, 4); ?>
 </h3>
 </div>
 
@@ -226,7 +226,9 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <div class="row form-group">
 <div class="col-md-12 input_val">
 <label style="  background-color: coral;"><strong>Artifacts</strong></label>
- <textarea type="text" class="form-control" disabled="" id="MUpdate"style="height: 150px; border-color:#A1E6EA" ></textarea>
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
+      </div>
 </div>
 </div>
 </div>

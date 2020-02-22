@@ -8,7 +8,7 @@ include "../php/common/config.php";
 <base href="/blockchain/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Idea | Tip Number</title>
+        <title>Idea | Idea Number</title>
         <meta name="description" content="Base form control examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -45,33 +45,12 @@ include "../php/common/config.php";
     window.close();
   }
 </script>
-<script type="text/javascript">
-    $('button').click(function(){
-  
-  Swal.fire({
-  title: 'Are you sure?',
-  text: "It will permanently deleted !",
-  type: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Yes, delete it!'
-}).then(function() {
-  Swal.fire(
-    'Deleted!',
-    'Your file has been deleted.',
-    'success'
-  );
-})
-  
-})
-</script>
 
   <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-image: url(./assets/media/bg/bg-7.jpg);"> <br><br>
 <div class="container">
     <div class="row">
 
-    <button type="button" class="btn btn-danger" onclick="closeWin1()" style="margin-left: 1200px;">Close</button>
+    <button type="button" class="btn btn-danger" onclick="closeWin()" style="margin-left: 1200px;">Close</button>
   </div>
 </div>
 

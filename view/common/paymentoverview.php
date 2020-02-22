@@ -107,260 +107,190 @@ $companyId=$id[0]['id'];
     <?php
     include '../siteHeader.php';
     ?>
-  <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #e0d9d9;">
+    <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #e0d9d9;">
 
-       
+         
 
-      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-10%;">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-10%;">
 
-<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
-<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-    <!--Begin::App-->
-<div class="kt-grid kt-grid--desktop kt-grid--ver kt-grid--ver-desktop kt-app">
-    <!--Begin:: App Aside Mobile Toggle-->
-    <button class="kt-app__aside-close" id="kt_user_profile_aside_close">
-        <i class="la la-close"></i>
-    </button>
-    <!--End:: App Aside Mobile Toggle-->
+  <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+  <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+      <!--Begin::App-->
+  <div class="kt-grid kt-grid--desktop kt-grid--ver kt-grid--ver-desktop kt-app">
+      <!--Begin:: App Aside Mobile Toggle-->
+      <button class="kt-app__aside-close" id="kt_user_profile_aside_close">
+          <i class="la la-close"></i>
+      </button>
+      <!--End:: App Aside Mobile Toggle-->
 
-    <!--Begin:: App Aside-->
-    <div class="kt-grid__item kt-app__toggle kt-app__aside" id="kt_user_profile_aside" >
-        <!--begin:: Widgets/Applications/User/Profile4-->
-<div class="kt-portlet kt-portlet--height-fluid-">
-    <div class="kt-portlet__body" >
-        <!--begin::Widget -->
-        <div class="kt-widget kt-widget--user-profile-4">
-            <div class="kt-widget__head">
-                <div class="kt-widget__media">
+      <!--Begin:: App Aside-->
+      <div class="kt-grid__item kt-app__toggle kt-app__aside" id="kt_user_profile_aside" >
+          <!--begin:: Widgets/Applications/User/Profile4-->
+  <div class="kt-portlet kt-portlet--height-fluid-" style="width:500px; height: 500px;">
+      <div class="kt-portlet__body" >
+          <!--begin::Widget -->
+          <div class="kt-widget kt-widget--user-profile-4">
+              <div class="kt-widget__head">
+                  <div class="kt-widget__media">
 
-                    <a href="view/common/overview.php"><img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="80px" /></a>     <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change avatar">
-                                                                <i class="fa fa-pen"></i>
-                                                                <input type="file" name="kt_user_add_user_avatar" style="display: none;">
-                                                            </label>
+                      <a href="view/common/overview.php"><img src=" ./assets/media/logos/user.png" alt="" width="100px" height="100px" /></a>     <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change avatar">
+                                                                  <i class="fa fa-pen"></i>
+                                                                  <input type="file" name="kt_user_add_user_avatar" style="display: none;">
+                                                              </label>
 
-                </div>                
-                <div class="kt-widget__content">
-                    <div class="kt-widget__section">
-                       
-                        <div>                             
-                            <a href="#" class="btn btn-icon btn-circle btn-label-facebook">
-                                <i class="fa flaticon-users-1"></i>
-                            </a>
-                            <i>Super_admin</i>
-                          </div>&nbsp;
-                          <div>
-                            <a href="#" class="btn btn-icon btn-circle btn-label-twitter">
-                                <i class="la la-phone"></i>
-                            </a>
-                            <i>044-24521452</i>
-                          </div>&nbsp;
-                          <div>
-                            <a href="#" class="btn btn-icon btn-circle btn-label-google">
-                                <i class="fa flaticon2-black-back-closed-envelope-shape"></i>
-                            </a>
-                            <i>admin@fixnix.co</i>                             
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--end::Widget -->
-    </div>
-</div>
-<!--end:: Widgets/Applications/User/Profile4-->
-        <!--Begin:: Portlet-->
-     
-        <!--end:: Portlet-->
-    </div>
-    <!--End:: App Aside-->
-    
-    <!--Begin:: App Content-->
-    <div class="kt-grid__item kt-grid__item--fluid kt-app__content">
-        <div class="row">
-            <div class="col-xl-12">
-                <!--begin:: Widgets/Trends-->
-<div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
-  <div class="kt-portlet__head kt-portlet__head--noborder">
-    <div class="kt-portlet__head-label">
-       <h3 class="kt-portlet__head-title">
-              Feeds
-         </h3>
-    </div>
-    
-  </div>
-
-                                      
-  <div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
-    <div class="kt-widget4 kt-widget4--sticky">
-      <div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-20">
-       <div class="portlet-body" style="overflow-x:scroll;">                                               
-                      <div class="tab-content">
-                        <div class="tab-pane active" id="tab_1_1">
-                          <div class="scroller kt-scroll" data-scroll="true" data-height="245" data-mobile-height="200" data-always-visible="1" data-rail-visible1="0" data-handle-color="#FFA130">
-                            <ul class="feeds">
-                              <?php
-  $link=mysqli_connect("localhost","root","Admin1234#@","Whistle");
-  $que="SELECT * from blower order by id desc ";
-  $res=mysqli_query($link,$que);
-  while ($row=mysqli_fetch_assoc($res)) {
-  ?>
-                                  <p style="font-size:14px;"><?php echo $row['company'];?> has been created</p>
-                                  <?php
-                                }
-                                ?>
-                              <?php foreach($feeds as $feed){ ?>
-                                <li>
-                                  <div class="col1">                                
-                                    <div class="cont">
-                                      <div class="cont-col1">
-                                        <div class="kt-widget4__item">
-                                        <!-- <div class="label label-sm label-success"> -->
-                                          <i class="btn btn-icon btn-circle btn-label-facebook" style=""><a class="la la-bell"></a></i>
-                                        <!-- </div> -->
-                                      </div>
-                                      <div class="cont-col2">
-                                      <?php if($userRole == 'compliance_author'){ ?>
-                                          <div class="desc" id="feed<?php echo $auditId ?>">New <?php echo $feed['procedure']?>  <?php echo $feed['name']?> is created by <?php echo $feed['last_name'] ?> <?php echo $feed['name'] ?>
-                                      <?php } else if($userRole == 'compliance_reviewer') { ?>
-                                          <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['name'];?> is <?php echo $feed['status'];?>                                          
-                                      <?php }
-                                      else if($userRole == 'incident_analyst' || $userRole == 'incident_manager') { ?>
-                                          <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['Title'];?> is <?php echo $feed['status'];?> on <?php echo $feed['date_occured'];?> by                                         
-                                      <?php }
-                                      else if($userRole == 'incident_resolver') { ?>
-                                          <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['Title'];?> is <?php echo $feed['status'];?> on <?php echo $feed['date_occured'];?> by                                         
-                                      <?php }
-                                      else if($userRole == 'incident_reviewer') { ?>
-                                          <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['Title'];?> is <?php echo $feed['status'];?> on <?php echo $feed['date_occured'];?> by                                         
-                                      <?php }
-                                       else {?>
-                                        <div class="desc" id="feed<?php echo $auditId ?>"><?php echo $feedMessage." " ?> <?php echo $feed['last_name'] ?><?php echo $feed['name'] ?> 
-                                      <?php } ?>
-
-                                      <?php if($userRole == 'policy_owner'){ ?>
-                                          <div class="desc" id="feed<?php echo $auditId ?>">New <?php echo $feed['procedure']?> - <?php echo $feed['title']?> is created by <?php echo $feed['last_name'] ?> <?php echo $feed['name'] ?>
-                                      <?php } else if($userRole == 'policy_reviewer' || $userRole == 'policy_approver') { ?>
-                                          <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['title'];?> is <?php echo $feed['status'];?>                                          
-                                      <?php } else {?>
-                                        <div class="desc" id="feed<?php echo $auditId ?>"><?php echo $feedMessage." " ?> <?php echo $feed['last_name'] ?>     <?php echo $feed['title'] ?> 
-                                      <?php } ?>
-                                          <?php if($isAuditor==1){ ?>
-                                            <span class="label label-sm label-info">
-                                              
-                                              <a  <?php if($feed['status']=="create") {?> href="view/audit/auditDoPage.php?auditId=<?php echo $feed['id'] ?>" <?php }?>  <?php if($feed['status']=="prepared") {?> href="view/audit/auditeeDoPage?auditId=<?php echo $feed['id'] ?>" <?php }?> <?php if($feed['status']=="performed") {?> href="view/audit/auditCheckPage.php?auditId=<?php echo $feed['id'] ?>" <?php }?> <?php if($feed['status']=="returned") {?> href="view/audit/auditActPage.php?auditId=<?php echo $feed['id'] ?>" <?php }?>> Take action</a>  <?php } ?>
-                                            </span>
-                                        </div>
-                                      </div>
-                                    </div>                                  
-                                  </div>
-                                  <div class="col2">
-                                      <?php if($userRole == 'policy_owner' || $userRole == 'policy_reviewer' || $userRole == 'policy_approver' || $user_role == 'compliance_author' || $user_role == 'compliance_reviewer'){?>
-                                        <div class="date"><?php echo $feed['date']?></div>
-                                      <?php } else {  ?>
-                                        <span class="kt-widget4__ext">
-                                          <span class="kt-widget4__number kt-font-danger">Just now</span>
-                                        </span>
-                                      <?php } ?>
-                                  </div>
-                                </div>
-                                </li>
-                              <?php 
-                            } ?>
+                  </div>                
+                  <div class="kt-widget__content">
+                      <div class="kt-widget__section">
+                         
+                          <div>                             
+                              <a href="#" class="btn btn-icon btn-circle btn-label-facebook">
+                                  <i class="fa flaticon-users-1"></i>
+                              </a>
+                              <i>Super_admin</i>
+                            </div>&nbsp;
+                            <div>
+                              <a href="#" class="btn btn-icon btn-circle btn-label-twitter">
+                                  <i class="flaticon-piggy-bank"></i>
+                              </a>
+                           <h>1005000 <i class="fas fa-dollar-sign"></i></h>
+                            </div>&nbsp;
+                            <div>
+                              <a href="#" class="btn btn-icon btn-circle btn-label-google">
+                                  <i class="fa flaticon2-black-back-closed-envelope-shape"></i>
+                              </a>
+                              <i>admin@fixnix.co</i>                             
                           </div>
-                        </div>                        
+                          &nbsp;
+                            <div>
+                              <a href="#" class="btn btn-icon btn-circle btn-label-google">
+                                  <i class="flaticon-support"></i>
+                              </a>
+                              <i>+1 (123) 456–7890</i>                             
+                          </div>
                       </div>
-                    </div>
-      </div>      
-    </div>         
+                  </div>
+              </div>
+          </div>
+          <!--end::Widget -->
+      </div>
   </div>
-</div>
-</div>
- </div> 
-</div>
+  <!--end:: Widgets/Applications/User/Profile4-->
+          <!--Begin:: Portlet-->
+       
+          <!--end:: Portlet-->
+      </div>
+      <!--End:: App Aside-->
+      
+      <!--Begin:: App Content-->
+      <div class="kt-grid__item kt-grid__item--fluid kt-app__content" >
+          <div class="row">
+              <div class="col-xl-12">
+                  <!--begin:: Widgets/Trends-->
+  <div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid" style="width: 800px; height: 500px; margin-left: 150px;">
+    <div class="kt-portlet__head kt-portlet__head--noborder">
+      <div class="kt-portlet__head-label">
+         <h3 style="font-size: 25px;" class="kt-portlet__head-title">
+                Feeds
+           </h3>
+      </div>
+      
+    </div>
 
-</div>
- </div>
-</div>
-</div>
+                                        
+    <div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
+      <div class="kt-widget4 kt-widget4--sticky">
+        <div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-20">
+         <div class="portlet-body">                                               
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="tab_1_1">
+                            <div class="scroller kt-scroll" data-scroll="true" data-height="500" data-mobile-height="200" data-always-visible="1" data-rail-visible1="0" data-handle-color="#FFA130">
+                              <ul>
+                                <li style="font-size: 20px;"> <i class="fa fa-usd"></i>100000  -Credited to your account.</li>
+                                <li style="font-size: 20px;"> <i class="fa fa-usd"></i>15000  -Credited to your account.</li>
+                                <li style="font-size: 20px;"><i class="fa fa-usd"></i>15000  -Debited from your account.</li>
+                                <li style="font-size: 20px;"><i class="fa fa-usd"></i>8000  -Credited to your account.</li>
+                                <li style="font-size: 20px;"> <i class="fa fa-usd"></i>1000   -Debited from your account. </li>
+                              </ul>
+                                 
+                                <?php foreach($feeds as $feed){ ?>
+                                  <li>
+                                    <div class="col1">                                
+                                      <div class="cont">
+                                        <div class="cont-col1">
+                                          <div class="kt-widget4__item">
+                                          <!-- <div class="label label-sm label-success"> -->
+                                            <i class="btn btn-icon btn-circle btn-label-facebook" style=""><a class="la la-bell"></a></i>
+                                          <!-- </div> -->
+                                        </div>
+                                        <div class="cont-col2">
+                                        <?php if($userRole == 'compliance_author'){ ?>
+                                            <div class="desc" id="feed<?php echo $auditId ?>">New <?php echo $feed['procedure']?>  <?php echo $feed['name']?> is created by <?php echo $feed['last_name'] ?> <?php echo $feed['name'] ?>
+                                        <?php } else if($userRole == 'compliance_reviewer') { ?>
+                                            <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['name'];?> is <?php echo $feed['status'];?>                                          
+                                        <?php }
+                                        else if($userRole == 'incident_analyst' || $userRole == 'incident_manager') { ?>
+                                            <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['Title'];?> is <?php echo $feed['status'];?> on <?php echo $feed['date_occured'];?> by                                         
+                                        <?php }
+                                        else if($userRole == 'incident_resolver') { ?>
+                                            <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['Title'];?> is <?php echo $feed['status'];?> on <?php echo $feed['date_occured'];?> by                                         
+                                        <?php }
+                                        else if($userRole == 'incident_reviewer') { ?>
+                                            <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['Title'];?> is <?php echo $feed['status'];?> on <?php echo $feed['date_occured'];?> by                                         
+                                        <?php }
+                                         else {?>
+                                          <div class="desc" id="feed<?php echo $auditId ?>"><?php echo $feedMessage." " ?> <?php echo $feed['last_name'] ?><?php echo $feed['name'] ?> 
+                                        <?php } ?>
 
-<div class="kt-grid kt-grid--hor kt-grid--root">
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+                                        <?php if($userRole == 'policy_owner'){ ?>
+                                            <div class="desc" id="feed<?php echo $auditId ?>">New <?php echo $feed['procedure']?> - <?php echo $feed['title']?> is created by <?php echo $feed['last_name'] ?> <?php echo $feed['name'] ?>
+                                        <?php } else if($userRole == 'policy_reviewer' || $userRole == 'policy_approver') { ?>
+                                            <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['title'];?> is <?php echo $feed['status'];?>                                          
+                                        <?php } else {?>
+                                          <div class="desc" id="feed<?php echo $auditId ?>"><?php echo $feedMessage." " ?> <?php echo $feed['last_name'] ?>     <?php echo $feed['title'] ?> 
+                                        <?php } ?>
+                                            <?php if($isAuditor==1){ ?>
+                                              <span class="label label-sm label-info">
+                                                
+                                                <a  <?php if($feed['status']=="create") {?> href="view/audit/auditDoPage.php?auditId=<?php echo $feed['id'] ?>" <?php }?>  <?php if($feed['status']=="prepared") {?> href="view/audit/auditeeDoPage?auditId=<?php echo $feed['id'] ?>" <?php }?> <?php if($feed['status']=="performed") {?> href="view/audit/auditCheckPage.php?auditId=<?php echo $feed['id'] ?>" <?php }?> <?php if($feed['status']=="returned") {?> href="view/audit/auditActPage.php?auditId=<?php echo $feed['id'] ?>" <?php }?>> Take action</a>  <?php } ?>
+                                              </span>
+                                          </div>
+                                        </div>
+                                      </div>                                  
+                                    </div>
+                                    <div class="col2">
+                                        <?php if($userRole == 'policy_owner' || $userRole == 'policy_reviewer' || $userRole == 'policy_approver' || $user_role == 'compliance_author' || $user_role == 'compliance_reviewer'){?>
+                                          <div class="date"><?php echo $feed['date']?></div>
+                                        <?php } else {  ?>
+                                          <span class="kt-widget4__ext">
+                                            <span class="kt-widget4__number kt-font-danger">Just now</span>
+                                          </span>
+                                        <?php } ?>
+                                    </div>
+                                  </div>
+                                  </li>
+                                <?php 
+                              } ?>
+                            </div>
+                          </div>                        
+                        </div>
+                      </div>
+        </div>      
+      </div>         
+    </div>
+  </div>
+  </div>
+   </div> 
+  </div>
 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-10%;">
-
-<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content"style="margin-top:-3%;">
-
-<!-- begin:: Content -->
-<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-
-
-<div class="kt-portlet">
-<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
-<div class="kt-portlet__head-label">
-<span class="kt-portlet__head-icon">
-<i class="kt-font-brand flaticon2-line-chart"></i>
-</span>
-
-<h3 class="kt-portlet__head-title" style="color: white;">
-Business Unit
-</h3>
-
-</div>
-<div>
-  <button class="btn btn-success" style="float: right;"><a href="view/common/addadminuser.php" style="color:white;">Adduser</a></button>
-   <button class="btn btn-danger" style=""><a href="view/common/bulkbusinessunit.php" style="color:white;">Add BusinessUnit</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  
-</div>
-
-
-</div>
-
-<div class="kt-portlet__body" style="overflow-x: scroll;">
-<!--begin: Datatable --> 
-<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
-<thead>
-  <tr>
-                    <th>User Id</th>
-                    <th>Category</th> 
-                    <th>Address</th>                       
-                    <th>Code</th>
-                    <th>City</th>
-                    <th>Team</th>
-                    <th>Department</th>
-                    <th>Action</th>
-                    
-  </tr>
-</thead>
-
-<tbody>
-<?php foreach ($allcompanydata as $data) { ?>
-                    <tr>
-                    <td><?php echo $data['user_id'];?></td>
-                    <td><?php echo $data['category'];?></td>
-                    <td><?php echo $data['address'];?></td>
-                    <td><?php echo $data['code'];?></td>
-                    <td><?php echo $data['city'];?></td>
-                    <td><?php echo $data['team'];?></td>
-                    <td><?php echo $data['department']; ?></td>
-                      <td><button class="btn btn-primary"><a href="/blockchain/view/common/editbulkbussinessunit.php?userId=<?php echo $data['user_id']; ?>" style="color: white;">Edit</a></button></td>
-                   </tr>
-                    
-                  <?php } ?>
-
-</tbody>
-
-
-</table>
-<!--end: Datatable -->
-</div>
-
-
+  </div>
+   </div>
+  </div>
+  </div>
 
 
 <?php
-include '../sidemenu.php';
-
- ?>
+include '../common/sidemenu4.php';
+?>
         <!-- begin::Global Config(global config for global JS sciprts) -->
         <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#374afb","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};

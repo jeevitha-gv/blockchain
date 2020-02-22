@@ -71,188 +71,124 @@ include "../siteHeader.php";
       <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
 
  
-<!-- end:: Header Mobile -->
-<div class="kt-grid kt-grid--hor kt-grid--root">
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+        <div class="col-md-8" style="margin-left: 20%;">
 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-13%;">
+        <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
 
-<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
-
-<!-- begin:: Content -->
-<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
- 
-
-<div class="">
-    <div class="row" style="margin-left: 25%;">
-                <div class="col-lg-6 col-xl-8 order-lg-1 order-xl-1" style="text-align: center;">
-<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
-
-                    <div class="kt-portlet__head-label"><br>
-                        <!-- <span class="kt-portlet__head-icon">
-                            <i class="kt-font-brand flaticon2-line-chart" ></i>
-                        </span> -->
-                        <h3 class="kt-portlet__head-title" style="color: white;">
-                            <span class="caption-subject bold" style="color: #EA535A; text-transform: uppercase;"> Timeline</span>
-                            <span class="caption-helper" style="font-size: 13px;">user timeline</span>
-                        </h3><br>
-                    </div>        
-                   </div>
-
-<div class="kt-portlet__body" >
-               <form method="POST" onsubmit="return validate1();" action="view/common/chatProcess.php" class="modal-content animate" >
-       
-               
-
-                 
-                      <div class="form-group">
+                            <div class="kt-portlet__head-label">
+                                <span class="kt-portlet__head-icon">
+                                    <i class="kt-font-brand flaticon2-line-chart" ></i>
+                                </span>
+                                <h3 class="kt-portlet__head-title" style="color: white;">
+                                    <span class="caption-subject bold" style="color: #EA535A; text-transform: uppercase;"> Timeline</span>
+                                    <span class="caption-helper" style="font-size: 13px;">user timeline</span>
+                                </h3>
+                            </div>        
+                           </div>
+        <div class="kt-portlet__body" >
+                     <div class="form-group">
                      
-                       
-                          <div class="form-group">
-                          <label for="comment"></label>
-                          <center>
-                          <textarea style="width: 60%;" name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control"  rows="4"></textarea>
-                        </center>
 
-                          </div>
-                          <div class="form-group">
-                           
- 
-
-                          <select name="to_id" class="form-control select2-selection arrow" style="width: 60%;margin-left:20%;margin-top:-3%;">
-                             <option></option>
-                                <?php foreach($users as $user){
-                                   if($_SESSION['user_id']!=$user['id']){ ?>
-                               <option  value="<?php echo $user['id']; ?>">  <?php echo htmlspecialchars($user['last_name']); ?></option>
-                           <?php } } ?>
-                           </select>
-                           
                              
-                          </div>
-                        <!-- <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
-                        <center>
-                        <button class="btn btn-primary" type="submit" style="width:15%;" name="submit">Post</button>
-                      </center>
-                     </div>
-                       
-               
-   
-      </form>
-              </div>
-         <!--  </div>
-
-
-          <div class="col-lg-6 col-xl-8 order-lg-1 order-xl-1"> -->
-           
-           
-                    <div class="form-group ">
-                    <div class="portlet-body" style="background-color: #ffffff;">
-                      <div class="timeline" style="overflow:scroll; height:375px;">                              
-                        <div class="timeline-item">                                                        
-                          <div class="timeline-item">
-                            <div class="kt-widget4">
-                                <div class="kt-widget4__item" style="background-color: #2a5aa8; height: 60px;">
-                                    <div class="kt-widget4__pic kt-widget4__pic--pic">
-                                        <img src="assets/img/shan.jpg" class="rounded-circle" alt="Cinque Terre" >  
-                                    </div>
-                                    <div class="kt-widget4__info">
-                                        <a href="#" class="kt-widget4__username" style="color: #ffffff;">
-                                            Shanmugavel Sankaran
-                                        </a>
-                                        <p class="kt-widget4__text">
-                                            Added office location at 2:50 PM
-                                        </p>                                    
-                                    </div>                      
+                               
+                                <div class="form-group">
+                                  <label for="comment"></label>
+                                  <textarea onclick="document.getElementById('modal-wrapper').style.display='block'" name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control" rows="4"></textarea>
                                 </div>
-                         
-                       <?php foreach($chats as $chat){ ?>  
-                       <?php $from = $timeManager->userDetails($chat['from_id']); ?>                            
-                          <div class="timeline-item" style="margin-left:20px;" align="left">
-                            <div class="timeline-badge">
-                              <div class="timeline-icon" >
-                                <i class="flaticon-businesswoman" style="font-size: 35px; color: #38A2AE;"></i>
-                                 <?php $to = $timeManager->userDetails($chat['to_id']); ?>
-                                <span class="" style="font-size: 15px;">  <?php echo $to[0]['last_name']; ?></span>&nbsp;&nbsp;&nbsp;<span style="font-size: 15px; ">  <?php echo $chat['message']; ?></span>
-                              </div>  
-
-                            </div>
-                                  <span><?php echo $from[0]['last_name']; ?></span>
-                                  <span style="font-size: 13px;"><?php echo $chat['create_time']; ?></span>
-                                 
+                               
+                                <!-- <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
+         
                           </div>
-                      <?php }?>
-                        </div>
                       </div>
+
+                       <div class="kt-widget4">
+                                        <div class="kt-widget4__item" style="background-color: #2a5aa8; height: 60px;">
+                                            <div class="kt-widget4__pic kt-widget4__pic--pic">
+                                                <img src="assets/img/shan.jpg" class="rounded-circle" alt="Cinque Terre" >  
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                                <a href="#" class="kt-widget4__username" style="color: #ffffff;">
+                                                    Shanmugavel Sankaran
+                                                </a>
+                                                <p class="kt-widget4__text">
+                                                    Added office location at 2:50 PM
+                                                </p>                                    
+                                            </div>                      
+                                        </div>
+                                 
+                               <?php foreach($chats as $chat){ ?>  
+                               <?php $from = $timeManager->userDetails($chat['id']); ?>                            
+                                  <div class="timeline-item" style="margin-left:20px;" align="left">
+                                    <div class="timeline-badge">
+                                      <div class="timeline-icon" >
+                                        <i class="flaticon-businesswoman" style="font-size: 35px; color: #38A2AE;"></i>
+                                         <?php $to = $timeManager->userDetails($chat['to_id']); ?>
+                                        <span class="" style="font-size: 15px;">  <?php echo $to[0]['last_name']; ?></span><br>&nbsp;&nbsp;&nbsp;<span style="font-size: 15px; text-align: center ">  <?php echo $chat['message']; ?></span>
+                                      </div>  
+
+                                    </div>
+                                          <span><?php echo $from[0]['last_name']; ?></span>
+                                          <span style="font-size: 13px; float: right;"><?php echo $chat['create_time']; ?></span><br>
+                                         
+                                  </div>
+                              <?php }?>
+                                </div>
                     </div>
-                </div>
-            </div>
+        <div id="modal-wrapper" style="width: 66%;margin-left: 20.5%;margin-top:9%; height: 35%;"class="modal">
+         
+                      <form method="POST" onsubmit="return validate1();" action="view/common/chatProcess.php" class="modal-content animate" >
+               
+                        <div class="imgcontainer">
+                             <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+             
+                               <!-- <h1 style="text-align:center">Time Line</h1> -->
+                        </div>
+
+                         <div class="container">
+                              <div class="form-group">
+                             
+                               
+                                  <div class="form-group">
+                                  <label for="comment"></label>
+                                  <center>
+                                  <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control"  rows="4"></textarea>
+                                </center>
+
+                                  </div><br>
+                                  <div class="form-group">
+                                  <!--  <div class="custom-control custom-radio" style="margin-left: 20%">
+                                <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios">
+                                                                    <label class="custom-control-label" for="defaultGroupExample1">New Feed</label>
+                                </div> -->
+         
+
+                                  <select name="to_id" class="form-control select2-selection arrow" style="margin-top:-3%;">
+                                     <option></option>
+                                        <?php foreach($users as $user){
+                                           if($_SESSION['user_id']!=$user['id']){ ?>
+                                       <option value="<?php echo $user['id']; ?>"><?php echo htmlspecialchars($user['last_name']); ?></option>
+                                   <?php } } ?>
+                                   </select>
+                                   
+                                     
+                                  </div>
+                                <!-- <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
+                                <center>
+                                <button class="btn btn-primary" type="submit" name="submit">Post</button>
+                              </center>
+                             </div>
+                               
+                       </div>
+           
+              </form>
+         
+           
         </div>
 
 
-<!--end::Form-->    
-</div>
-</div>
-</div>
- </div>
- </div>  
-</div>
-</div>
-
-</div>
-
-<div id="modal-wrapper" style="width: 43.1%;margin-left: 33.2%;margin-top:10%;background-color: #F2F2F2;"class="modal">
-  
-              <form method="POST" onsubmit="return validate1();" action="view/common/chatProcess.php" class="modal-content animate" >
-        
-                <div class="imgcontainer">
-                     <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-      
-                       <h1 style="text-align:center">Time Line</h1>
-                </div>
-
-                 <div class="container">
-                      <div class="form-group">
-                     
-                        
-                          <div class="form-group">
-                          <label for="comment"></label>
-                          <center>
-                          <textarea style="width: 60%;" name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control"  rows="4"></textarea>
-                        </center>
-
-                          </div>
-                          <div class="form-group">
-                           <div class="custom-control custom-radio" style="margin-left: 20%">
-                        <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios">
-                                                            <label class="custom-control-label" for="defaultGroupExample1">New Feed</label>
-                        </div>
- 
-
-                          <select name="to_id" class="form-control select2-selection arrow" style="width: 40%;margin-left:40%;margin-top:-3%;">
-                             <option></option>
-                                <?php foreach($users as $user){
-                                   if($_SESSION['user_id']!=$user['id']){ ?>
-                               <option value="<?php echo $user['id']; ?>"><?php echo htmlspecialchars($user['last_name']); ?></option>
-                           <?php } } ?> 
-                           </select>
-                           
-                             
-                          </div>
-                        <!-- <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
-                        <center>
-                        <button class="btn btn-primary" type="submit" name="submit">Post</button>
-                      </center>
-                     </div>
-                        
-               </div>
-    
-      </form>
-  
-    
-</div>
 
 <?php 
-include "sidemenu.php";
+include "../sidemenu.php";
 ?>
               <!-- begin::Global Config(global config for global JS sciprts) -->
        <script>

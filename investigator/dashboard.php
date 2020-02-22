@@ -426,7 +426,7 @@ Highcharts.chart('container4', {
 <div class="kt-portlet__head kt-portlet__head--noborder">
 <div class="kt-portlet__head-label">
   <h3 class="kt-portlet__head-title">
-       Bussiness Unit
+       Business Unit
       </h3>
 </div>
 </div>

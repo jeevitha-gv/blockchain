@@ -1,11 +1,4 @@
- <?php
- include 'php/common/config.php';
 
-      $sql="SELECT email,password FROM user";
-     $result=mysqli_query($link,$sql);
-       
- 
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,12 +27,7 @@
 
           <!-- begin:: Aside Menu -->
           <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
-            <?php
-        if($rows=mysqli_fetch_assoc($result))
-             {    
-               if($rows['email']=='admin@nixwhistle.co'&& $rows['password']=='admin')
-               {
-                ?>
+       
             <div id="kt_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown " data-ktmenu-vertical="1" data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
        
               <ul class="kt-menu__nav ">
@@ -56,12 +44,7 @@
            
          
                   </div>
-                  <?php
-                }
-               
-              }
-              ?>
-             
+            
 
   </div>
 </body>

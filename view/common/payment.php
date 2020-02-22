@@ -185,26 +185,25 @@ a
                     </div>
                     <div class="kt-wizard-v4__nav-label">
                         <div class="kt-wizard-v4__nav-label-title">
-                            User
+                            Ammount
                         </div>
                         <div class="kt-wizard-v4__nav-label-desc">
-                            User's Personal Information...,
+                            Lourd your ammount...,
                         </div>
                     </div>
                 </div>
             </a>
-            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
+             <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
                 <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
                         2
-                        
-                    </div>
+                       </div>
                     <div class="kt-wizard-v4__nav-label">
                         <div class="kt-wizard-v4__nav-label-title">
-                          Card details
+                          Account Information
                         </div>
                         <div class="kt-wizard-v4__nav-label-desc">
-                            give credit card details carfully...,
+                            Give your correct account info...,
                         </div>
                     </div>
                 </div>
@@ -217,7 +216,7 @@ a
                     </div>
                     <div class="kt-wizard-v4__nav-label">
                         <div class="kt-wizard-v4__nav-label-title">
-                          Checkout
+                          Card Details
                         </div>
                         <div class="kt-wizard-v4__nav-label-desc">
                             Give your card details carfully...,
@@ -235,7 +234,7 @@ a
                            Confirmation
                         </div>
                         <div class="kt-wizard-v4__nav-label-desc">
-                            Review and Submit
+                            Review and Submit...,
                         </div>
                     </div>
                 </div>
@@ -256,76 +255,27 @@ a
                         <!--begin: Form Wizard Step 1-->
                         <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
 
-                            <div class="kt-heading kt-heading--md">User's Profile Details:</div>
+                            <div class="kt-heading kt-heading--md">How many dollars do you want lourd:</div>
                             <div class="kt-section kt-section--first">
                                 <div class="kt-wizard-v4__form">
                                     <div class="row">
                                         <div class="col-xl-12">
-                                            <div class="kt-section__body">
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Avatar</label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar">
-                                                            <div class="kt-avatar__holder" style="background-image: url(lg.png); width: 150px;"></div>
-                                                            <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change avatar">
-                                                                <i class="fa fa-pen"></i>
-                                                                <input type="file" name="kt_user_add_user_avatar">
-                                                            </label>
-                                                            <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="Cancel avatar">
-                                                                <i class="fa fa-times"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            
+
                                                      
-                                                    <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">First Name:</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control" type="text" id="firstName">
-                                                    </div>
-                                                </div>
-                                                     
-                              <div class="form-group">
-                       
-                            <input type="hidden" class="form-control" id="userId">
-                            <input type="hidden" class="form-control" id="action" value="create">
-                            <input type="hidden" class="form-control" id="companyId" value="<?php echo $companyId ?>">
-                            <input type="hidden" class="form-control" id="company" value="7">
-                        </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Last Name:</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control" type="text" id="lastName">
-                                                    </div>
-                                                </div>
-                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Email Address:</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
-                                                            <input type="text" class="form-control" id="email">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Role:</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <?php include '../common/roleMultiSelect.php';?>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Phone:</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                                                            <input type="text" class="form-control" value="+45678967456" placeholder="Phone" aria-describedby="basic-addon1">
-                                                        </div>
-                                                       
-                                                    </div>
-                                                </div>
+                                                   
+                              <div class="form-group row">
+                                  <label class="col-xl-3 col-lg-3 col-form-label" style="font-size:18px;">Amount:<b1>$</b1></label>
+                                  <div class="col-lg-9 col-xl-9">
+                                      <input class="form-control" type="text" placeholder="100500" maxlength="30" id="Amount">
+                                  </div>
+                              </div>
+                                                 
+                                                
+                                                
                                                
                                                 
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -342,26 +292,42 @@ a
                                             <div class="kt-section__body">
                                                 <div class="form-group row">                                                     
                                                     <div class="col-lg-9 col-xl-6">
-                                                        <h3 class="kt-section__title kt-section__title-md">Select</h3>
+                                                        <h3 class="kt-section__title kt-section__title-md"> Account Information:</h3>
                                                     </div>
                                                 </div>
                                                 
                                                <div class="form-group row">
-                                                   <label class="col-xl-3 col-lg-3 col-form-label">Select Number Of Users:</label>
+                                                   <label class="col-xl-3 col-lg-3 col-form-label">Account holder name:</label>
                                                    <div class="col-lg-9 col-xl-9">
-                                                       <input class="form-control" type="text">
+                                                       <input class="form-control" type="text" placeholder="Armstrong Achechie" maxlength="30">
                                                    </div>
                                                </div>
                                                <div class="form-group row">
-                                                   <label class="col-xl-3 col-lg-3 col-form-label">Total: <b>$</b></label>
+                                                   <label class="col-xl-3 col-lg-3 col-form-label">Bank Name:</label>
                                                    <div class="col-lg-9 col-xl-9">
-                                                       <input class="form-control" type="text">
+                                                       <input class="form-control" type="text" placeholder="Bank of America" maxlength="30">
+                                                   </div>
+                                               </div>
+                                               <div class="form-group row">
+                                                   <label class="col-xl-3 col-lg-3 col-form-label">Bank account number:</label>
+                                                   <div class="col-lg-9 col-xl-9">
+                                                       <input class="form-control" type="text" placeholder="1111 2222 3333 4444" maxlength="16">
+                                                   </div>
+                                               </div>
+                                               <div class="form-group row">
+                                                   <label class="col-xl-3 col-lg-3 col-form-label">Email:</label>
+                                                   <div class="col-lg-9 col-xl-9">
+                                                       <input class="form-control" type="text" placeholder="Armstrong@gmail.com" maxlength="30">
+                                                   </div>
+                                               </div>
+                                               <div class="form-group row">
+                                                   <label class="col-xl-3 col-lg-3 col-form-label">Phone number:</label>
+                                                   <div class="col-lg-9 col-xl-9">
+                                                       <input class="form-control" type="text" placeholder="+1 (123) 456–7890" maxlength="20">
                                                    </div>
                                                </div>
 
-                                            
-
-                                            
+                                                                                    
                                             
 
                                             </div>
@@ -383,17 +349,16 @@ a
                                             <div class="kt-section__body">
                                                 <div class="form-group row">                                                     
                                                     <div class="col-lg-9 col-xl-6">
-                                                        <h3 class="kt-section__title kt-section__title-md">User Card Details:</h3>
+                                                        <h3 class="kt-section__title kt-section__title-md">Card Details:</h3>
                                                     </div>
                                                 </div>
+                                                
                                                 <?php
                                                 include '../common/payment2.php';
 
                                                  ?>
                                                
-                                                
-
-                                            
+                                                                                      
 
                                             
                                             
@@ -444,7 +409,7 @@ a
                             <div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
                                 Previous
                             </div>
-                            <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold " data-ktwizard-type="action-submit" id="managerUserButton" onclick="manageUser()">
+                            <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold " data-ktwizard-type="action-submit" id="managerUserButton" onclick="manageUserpayment()">
                                 Submit
                             </div>
                             <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
