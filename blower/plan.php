@@ -51,7 +51,8 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
      values('$company','$category','$relationship','$encounter','$department','$place','$monetaryvalue','$period','$namepi','$designationpi','$departmentpi','$nameyd','$emailyd','$phonenoyd','$authorityknows','$nameauth','$emailauth','$phoneauth','$incidentinfo','$NPname','$BName','$bankaccountno','$AHN','$bankname','$BANo','$btcaddress','$ethaddress','$ran','$secretkey','$Artifacts','$status')";
 
         if(mysqli_query($link,$sql))
-        {   
+        {
+           
            if (move_uploaded_file($_FILES["Artifacts"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["Artifacts"]["name"]). " has been uploaded.";
             } 
