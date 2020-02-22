@@ -250,7 +250,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
        
           <option>Employee</option>
            <option>Temporary Employee</option>
-          <option>Contractor</option>
+          <option>Contractror</option>
           <option>Consultant</option>
           <option>Former Employee</option>
              
@@ -484,7 +484,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
           <div class="form-group row" id="div12" style="display: none;">
             <label for="example-time-input" class="col-2 col-form-label"style="color: white;">Incident Information</label>
             <div class="col-9">
-              <textarea type="text" rows="9" placeholder="Incident Information" class="form-control output" id="nature" name="incidentinfo" style="background: transparent;color: white;width:835px;"></textarea>
+              <textarea type="text" rows="9" placeholder="Incident Information" class="form-control" id="nature" name="incidentinfo" style="background: transparent;color: white;width:835px;"></textarea>
            <span><button type="button" id="start" class="image" style="background-color: #720765;color:#720765;"><img src="mic.png" width="35px"; height="35px;"></button></span>
             </div>
 
@@ -520,36 +520,35 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
       </div>
 
 
-      <div id="donates" style="margin-left: 16%;">
+      <div id="donates" class="container" style="margin-left: 16%;">
                         <div class="form-group row">
                          <div class="col-3">
                                         <input type="text" name="AHN" id="AHN" placeholder="Account Holder Name" class="form-control" style="background: transparent;">
-                                      </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      </div>
                                   <div class="col-3">
                                      <input type="text" id="bankname" name="bankname" placeholder="Bank Name" class="form-control" style="background: transparent;">
-                                  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  </div>
                                    <div class="col-3">
                                       <input type="text" name="BANo" id="BANo" placeholder="Bank Account No." class="form-control" style="background: transparent;">
                                   </div>
-                                 
+                                
                                 </div>
-                               
-                                <div class="container">
-                                  <div class="row">
-                                       <div class="col-md-10 input_val">
+                                 <div class="form-group row">
+                                       <div class="col-11">
+                                   <center><strong style="margin-left: -30%;">OR</strong></center>
                                    </div>  
                                  </div>
                                   <div class="row">
                                    
                                
                                    <div class="col-md-11 input_val">
-         <input type="text" placeholder="BitCoin Address" name="btcaddress" id="btcaddress" class="form-control" style="background: transparent;color: white;width:850px;margin-left: -10px;"><center><strong></strong></center></div><br><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="text" placeholder="BitCoin Address" name="btcaddress" id="btcaddress" class="form-control" style="background: transparent;color: white;width:830px;margin-left: -7px;"><br><center><strong style="margin-left: -30%;">OR</strong></center>></div><br><br><br><br>
 
-                                       <img src="./blower/BTC1.png"  alt="Bit" style="margin-right:-50px;height:47px;width:52px;">
+                                       <img src="./blower/BTC1.png" height="47px" width="52px" alt="Bit" style="margin-left: -13%;">
                                       <div class="col-md-11 input_val">
-         <input type="text" placeholder="Ethereum Address" id="ethaddress" name="ethaddress" class="form-control" style="background: transparent;color: white;width:850px;margin-left: -10px;">
+         <input type="text" placeholder="Ethereum Address" id="ethaddress" name="ethaddress" class="form-control" style="background: transparent;color: white;width:830px;margin-left: -7px;">
                                       </div>
-         <img src="./blower/ETC.png" height="47px" width="52px" style="margin-left: 20px;">
+         <img src="./blower/ETC.png" height="47px" width="52px" style="margin-left: -13%;">
                
                       <input type="hidden" name="ran" id="ran">
  <input type="hidden" name="secretkey" id="secretkey">
@@ -778,7 +777,41 @@ function CheckColors(val){
 }
 
 </script>
+<script type="text/javascript">
+  class SpeechRecognitionApi{
+  constructor(options) {
+    const SpeechToText = window.speechRecogniton || window.webkitSpeechRecognition;
+    this.speechApi = new SpeechToText();
+    this.output = options.output ? options.output: document.createElement("");
+    this.speechApi.continuous = true;
+    this.speechApi.interimResult = false;
+    this.speechApi.onresult = (event) => {
+      var resultIndex = event.resultIndex;
+      var transcript = event.results[resultIndex][0].transcript;
+      this.output.textContent += transcript;
+      console.log(this.output)
+    }
+  }
+  init() {
+    this.speechApi.start();
+  }
+  stop() {
+    this.speechApi.stop();
+  }
+}
+window.onload = function() {
+  var speech = new SpeechRecognitionApi({
+    output: document.querySelector(".output")
+  })
+  document.querySelector("#start").addEventListener("click", () => {
+    speech.init();
+  })
 
+  document.querySelector("#end").addEventListener("click", () =>{
+    speech.stop();
+  })
+}
+</script>
     <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
@@ -872,38 +905,3 @@ function CheckColors(val){
             </body>
     <!-- end::Body -->
 </html>
-<script type="text/javascript">
-  class SpeechRecognitionApi{
-  constructor(options) {
-    const SpeechToText = window.speechRecogniton || window.webkitSpeechRecognition;
-    this.speechApi = new SpeechToText();
-    this.output = options.output ? options.output: document.createElement("");
-    this.speechApi.continuous = true;
-    this.speechApi.interimResult = false;
-    this.speechApi.onresult = (event) => {
-      var resultIndex = event.resultIndex;
-      var transcript = event.results[resultIndex][0].transcript;
-      this.output.textContent += transcript;
-      console.log(this.output)
-    }
-  }
-  init() {
-    this.speechApi.start();
-  }
-  stop() {
-    this.speechApi.stop();
-  }
-}
-window.onload = function() {
-  var speech = new SpeechRecognitionApi({
-    output: document.querySelector(".output")
-  })
-  document.querySelector("#start").addEventListener("click", () => {
-    speech.init();
-  })
-
-  document.querySelector("#end").addEventListener("click", () =>{
-    speech.stop();
-  })
-}
-</script>

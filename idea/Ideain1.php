@@ -140,7 +140,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
                      </datalist>    
     </div>
           </div>
-                    <div class="form-group row" id="div1" name="Description" style="display: none;">
+                    <div class="form-group row" id="div1" name="Description" >
             <label for="example-text-input" class="col-2 col-form-label" style="color: white;">Description :</label>
              <div class="col-9">
          
@@ -151,7 +151,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
           <input type="file" style="display:none" /></label>
           </div>
         </div><br>
-        <div id="div2" style="display: none;">
+        <div id="div2" >
           <div class="form-group row">
             <label for="example-month-input" class="col-2 col-form-label" style="color: white;">Your details:</label>
             <div class="col-10">
@@ -191,7 +191,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
     </div>
   </div>
 </div>
-<div style="display: none;" id="div3">
+<div  id="div3">
       <div class="form-group row">
             <label for="example-color-input" class="col-2 col-form-label" style="color: white;">In case of reward</label>
             <div class="col-10">
@@ -280,31 +280,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
 </div>
     </form>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    if($('#box').on('change', function() {
-      $('#div1').show();
-     
-     
-    }));
-       if($('#div1').on('change', function() {
-      $('#div2').show();
-     
-     
-    }));
-         if($('#div2').on('change', function() {
-      $('#div3').show();
-     
-     
-    }));
-               if($('#div4').on('change', function() {
-      $('#div5').show();
-     
-     
-    }));
-   
-  });
-</script>
+
 
 <script type="text/javascript">
   $(document).ready(function(){

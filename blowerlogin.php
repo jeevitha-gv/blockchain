@@ -109,7 +109,7 @@ input[type=text] {
           <input type="text" name="ran" id="ran" class="form-control mb-3">
              <label style="color: white"s>Secret Key</label>
           <input type="text" name="secretkey" id="secretkey" class="form-control mb-3">
-          <input type="submit" name="submit" class="btn btn-success" style="float: right;">
+          <input type="submit" name="submit" value="followup" class="btn btn-success" style="float: right; margin-right: 42%;">
               </form>
         </div>
         

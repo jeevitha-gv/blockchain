@@ -146,15 +146,15 @@ Idea - <?php echo $_GET['id'];?>
 <form method="post" action="">
 <?php
 while ($rows=mysqli_fetch_assoc($result)) {
-?>
-  <div class="container">
+?><br><br>
+ <div class="container" style="margin-right: -12%;">
      <label style="font-size: 14px;"><strong>Reward</strong></label>
     <div class="row">
       <div class="col-md-6">
-       <input type="text" id="reward" name="reward" placeholder="$" class="form-control">
+       <input type="text" id="reward" placeholder="$" class="form-control">
       </div>
   <div class="col-md-6">
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#update">Pay Now</button>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#update" style="margin-left: 36%;">Pay Now</button>
   </div>
 </div>
 </div>
@@ -231,16 +231,29 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <div class="container" id="data"><br>
 <!-- <div class="container hide" id="data" style="border:1px solid #C3C8C6; margin-left: -18px; height: 90px;"> -->
 
-<div class="container">
+  <div class="container">
+  <div class="row form-group">
+<div class="col-md-6">
+<label><i class=" fa fa-podcast" style="color: red;"></i><strong>Category</strong></label><br>
+<input type="text" name="email" class="form-control" disabled value="<?php echo $rows['category'];?>">
+
+</div>
+
+<div class="col-md-6">
+<label><strong>Description</strong></label><br>
+ <input type="text" name="email" class="form-control" disabled value="<?php echo $rows['Description'];?>"></div>
+</div>
+</div>
+<!-- <div class="container">
   <label>Category :</label>
 <input type="text" name="email" class="form-control" disabled value="<?php echo $rows['category'];?>">
-</div><br>
+</div>
 
 <div class="container">
   <label>Description :</label>
   <input type="text" name="email" class="form-control" disabled value="<?php echo $rows['Description'];?>">
 </div>
-<br>
+<br> -->
 
 
 <div class="container">
@@ -393,7 +406,34 @@ while ($rows=mysqli_fetch_assoc($result)) {
  
 </div>
 </div>
+<div class="container">
+<div class="form-group">
+  <label style="font-size: 14px;  background-color: coral;">Artifacts</label>
+      <div class="">
+   <textarea type="text" class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['artifacts'];?> </textarea>
+   <span id="apdate" style="color: red;"></span>
 </div>
+   </div>
+ </div>  
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-11">
+  <button type="button" class="collapsible btn btn-success">Interaction</button>
+
+  <div id="demo" class="collapse">
+    &nbsp;
+    <h3>Chat History </h3> 
+  <div style="min-height: 200px; width: 1119px; max-height: 100px; overflow: auto;border:1px solid #C3C8C6;">
+          <div class="conversations"></div>
+      
+      </div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+
 
 <?php
 }
@@ -401,18 +441,9 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-md-11">
-  <button type="button" class="" style="background-color: green; color: white;" id="intro">Interaction</button>
 
-  <div id="demo" class="collapse">
-  <div style="min-height: 200px; width: 1119px; max-height: 100px; overflow: auto;border:1px solid #C3C8C6;">
-          <div class="conversations"></div>
-      
-      </div>
-   </div>
-</div>
 <div class="col-md-1">
-    <div class="img" style="float: right;">
+    <div class="img" style="margin-left: 1090px;">
         
           <a href="" data-toggle="modal" data-target="#myModal"><i class='fa fa-comments' style="color:  red; font-size: 38px;" title="Review"></i></a>
             </div>

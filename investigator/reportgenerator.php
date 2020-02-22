@@ -104,7 +104,7 @@
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;font-size: 20px;">
- Tip - <?php echo $_GET['id'];?>
+Idea - <?php echo $_GET['id'];?>
 </h3>
 </div>
 
@@ -134,22 +134,22 @@
            <div class="container">
             <div class="row form-group">
               <div class="col-sm-6 input_val">   
-               <label>Category:</label>
+               <label><i class=" fa fa-podcast" style="color: red;"></i><strong>Category</strong></label>
               <span id="companyName" class="form-control"><?php echo $rows['category']; ?></span>
             </div>
             <div class="col-sm-6 input_val">   
-                <label>Business Unit:</label>
+                <label><strong>Business Unit</strong></label>
                <span id="nature" class="form-control"><?php echo $rows['company']; ?></span>
               </div>
              </div>
              <div class="panel-body" style="border: 1px solid #e2e5ec; border-color: #A1E6EA">
                <div class="row form-group" style="margin: 20px;">   
             <div class="col-md-6 input_val">    
-            <label>Relationship:</label>
+            <label>Relationship</label>
                 <span id="association" class="form-control"><?php echo $rows['relationship']; ?></span>
               </div>
               <div class="col-md-6 input_val">  
-              <label>Encounter:</label>
+              <label>Encounter</label>
                 <span id="howdoyouaware" class="form-control"><?php echo $rows['encounter']; ?></span>
              </div>                      
             </div>
@@ -159,7 +159,7 @@
 <br>
    
     <div class="container">
-       <b>People Involved:</b><br>
+       <b>People Involved</b><br>
 <div class="panel-body"style="border: 1px solid #e2e5ec;border-color:#A1E6EA">
 <div class="row form-group" style="margin:20px;">
 <div class="col-md-4 input_val">
@@ -223,17 +223,19 @@
    <div class="row form-group">
 <div class="col-md-12">
 <label><b>Description</b></label>
-<textarea id="nature" rows="7" class="form-control" disabled><?php echo $rows['incidentinfo']; ?></textarea>
+<textarea id="nature" rows="7" class="form-control" disabled style="height: 150px; border-color:#A1E6EA"><?php echo $rows['incidentinfo']; ?></textarea>
 </div>
 
     </div>
-     <div class="form-group">
-  <label><b>Artifacts </b></label>
-      <div class="">
-   <textarea type="text" class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['artifacts'];?> </textarea>
-   <span id="apdate" style="color: red;"></span>
+  </div>
+  <div class="container">
+   <div class="row form-group">
+<div class="col-md-12">
+<label style="  background-color: coral;"><b>Artifacts</b></label>
+<textarea id="nature" rows="7" class="form-control" disabled style="height: 150px; border-color:#A1E6EA"></textarea>
 </div>
-   </div>
+
+    </div>
   </div>
 <?php 
 }

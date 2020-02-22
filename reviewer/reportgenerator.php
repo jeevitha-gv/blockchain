@@ -134,61 +134,67 @@ while ($rows=mysqli_fetch_assoc($result)) {
 
 <div class="row form-group">
 <div class="col-md-6 input_val">
-<label>Name of the Company</label>
+<label><strong>Name of the Company</strong></label>
 <input type="text" class="form-control" disabled value="<?php echo $rows['company'] ;?>">
 <!-- <span id="companyName" class="form-cont````````rol"></span>
  -->
 </div>
 <div class="col-md-6 input_val">             
-<label >Created Date</label>
+<label ><strong>Created Date</strong></label>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['createat'] ;?>">
 </div>
 </div>
 <div class="row form-group">
 <div class="col-md-6 input_val">
-<label>Incident Information</label>
+<label><strong>Incident Information</strong></label>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['incidentinfo'] ;?>">
 
 </div>
 <div class="col-md-6 input_val">    
-<label>Category </label>
+<label><strong>Category</strong> </label>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['category'] ;?>">
 
 </div>
 </div>
 <div class="row form-group">
 <div class="col-md-6 input_val">
-<label>Relationship</label>
-<input type="text" class="form-control" disabled="" value="<?php echo $rows['relationship'] ;?>">
-
-</div>
-<div class="col-md-6 input_val"> 
-<label>Encounter</label>
-<input type="text" class="form-control" disabled="" value="<?php echo $rows['encounter'] ;?>">
-</div>
-</div>                    
-<div class="row form-group">
-<div class="col-md-6 input_val">
-<label>Department</label>
+<label><strong>Department</strong></label>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['department'] ;?>">
 
 </div>   
 <div class="col-md-6 input_val">                     
-<label>Place</label>
+<label><strong>Place</strong></label>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['place'] ;?>">
 
 </div>
 </div>
 <div class="row form-group">
 <div class="col-md-6 input_val"> 
-<label>Suspected Monetory loss</label>
+<label><strong>Suspected Monetory loss</strong></label>
 <span id="SMLoss" class="form-control"></span>
 </div>
 <div class="col-md-6 input_val">
-<label>Whistle BlowerUpdate</label>
+<label><strong>Whistle BlowerUpdate</strong></label>
 <span id="WBUpdate" class="form-control"></span>
 </div>
 </div> 
+<br>
+  <div class="panel-body" style="border: 1px solid #e2e5ec; border-color: #A1E6EA">
+  <div class="row form-group" style="margin: 20px;">
+<div class="col-md-6">
+<label>Relationship</label><br>
+<span id="association" class="form-control" ><?php echo $rows['relationship'];?></span>
+</div>
+  <div class="col-md-6">
+<label>Encounter</label><br>
+<span id="howdoyouaware" class="form-control" ><?php echo $rows['encounter'];?></span>
+</div>
+
+
+      </div>
+    </div>                  
+
+<br>
 
 <b>Authority</b><br><br>
 <div class="panel-body"style="border: 1px solid #e2e5ec;border-color:#A1E6EA">
@@ -213,35 +219,44 @@ while ($rows=mysqli_fetch_assoc($result)) {
       
 <div class="row form-group">
 <div class="col-md-12 input_val">
-<label>Management Update</label>
+<label><strong>Management Update</strong></label>
  <textarea type="text" class="form-control" disabled="" id="MUpdate"style="height: 150px; border-color:#A1E6EA" ><?php echo $rows['MUpdate'];?></textarea>
 </div>
 </div>
-</div>  
+<div class="row form-group">
+<div class="col-md-12 input_val">
+<label style="  background-color: coral;"><strong>Artifacts</strong></label>
+ <textarea type="text" class="form-control" disabled="" id="MUpdate"style="height: 150px; border-color:#A1E6EA" ></textarea>
+</div>
+</div>
+</div>
+
+
+  <div class="container">
+  <div class="row">
+    <div class="col-md-11">
+  <button type="button" data-toggle="collapse" data-target="#demo1" class="btn btn-success">Interaction</button>
+
+  <div id="demo1" class="collapse"><br>
+   <h5>Chat History </h5>
+  <div style="min-height: 200px; width: 1119px; max-height: 100px; overflow: auto;border:1px solid #C3C8C6;">
+          <div class="conversations"></div>
+     
+      </div>
+   </div>
+</div>
+
+</div>
+</div>   
               <!-- <td> <th style="font-size: 13px;" colspan="4">Management Update</th>
+     
+
               <span id="MUpdate" class=""></span>
               </td> -->
            
 </div>
 
-    <div class="container">
-  <a data-toggle="collapse" data-target="#data" style="font-size: 16px;"><button class="" style="border-radius: 25px; background-color: #86346C; color: #ffffff; ">Conversation</button></a>
 
-</div>
-
-<div class=" container collapse" id="data">
-<div class="row form-group">
-<div class="col-md-12 input_val">
-<span class="form-control conversations" style="border-color:#A1E6EA"></span>
-
-</div>
-</div>
-</div>
-<div class="container col-2" style="margin-left:87%;">
-               <label aria-hidden="true" style="color: white;">Artifacts<i class="btn btn-danger btn-block"><span class="flaticon-attachment"></span></i>
-          <input type="file" style="display:none" /></label>
-            </div>
-       
           <br>
       <!--   </div> -->
         </div>
