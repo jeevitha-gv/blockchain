@@ -45,12 +45,33 @@ include "../php/common/config.php";
     window.close();
   }
 </script>
+<script type="text/javascript">
+    $('button').click(function(){
+  
+  Swal.fire({
+  title: 'Are you sure?',
+  text: "It will permanently deleted !",
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then(function() {
+  Swal.fire(
+    'Deleted!',
+    'Your file has been deleted.',
+    'success'
+  );
+})
+  
+})
+</script>
 
   <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-image: url(./assets/media/bg/bg-7.jpg);"> <br><br>
 <div class="container">
     <div class="row">
 
-    <button type="button" class="btn btn-danger" onclick="closeWin()" style="margin-left: 1200px;">Close</button>
+    <button type="button" class="btn btn-danger" onclick="closeWin1()" style="margin-left: 1200px;">Close</button>
   </div>
 </div>
 
@@ -71,7 +92,7 @@ if (mysqli_num_rows($result) > 0) {
               <div class="modal-body">
                <div class="form-group">
                 <label style="font-size: 20px;"><b>Idea Number</b></label><br>
-                <span class="no" id="quantity" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo substr($row['tipno'], 0, 4) . " - " . substr($row['tipno'], 4, 4) . " - " . substr($row['tipno'],8,4) . " - " . substr($row['tipno'], 12, 4);?></span>
+                <span class="no" id="quantity" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo substr($row['tipno'], 0, 4) . "  " . substr($row['tipno'], 4, 4) . "  " . substr($row['tipno'],8,4) . "  " . substr($row['tipno'], 12, 4);?></span>
                 <!-- <span class="no" id="quantity" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo  $row['tipno'];?></span> -->
                 <input type="text" id="copy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['tipno']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
                 <button id="cpybtn" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
@@ -79,17 +100,13 @@ if (mysqli_num_rows($result) > 0) {
 
                 <div class="form-group">
                <label style="font-size: 20px;"><b>Secret code</b></label><br>
-               <span id="quantity" class="no" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo $row['passkey'];?></span>
+               <span id="quantity" class="no" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo substr($row['passkey'], 0, 4) . "  " . substr($row['passkey'], 4, 4) . "  " . substr($row['passkey'], 6, 2);?></span>
                <input type="text" id="secCopy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['passkey']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <button id="cpySec" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
               </div>
               </div>
 
-              <div>
-                <div class="form-group">
-                  <label style="font-size: 16px;" ><span style="color: red;">** Note</span><span style="color: #fff; font-size: 14px;"> - Remember this for future use</span></label>
-                </div>
-              </div>
+              
 
            <!--    <div class="modal-footer">
 
@@ -97,7 +114,11 @@ if (mysqli_num_rows($result) > 0) {
               </div> -->
             </div>
     
-   
+   <div style="width: 50%; margin-left: 470px; margin-top: 60px;">
+                <div class="form-group">
+                  <label style="font-size: 16px;" ><span style="color: #B1BABF; font-size: 34px;">Remember this for future use</span></label>
+                </div>
+              </div>
 
 
 <?php
@@ -156,6 +177,8 @@ if (mysqli_num_rows($result) > 0) {
 <script src="assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
 <script src="assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
 <script src="assets/vendors/general/wnumb/wNumb.js" type="text/javascript"></script>
+<script src="assets/vendors/general/sweetalert2/dist/sweetalert2.min.js" type="text/javascript"></script>
+<script src="assets/vendors/custom/js/vendors/sweetalert2.init.js" type="text/javascript"></script>
 <!--end:: Global Mandatory Vendors -->
 
 <!--begin:: Global Optional Vendors -->
@@ -210,8 +233,7 @@ if (mysqli_num_rows($result) > 0) {
 <script src="assets/vendors/general/waypoints/lib/jquery.waypoints.js" type="text/javascript"></script>
 <script src="assets/vendors/general/counterup/jquery.counterup.js" type="text/javascript"></script>
 <script src="assets/vendors/general/es6-promise-polyfill/promise.min.js" type="text/javascript"></script>
-<script src="assets/vendors/general/sweetalert2/dist/sweetalert2.min.js" type="text/javascript"></script>
-<script src="assets/vendors/custom/js/vendors/sweetalert2.init.js" type="text/javascript"></script>
+
 <script src="assets/vendors/general/jquery.repeater/src/lib.js" type="text/javascript"></script>
 <script src="assets/vendors/general/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
 <script src="assets/vendors/general/jquery.repeater/src/repeater.js" type="text/javascript"></script>

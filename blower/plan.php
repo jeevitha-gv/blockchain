@@ -223,7 +223,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
           <option>Money Laundering</option>
           <option>Sanctions</option>
           <option>Theft/Fraud</option>
-          <option>Health & Safty</option>
+          <option>Health & Safety</option>
           
          <!--  <option value="Other">Other</option> -->
         </datalist>
@@ -523,13 +523,13 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
       <div id="donates" style="margin-left: 16%;">
                         <div class="form-group row">
                          <div class="col-3">
-                                        <input type="text" name="AHN" id="AHN" placeholder="Account Holder Name" class="form-control" style="background: transparent;">
+                                        <input type="text" name="AHN" id="AHN" placeholder="Account Holder Name" class="form-control" style="background: transparent;color: white;">
                                       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                   <div class="col-3">
-                                     <input type="text" id="bankname" name="bankname" placeholder="Bank Name" class="form-control" style="background: transparent;">
+                                     <input type="text" id="bankname" name="bankname" placeholder="Bank Name" class="form-control" style="background: transparent;color: white;">
                                   </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                    <div class="col-3">
-                                      <input type="text" name="BANo" id="BANo" placeholder="Bank Account No." class="form-control" style="background: transparent;">
+                                      <input type="text" name="BANo" id="BANo" placeholder="Bank Account No." class="form-control" style="background: transparent;color: white;">
                                   </div>
                                  
                                 </div>
@@ -572,7 +572,26 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 </div>
 </div>
 </div>
+<script type="text/javascript">
+  var payment = document.getElementById('AHN'),
+  downpayment = document.getElementById('btcaddress'),
+    full_payment = document.getElementById('ethaddress');
 
+function enableToggle(current, other1 , other2) {
+    other1.disabled = current.value.replace(/\s+/,'').length > 0 ? true : false;
+    other2.disabled = current.value.replace(/\s+/,'').length > 0 ? true : false;
+}
+
+downpayment.onkeyup = function () {
+    enableToggle(this, full_payment, payment);
+}
+full_payment.onkeyup = function () {
+    enableToggle(this, downpayment, payment);
+}
+payment.onkeyup = function () {
+    enableToggle(this, full_payment, downpayment);
+}
+</script>
  
 
 
