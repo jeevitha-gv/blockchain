@@ -37,7 +37,7 @@
 
 <!--begin:: Global Optional Vendors -->
 <link href="assets/vendors/general/tether/dist/css/tether.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
+<!-- <link href="assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" /> -->
 <link href="assets/vendors/general/bootstrap-datetime-picker/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
 <link href="assets/vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
 <link href="assets/vendors/general/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
@@ -153,14 +153,14 @@ Tip - <?php echo $_GET['id'];?>
 </div><hr>
 <form method="post" action="">
 
-  <div class="container">
+ <div class="container" style="margin-right: -12%;">
      <label style="font-size: 14px;"><strong>Reward</strong></label>
     <div class="row">
       <div class="col-md-6">
-       <input type="text" id="reward" name="reward" placeholder="$" class="form-control">
+       <input type="text" id="reward" placeholder="$" class="form-control">
       </div>
   <div class="col-md-6">
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#update">Pay Now</button>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#update" style="margin-left: 35%;">Pay Now</button>
   </div>
 </div>
 </div>
@@ -222,17 +222,17 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <!-- <div class="container hide" id="data" style="border:1px solid #C3C8C6; margin-left: -18px; height: 90px;"> -->
 
 <div class="row form-group">        
-<div class="col-md-4">
+<!-- <div class="col-md-4">
 <label>Tip No</label><br>  
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['ran']; ?>">
 
-</div>
-<div class="col-md-4">
-<label>Created Date</label><br>
+</div> -->
+<div class="col-md-6">
+<label><b>Created Date</b></label><br>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['createat']; ?>">
 </div>
-<div class="col-md-4">
-<label>Name of the Company </label><br>
+<div class="col-md-6">
+<label><b>Name of the Company</b> </label><br>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['company']; ?>">
 </div>
 
@@ -243,10 +243,14 @@ while ($rows=mysqli_fetch_assoc($result)) {
 
     <div class="row form-group">
 
-<div class="col-md-12">
-<label>Incident Informations</label>
+<div class="col-md-6">
+<label><b>Incident Informations</b></label>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['incidentinfo']; ?>">
 
+</div>
+<div class="col-md-6">
+<label><b>Department</b></label><br>
+<input type="text" class="form-control" disabled="" value="<?php echo $rows['department']; ?>">
 </div>
 
     </div>
@@ -259,27 +263,26 @@ while ($rows=mysqli_fetch_assoc($result)) {
   <!-- <div class="container hide" id="data" style="border:1px solid #C3C8C6; margin-left: -18px; height: 90px;">-->
 <div class="row form-group">
 <div class="col-md-6">
-<label>Category</label><br>
+<label><i class=" fa fa-podcast" style="color: red;"></i><b>Category</b></label><br>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['category']; ?>">
 
 </div>
 <div class="col-md-6">
-<label>Relationship</label><br>
-<input type="text" class="form-control" disabled="" value="<?php echo $rows['relationship']; ?>">
-</div>
+<label><b>Place</b></label><br>
+<input type="text" class="form-control" disabled="" value="<?php echo $rows['place']; ?>"></div>
 
 
 </div>
   <!--   <div class="container hide" id="data" style="border:1px solid #C3C8C6; margin-left: -18px; height: 90px;"> -->
   <div class="row form-group">
   <div class="col-md-6">
-<label>Encounter</label><br>
+<label><b>Encounter</b></label><br>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['encounter']; ?>">
 </div>
 
 <div class="col-md-6">
-<label>Department</label><br>
-<input type="text" class="form-control" disabled="" value="<?php echo $rows['department']; ?>">
+<label><b>Relationship</b></label><br>
+<input type="text" class="form-control" disabled="" value="<?php echo $rows['relationship']; ?>">
 </div>
 
       </div>
@@ -289,24 +292,17 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <div class="row form-group">
            
 
-
-<!--<div class="col-md-5">
-<label style="font-size: 14px;margin-left: 90px;">Persons Involved</label><br>
-<span id="personsInvolved" class="form-control" style="font-size: 13px; margin-left: 90px;"></span>
-</div>-->
-<div class="col-md-6">
-<label>Place</label><br>
-<input type="text" class="form-control" disabled="" value="<?php echo $rows['place']; ?>"></div>
+<!-- 
 <div class="col-md-6">
 <label>Authorities Know</label><br>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['authorityknows']; ?>">
-</div>
+</div> -->
 
 
 </div>
 
- <div id="authknowsarea">
-    <div class="row form-group">
+ <!-- <div id="authknowsarea"> -->
+<!--     <div class="row form-group">
     <div class="col-md-6">
 <label>Authority's Email_ID</label><br>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['emailauth'] ;?>">
@@ -327,7 +323,7 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <input type="text" name="" class="form-control" disabled="" value="<?php echo $rows['phoneauth'] ;?>">             </div>
 
 </div>
-</div>
+</div> -->
 </div>
 </div>
 
@@ -345,18 +341,18 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <div class="row">
   <div class="input-group">
    <div class="col-md-4 input_val">
-     <label>Name:</label>
+     <label><b>Name</b></label>
 
 <input type="text" name="" class="form-control" disabled="" value="<?php echo $rows['namepi'] ;?>">
    </div>
    <div class="col-md-4 input_val">
-     <label>Designation:</label>
+     <label><b>Designation</b></label>
      <!--<input type="text" placeholder="Designation" class="form-control" style="border-color: #216582;">-->
 
 <input type="text" name="" class="form-control" disabled="" value="<?php echo $rows['designationpi'] ;?>">
    </div>
    <div class="col-md-4 input_val">
-     <label>Department:</label>
+     <label><b>Department</b></label>
     <!-- <input type="text" placeholder="Department" class="form-control" style="border-color: #216582;">-->
  <input type="text" name="" class="form-control" disabled="" value="<?php echo $rows['departmentpi'] ;?>">   </div>
  
@@ -366,46 +362,23 @@ while ($rows=mysqli_fetch_assoc($result)) {
 
        </div>  
        </div>                                  
-     
-
-
-
-<div class="copy hide">
-         <div class="control-group input-group">
-           <!-- <input type="text" name="addmore[]" class="form-control" placeholder="Enter Name Here"> -->
-           <div class="col-md-3 input_val">
-     <label>Name:</label>
-     <input type="text" class="form-control" id="persons">
-   </div>
-   <div class="col-md-4 input_val">
-     <label>Designation:</label>
-     <input type="text" class="form-control">
-   </div>
-   <div class="col-md-4 input_val">
-     <label>Department:</label>
-     <input type="text" class="form-control">
-   </div>
-    <div class="input-group col-md-1">
-             <button class="btn remove" type="button" title="Delete Row"><i class="fa flaticon-cancel"></i></button>
-         </div>
-         </div>
-       </div>
+    
 </div><br><br>
 <div class="control-group">
 <div class="row">
       <div class="col-md-4 input_val">
 
-      <label style="font-size: 14px;">Reported Monetory</label><br>
+      <label style="font-size: 14px;"><b>Reported Monetory</b></label><br>
       <input type="text" name="" class="form-control" disabled="" value="<?php echo $rows['monetaryvalue'] ;?>">
    </div>
    
     <div class="col-md-4 input_val">
-<label>Suspected Monetory loss</label><br>
+<label><b>Suspected Monetory loss</b></label><br>
     <span id="SMLoss" class="form-control"><?php echo $rows['SMLoss'];?></span>
 </div>
 
 <div class="col-md-4 input_val">
-<label>Modus Operandi</label><br>
+<label><b>Modus Operandi</b></label><br>
  <span id="MOperandi" class="form-control"><?php echo $rows['MOperandi'];?></span>  
 </div>
 
@@ -420,7 +393,32 @@ while ($rows=mysqli_fetch_assoc($result)) {
    <textarea type="text" class="form-control" id="WBUpdate" placeholder="Give WhistleBlower on update"  style="height: 150px;" disabled><?php echo $rows['WBUpdate'];?> </textarea>
 </div>
    </div>
+   <!-- <div class="container"> -->
+  <div class="form-group">
+  <label style="font-size: 14px;  background-color: coral;"><b>Artifacts</b></label>
+      <div class="">
+   <textarea type="text" class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['artifacts'];?> </textarea>
+   <span id="apdate" style="color: red;"></span>
+</div>
+   </div>
+ <!-- </div> -->
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-11">
+  <button type="button" class="collapsible btn btn-success">Interaction</button>
 
+  <div id="demo" class="collapse">
+    &nbsp;
+    <h3>Chat History </h3> 
+  <div style="min-height: 200px; width: 1119px; max-height: 100px; overflow: auto;border:1px solid #C3C8C6;">
+          <div class="conversations"></div>
+      
+      </div>
+   </div>
+</div>
+</div>
+</div>
   <div class="form-group">
     
       <script type="text/javascript">
@@ -475,7 +473,7 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <br>
 <div class="container">
   <div class="row">
-    <div class="col-md-11">
+ <!--    <div class="col-md-11">
   <button type="button" class="" style="background-color: green; color: white;" id="intro">Interaction</button>
 
   <div id="demo" class="collapse">
@@ -484,9 +482,9 @@ while ($rows=mysqli_fetch_assoc($result)) {
       
       </div>
    </div>
-</div>
+</div> -->
 <div class="col-md-1">
-    <div class="img" style="float: right;">
+    <div class="img" style="margin-left: 1090px;">
         
           <a href="" data-toggle="modal" data-target="#myModal"><i class='fa fa-comments' style="color:  red; font-size: 38px;" title="Review"></i></a>
             </div>
@@ -649,7 +647,7 @@ $("#people").hide();
     <!--begin:: Global Mandatory Vendors -->
 <script src="assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-<script src="assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script> -->
 <script src="assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
 <script src="assets/vendors/general/moment/min/moment.min.js" type="text/javascript"></script>
 <script src="assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>

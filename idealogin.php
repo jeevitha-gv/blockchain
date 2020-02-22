@@ -112,9 +112,9 @@ input[type=text] {
 
           <label style="color: white">Idea Number</label>
           <input type="text" name="tipNo" id="tipNo" class="form-control mb-3">
-             <label style="color: white"s>Secret Key</label>
+             <label style="color: white">Secret Key</label>
           <input type="text" name="passkey" id="passkey" class="form-control mb-3">
-          <input type="submit" name="submit" class="btn btn-success" style="float: right;">
+          <input type="submit" name="submit" value="followup" class="btn btn-success" style="float: right;margin-right: 40%;">
               </form>
         </div>
         
