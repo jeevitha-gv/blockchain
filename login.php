@@ -33,7 +33,8 @@
              }
              else
                {
-                echo "Error: " . $sql . "<br>" . $link->error;
+                // echo "Error: " . $sql . "<br>" . $link->error;
+                // alert("incorrect username and password");
                } 
   }
 ?>
