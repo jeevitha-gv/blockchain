@@ -1,8 +1,12 @@
 <?php
   include "../php/common/config.php";
+  $target_dir = "../documents/";
+$target_file = $target_dir . basename($_FILES["Artifacts"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     if(isset($_POST['submit']))
     {
-         $category=$_POST['category1'];
+         $category=$_POST['category2'];
             $Description=$_POST['Description'];
                $name=$_POST['name'];
                   $email=$_POST['email'];
@@ -18,12 +22,19 @@
                    $passkey=$_POST['passkey'];
                    $tipno=$_POST['tipno'];
                    $status="New Idea";
+                   $Artifacts=$_FILES['Artifacts']['name'];
                                    
-$sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac,AHN,bankname,BAN,BTC,ETC,passkey,tipno,status)values('$category','$Description','$name','$email','$phone','$NPname','$bname','$bankac','$AHN','$bankname','$BAN','$BTC','$ETC','$passkey','$tipno','$status')";
-  if(mysqli_query($link,$sql))
-  {
-   header("location:seckret.php");
-  }
+$sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac,AHN,bankname,BAN,BTC,ETC,passkey,tipno,status,Artifacts)values('$category','$Description','$name','$email','$phone','$NPname','$bname','$bankac','$AHN','$bankname','$BAN','$BTC','$ETC','$passkey','$tipno','$status','$Artifacts')";
+
+        if(mysqli_query($link,$sql))
+        {   
+           if (move_uploaded_file($_FILES["Artifacts"]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES["Artifacts"]["name"]). " has been uploaded.";
+            } 
+              echo "successfully";
+           header("location:seckret.php");
+        }
+
   else
   {
    
@@ -129,8 +140,8 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
           <div class="form-group row">
             <label for="example-text-input" class="col-2 col-form-label" style="color: white;">Category :</label>
              <div class="col-10">
-         <input list="category" id="box" name="category1" class="text-line" style="width: 80%;">
-                     <datalist id="category">
+         <input list="category1" id="box" name="category2" class="text-line" style="width: 80%;">
+                     <datalist id="category1">
                        <option>Employee Engagement</option>
                        <option>Strategy</option>
                        <option>Open Innovation</option>
@@ -149,7 +160,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
           </div>
           <div class="col-1">
             <label aria-hidden="true" style="margin-top: 114px;color: white;margin-left:-84px;">Artifacts<i class="btn btn-danger btn-block"><span class="flaticon-attachment"></span></i>
-          <input type="file" style="display:none" /></label>
+           <input type="file" name="Artifacts" hidden=""></label>
           </div>
         </div><br>
         <div id="div2" style="display: none;">
