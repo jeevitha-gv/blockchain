@@ -280,7 +280,26 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
 
 </div>
     </form>
+<script type="text/javascript">
+  var payment = document.getElementById('AHN'),
+  downpayment = document.getElementById('BTC'),
+    full_payment = document.getElementById('ETC');
 
+function enableToggle(current, other1 , other2) {
+    other1.disabled = current.value.replace(/\s+/,'').length > 0 ? true : false;
+    other2.disabled = current.value.replace(/\s+/,'').length > 0 ? true : false;
+}
+
+downpayment.onkeyup = function () {
+    enableToggle(this, full_payment, payment);
+}
+full_payment.onkeyup = function () {
+    enableToggle(this, downpayment, payment);
+}
+payment.onkeyup = function () {
+    enableToggle(this, full_payment, downpayment);
+}
+</script>
 <script type="text/javascript">
   $(document).ready(function() {
     if($('#box').on('change', function() {

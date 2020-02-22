@@ -66,27 +66,27 @@ if (mysqli_num_rows($result) > 0) {
               <div class="modal-body">
                <div class="form-group">
                 <label style="font-size: 20px;"><b>Tip Number</b></label><br>
-                <span class="no" id="quantity" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo substr($row['ran'], 0, 4) . " - " . substr($row['ran'], 4, 4) . " - " . substr($row['ran'],8,4) . " - " . substr($row['ran'], 12, 4);?></span>
+                <span class="no" id="quantity" maxlength="14" style="border-color: #30B7B7; color: #ffffff;font-size: 36px;"><?php echo substr($row['ran'], 0, 4) . "  " . substr($row['ran'], 4, 4) . "  " . substr($row['ran'],8,4) . "  " . substr($row['ran'], 12, 4);?></span>
                 <input type="text" id="copy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['ran']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
                 <button id="cpybtn" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
             </div>
               <div class="form-group">
                <label style="font-size: 20px;"><b>Secret code</b></label><br>
-               <span id="quantity" class="no" maxlength="14" style="border-color: #30B7B7; color: #ffffff; font-size: 36px;"><?php echo $row['secretkey'];?></span>
+               <span id="quantity" class="no" maxlength="14" style="border-color: #30B7B7; color: #ffffff; font-size: 36px;"><?php echo substr($row['secretkey'], 0, 4) . "  " . substr($row['secretkey'], 4, 4) . "  " . substr($row['secretkey'], 6, 2);?></span>
                <input type="text" id="secCopy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['secretkey']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <button id="cpySec" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
               </div>
               </div>
 
-              <div>
-                <div class="form-group">
-                  <label style="font-size: 16px;" ><span style="color: red;">** Note</span><span style="color: #fff; font-size: 14px;"> - Remember this for future use</span></label>
-                </div>
-              </div>
+              
 
             </div>
    
-   
+            <div style="width: 50%; margin-left: 470px; margin-top: 60px;">
+                <div class="form-group">
+                  <label style="font-size: 16px;"><span style="color: #B1BABF; font-size: 34px;">Remember this for future use</span></label>
+                </div>
+              </div>
 
 
 <?php
