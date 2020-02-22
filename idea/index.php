@@ -159,7 +159,7 @@ Idea - <?php echo $_GET['id'];?>
      # code...
 ?>
    <div class="col-md-4 input_val">
-     <label>FullName:</label>
+     <label><strong>FullName</strong></label>
     <!--<input type="text" placeholder="Name" class="form-control" id="persons" style="border-color: #216582;" >-->
      <span id="name" class="form-control"><?php echo $rows['name'];?></span>
    </div>
@@ -169,7 +169,7 @@ Idea - <?php echo $_GET['id'];?>
 
    <div class="col-md-4 input_val">
 
-      <label style="font-size: 14px;">Possible Cost Saving</label><br>
+      <label style="font-size: 14px;"><strong>Possible Cost Saving</strong></label><br>
       <input type="text" name="PCS" id="PCS" class="form-control"style="border-color:#A1E6EA;">    
      <!--<select class="form-control" id="fraud" style="border-color: #216582;">
        <option>--Select--</option>
@@ -182,7 +182,7 @@ Idea - <?php echo $_GET['id'];?>
    </div>
     
     <div class="col-md-4 input_val">
-<label>Idea</label><br>
+<label><strong>Idea</strong></label><br>
    <select class="form-control " name="Ideai" id="Ideai" style="border-color:#A1E6EA;">
        <option>--Select--</option>
        <option>Excellent</option>
@@ -236,7 +236,18 @@ Idea - <?php echo $_GET['id'];?>
   <input type="submit" name="submit" class="btn btn-danger" style="float: right;" onclick="alert()">
 
 </div>
-<br>
+<div class="container">
+<div class="row">
+
+<div class="col-md-1">
+ <div class="img" style="margin-left: 1080px;margin-top: 60px;">
+
+<a href="" data-toggle="modal" data-target="#myModal"><i class='fa fa-comments' style="color:  red; font-size: 38px;" title="Review"></i></a>
+    </div>
+</div>
+</div>
+
+</div>
 <div class="container">
   <a data-toggle="collapse" data-target="#data" style="font-size: 16px;"><button class="flaticon2-arrow" style="border-radius: 25px; background-color: #86346C; color: #ffffff;">  History</button></a>
 </div><br>
@@ -253,16 +264,20 @@ Idea - <?php echo $_GET['id'];?>
 <div class="container collapse" id="data"><br>
  
 <!-- <div class="container hide" id="data" style="border:1px solid #C3C8C6; margin-left: -18px; height: 90px;"> -->
-<div class="container">
-  <label>Category :</label>
+  <div class="container">
+  <div class="row form-group">
+<div class="col-md-6">
+<label><i class=" fa fa-podcast" style="color: red;"></i><strong>Category</strong></label><br>
 <input type="text" name="email" class="form-control" disabled value="<?php echo $rows['category'];?>">
-</div><br>
 
-<div class="container">
-  <label>Description :</label>
-  <input type="text" name="email" class="form-control" disabled value="<?php echo $rows['Description'];?>">
 </div>
-<br>
+
+<div class="col-md-6">
+<label><strong>Description</strong></label><br>
+<input type="text" name="email" class="form-control" disabled value="<?php echo $rows['Description'];?>">
+</div>
+</div>
+</div>
 
 
 <div class="container">
@@ -348,6 +363,25 @@ Idea - <?php echo $_GET['id'];?>
    </div>
 </div>
 </div>
+</div><br>
+<div class="form-group">
+  <label style="font-size: 14px; color: #009e73;  background-color: coral;">Artifacts:</label>
+      <div class="">
+   <textarea type="text" class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['artifacts'];?> </textarea>
+   <span id="apdate" style="color: red;"></span>
+</div>
+   </div>
+<br>
+<div class="col-md-11">
+  <button class="collapsible btn btn-success">Interaction</button>
+
+  <div id="demo" class="collapse"><br>
+  <h5>Chat History</h5>
+  <div style="min-height: 200px; width: 1119px; max-height: 100px; overflow: auto;border:1px solid #C3C8C6;border-color:#A1E6EA;">
+        <div class="conversations"></div>
+      
+      </div>
+   </div>
 </div>
 </div>
 
@@ -355,28 +389,7 @@ Idea - <?php echo $_GET['id'];?>
  }
  ?>
  <br>
-<div class="container">
-<div class="row">
-<div class="col-md-11">
-  <button class="collapsible btn btn-success">Interaction</button>
 
-  <div id="demo" class="collapse"><br>
-  <h5>Chat History</h5>
-  <div style="min-height: 200px; width: 1119px; max-height: 100px; overflow: auto;border:1px solid #C3C8C6;">
-        <div class="conversations"></div>
-      
-      </div>
-   </div>
-</div>
-<div class="col-md-1">
- <div class="img" style="float: right;">
-
-<a href="" data-toggle="modal" data-target="#myModal"><i class='fa fa-comments' style="color:  red; font-size: 38px;" title="Review"></i></a>
-   	</div>
-</div>
-</div>
-
-</div>
 <br>
 </div>
 

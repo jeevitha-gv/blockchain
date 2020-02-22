@@ -192,7 +192,7 @@ Idea-<?php echo $_GET['id'];?>
 <br>
 <div class="container">
 <div class="form-group">
-  <label style="font-size: 14px;">Description:</label>
+  <label style="font-size: 14px;"><b>Description</b></label>
       <div class="">
 <!--    <textarea type="text" class="form-control"  id="Synopsis" value="<?php echo $rows['Description'];?>" placeholder="" disabled  style="height: 150px; border-color:#A1E6EA"> </textarea> -->
 <input type="text" name="" class="form-control" disabled  value="<?php echo $rows['Description'] ;?>">
@@ -202,7 +202,7 @@ Idea-<?php echo $_GET['id'];?>
  </div>
 <div class="container">
 <div class="form-group">
-  <label style="font-size: 14px;">Synopsis:</label>
+  <label style="font-size: 14px;"><b>Synopsis</b></label>
       <div class="">
    <textarea type="text" class="form-control"  id="Synopsis" placeholder="" disabled style="height: 150px; border-color:#A1E6EA"><?php echo $rows['Synopsis'];?></textarea>
    <span id="apdate" style="color: red;"></span>
@@ -210,7 +210,7 @@ Idea-<?php echo $_GET['id'];?>
    </div>
 
    <div class="form-group">
-  <label style="font-size: 14px;">Idea Update:</label>
+  <label style="font-size: 14px;"><b>Idea Update</b></label>
       <div class="">
    <textarea type="text" class="form-control"  id="WBU" disabled placeholder="Give WhistleBlower on update"  style="height: 150px; border-color:#A1E6EA"><?php echo $rows['WBU'];?> </textarea>
    <span id="apdate" style="color: red;"></span>
@@ -218,7 +218,7 @@ Idea-<?php echo $_GET['id'];?>
    </div>
 
    <div class="form-group">
-  <label style="font-size: 14px;">Artifacts:</label>
+  <label style="font-size: 14px;  background-color: coral;"><b>Artifacts</b></label>
       <div class="">
    <textarea type="text" class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['artifacts'];?> </textarea>
    <span id="apdate" style="color: red;"></span>

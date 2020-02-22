@@ -171,7 +171,7 @@ Tip - <?php echo $_GET['id'];?>
   <div class="input-group">
 
    <div class="col-md-4 input_val">
-     <label>Full Name:</label>
+     <label><strong>Full Name</strong></label>
     <!--<input type="text" placeholder="Name" class="form-control" id="persons" style="border-color: #216582;" >-->
      <span id="personsInvolved" class="form-control"><?php echo $rows['namepi'];?></span>
    </div>
@@ -179,14 +179,14 @@ Tip - <?php echo $_GET['id'];?>
 <input type="hidden" name="id" value="<?php echo $rows['id'];?>">
 
       <div class="col-md-4 input_val">
-<label>Suspected Monetory loss</label><br>
+<label><strong>Suspected Monetory loss</strong></label><br>
    <input type="text" id="SMLoss" name="SMLoss" style="border-color:#A1E6EA" class="form-control">
    <span id="smloss" style="color:red;"></span>
 </div>
 
 <div class="col-md-4 input_val">
 
-<label>Modus Operandi</label><br>  
+<label><strong>Modus Operandi</strong></label><br>  
      <select class="form-control " name="MOperandi" id="MOperandi" style="border-color:#A1E6EA">
        <option>--Select--</option>
        <option>Cash</option>
@@ -263,11 +263,11 @@ Tip - <?php echo $_GET['id'];?>
 <div class="row form-group">        
 
 <div class="col-md-6">
-<label>Created Date</label><br>
+<label><strong>Created Date</strong></label><br>
 <span id="createdAt" class="form-control"><?php echo $rows['createat'];?></span>
 </div>
 <div class="col-md-6">
-<label>Business Unit </label><br>
+<label><strong>Business Unit</strong> </label><br>
 <span id="Business Unit" class="form-control"><?php echo $rows['category'];?></span>
 </div>
 
@@ -281,12 +281,12 @@ Tip - <?php echo $_GET['id'];?>
   <!-- <div class="container hide" id="data" style="border:1px solid #C3C8C6; margin-left: -18px; height: 90px;">-->
 <div class="row form-group">
 <div class="col-md-6">
-<label>Category</label><br>
+<label><i class=" fa fa-podcast" style="color: red;"></i><strong>Category</strong></label><br>
 <span id="category" class="form-control"><?php echo $rows['category'];?></span>
 </div>
 
 <div class="col-md-6">
-<label>Place</label><br>
+<label><strong>Place</strong></label><br>
 <span id="place" class="form-control"><?php echo $rows['place'];?></span>
 </div>
 
@@ -365,18 +365,18 @@ Tip - <?php echo $_GET['id'];?>
     <div class="row form-group">
 
 <div class="col-md-12">
-<label>Incident Informations</label>
+<label><strong>Incident Informations</strong></label>
 <textarea id="nature" rows="7" class="form-control" disabled><?php echo $rows['incidentinfo'];?></textarea>
 </div>
 
     </div>
-
+<div class="form-group">
+  <label style="font-size: 14px;  background-color: coral;"><b>Artifacts</b></label>
+      <div class="">
+   <textarea type="text" class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['artifacts'];?> </textarea>
+   <span id="apdate" style="color: red;"></span>
 </div>
-
-
-<br>
-<div class="container">
-<div class="row">
+   </div><br>
 <div class="col-md-11">
   <button class="collapsible btn btn-success">Interaction</button>
 
@@ -388,8 +388,25 @@ Tip - <?php echo $_GET['id'];?>
       </div>
    </div>
 </div>
+</div>
 
-<div class="col-md-1" style="float: right;">
+
+<br>
+<div class="container">
+<div class="row">
+<!-- <div class="col-md-11">
+  <button class="collapsible btn btn-success">Interaction</button>
+
+  <div id="demo" class="collapse"><br>
+    <h3>Chat History</h3>
+  <div style="min-height: 200px; width: 1119px; max-height: 100px; overflow: auto;border:1px solid #C3C8C6;">
+        <div class="conversations"></div>
+      
+      </div>
+   </div>
+</div> -->
+
+<!-- <div class="col-md-1" style="float: right;">
   <button class="btn-warning collapsible"><i class="fa flaticon-attachment">Artifacts</i></button>
     <div id="demo1" class="collapse"><br>
     <h3></h3>
@@ -399,7 +416,7 @@ Tip - <?php echo $_GET['id'];?>
       </div>
      
    </div>
-</div>
+</div> -->
 
 </div>
 <?php 
