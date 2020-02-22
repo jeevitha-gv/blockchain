@@ -18,15 +18,17 @@
       <body background="bc.jpg">
      <div  style="margin-left: 90%;margin-top: 20px;">
  
+
+   <a href="idealogin.php">
+   <img src="Idea.png" height="40" class="idea1" title="Followup Idea" style=" border-radius: 50%; border-width: 2px;   border-color: red;   border-style: solid;">&nbsp;&nbsp;&nbsp;&nbsp;
+
+       
+  </a>
     <a href="blowerlogin.php">
    <img src="Design.png" height="40" class="blower1" title="Followup Whistle" style=" border-radius: 50%; border-width: 2px;   border-color: red;   border-style: solid;">
        
-  </a>&nbsp;&nbsp;&nbsp;&nbsp;
-
-  <a href="idealogin.php">
-   <img src="Idea.png" height="40" class="idea1" title="Followup Idea" style=" border-radius: 50%; border-width: 2px;   border-color: red;   border-style: solid;">
-       
   </a>
+
 
 </div>
 
