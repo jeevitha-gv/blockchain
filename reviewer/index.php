@@ -132,7 +132,8 @@ include 'siteHeader2.php';
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;">
-Tip - <?php echo $_GET['id'];?>
+Tip - 
+<?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . "  " . substr($_GET['id'],8,4) . "  " . substr($_GET['id'], 12, 4); ?>
 </h3>
 </div>        
 </div>
@@ -160,7 +161,7 @@ Tip - <?php echo $_GET['id'];?>
        <input type="text" id="reward" placeholder="$" class="form-control">
       </div>
   <div class="col-md-6">
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#update" style="margin-left: 35%;">Pay Now</button>
+    <button type="button" class="btn btn-danger" style="margin-left: 35%;">Pay Now</button>
   </div>
 </div>
 </div>
@@ -211,7 +212,7 @@ while ($rows=mysqli_fetch_assoc($result)) {
     });
   </script>
   <div class="container">
-<button type="button" id="toggle" class="flaticon2-arrow" style="border-radius: 25px; background-color: #86346C; color: #ffffff; font-size: 16px;">  History</button>
+<button type="button" id="toggle" class="flaticon2-arrow" style="border-radius: 25px; background-color: #86346C; color: #ffffff; font-size: 16px;margin-top: 8%;">  History</button>
 <input type="submit" name="submit" value="Review" class="btn btn-danger" style="float: right;" onclick="alert()">
 </div>
 
@@ -396,10 +397,9 @@ while ($rows=mysqli_fetch_assoc($result)) {
    <!-- <div class="container"> -->
   <div class="form-group">
   <label style="font-size: 14px;  background-color: coral;"><b>Artifacts</b></label>
-      <div class="">
-   <textarea type="text" class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['artifacts'];?> </textarea>
-   <span id="apdate" style="color: red;"></span>
-</div>
+ <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
+      </div>
    </div>
  <!-- </div> -->
 <br>
@@ -484,7 +484,7 @@ while ($rows=mysqli_fetch_assoc($result)) {
    </div>
 </div> -->
 <div class="col-md-1">
-    <div class="img" style="margin-left: 1090px;">
+    <div class="img" style="margin-left: 1090px;margin-top: -45px;">
         
           <a href="" data-toggle="modal" data-target="#myModal"><i class='fa fa-comments' style="color:  red; font-size: 38px;" title="Review"></i></a>
             </div>

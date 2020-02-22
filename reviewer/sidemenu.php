@@ -31,15 +31,15 @@
 
 <ul class="kt-menu__nav ">
 
+<li class="kt-menu__item " aria-haspopup="true"><a href="reviewer/reviewerview.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-layers-1"></i><span class="kt-menu__link-text" style="text-align: center;">Reward <br>Tip</span></a>
+</li>
 <li class="kt-menu__item " aria-haspopup="true"><a href="reviewer/ideaview.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text" style="text-align: center;">Reward Idea</span></a>
 </li>
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="reviewer/reviewerview.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-layers-1"></i><span class="kt-menu__link-text" style="text-align: center;">Reward <br>Tip</span></a>
-</li>
 
+<li class="kt-menu__item " aria-haspopup="true"><a href="reviewer/report.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text" style="text-align: center;">Tip <br>Report</span></a></li>
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="reviewer/ideareport.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text" style="text-align: center;">Idea Report</span></a></li>
-<li class="kt-menu__item " aria-haspopup="true"><a href="reviewer/report.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text" style="text-align: center;">Tip Report</span></a></li>
+<li class="kt-menu__item " aria-haspopup="true"><a href="reviewer/ideareport.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text" style="text-align: center;">Idea <br>Report</span></a></li>
 
 <!-- <li class="kt-menu__item " aria-haspopup="true"><a href="view/audit/auditPublished.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text"> Reports</span></a></li> -->
 

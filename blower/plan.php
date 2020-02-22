@@ -523,14 +523,14 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
       <div id="donates" class="container" style="margin-left: 16%;">
                         <div class="form-group row">
-                         <div class="col-3">
+                         <div class="col-2.1">
                                         <input type="text" name="AHN" id="AHN" placeholder="Account Holder Name" class="form-control" style="background: transparent;color: white;">
                                       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                  <div class="col-3">
+                                  <div class="col-2.1">
                                      <input type="text" id="bankname" name="bankname" placeholder="Bank Name" class="form-control" style="background: transparent;color: white;">
                                   </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                   <div class="col-3">
+                                   <div class="col-2.1">
                                       <input type="text" name="BANo" id="BANo" placeholder="Bank Account No." class="form-control" style="background: transparent;color: white;">
                                   </div>
                                 
@@ -544,11 +544,11 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                                    
                                
                                    <div class="col-md-11 input_val">
-         <input type="text" placeholder="BitCoin Address" name="btcaddress" id="btcaddress" class="form-control" style="background: transparent;color: white;width:830px;margin-left: -7px;"><br><center><strong style="margin-left: -30%;">OR</strong></center>></div><br><br><br><br>
+         <input type="text" placeholder="BitCoin Address" name="btcaddress" id="btcaddress" class="form-control" style="background: transparent;color: white;width:840px;margin-left: -7px;"><br><center><strong style="margin-left: -30%;">OR</strong></center>></div><br><br><br><br>
 
                                        <img src="./blower/BTC1.png" height="47px" width="52px" alt="Bit" style="margin-left: -13%;">
                                       <div class="col-md-11 input_val">
-         <input type="text" placeholder="Ethereum Address" id="ethaddress" name="ethaddress" class="form-control" style="background: transparent;color: white;width:830px;margin-left: -7px;">
+         <input type="text" placeholder="Ethereum Address" id="ethaddress" name="ethaddress" class="form-control" style="background: transparent;color: white;width:840px;margin-left: -7px;">
                                       </div>
          <img src="./blower/ETC.png" height="47px" width="52px" style="margin-left: -13%;">
                

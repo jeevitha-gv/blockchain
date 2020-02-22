@@ -217,7 +217,7 @@ include "../php/common/config.php";
            <div class="row form-group">
               <div class="col-md-6">
           <label >Reward</label><br>
-            <input type="text" id="place" name="place" class="form-control"value="<?php echo $rows['place']; ?>"disabled style=";background: transparent;color: white;">
+            <input type="text" id="place" name="place" class="form-control"value="<?php echo $rows['reward']; ?>"disabled style=";background: transparent;color: white;">
         </div>
     </div>
              <div class="row form-group">
@@ -227,14 +227,20 @@ include "../php/common/config.php";
                  <textarea type="text" id="incidentinfo" rows="8" name="incidentinfo" class="form-control"value="<?php echo $rows['incidentinfo']; ?>"disabled style=";background: transparent;color: white;"></textarea>
          </div>
       </div>
-        
-             <div class="row form-group">
-   
-          <label class="col-md-10">Artifacts</label>
-          <div class="col-md-12">
-                 <textarea type="text" rows="8" class="form-control" disabled style=";background: transparent;color: white;"></textarea>
-         </div>
-      </div>
+        <br>
+     <div class="container">
+
+     <label class="" style="font-size: 14px;"><strong>Artifacts</strong></label>
+ <div class="panel-body"style="border: 1px solid #e2e5ec;border-color:#A1E6EA">
+<div id="" class="">
+<div class="row">
+  <div class="input-group" style="margin: 20px;">
+<a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;color: white;"><?php echo $rows['Artifacts'];?></a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
       </div>
       <br>
             <div class="modal fade" id="myModal" role="dialog" >

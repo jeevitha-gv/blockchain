@@ -240,7 +240,7 @@ Idea - <?php echo $_GET['id'];?>
 <div class="row">
 
 <div class="col-md-1">
- <div class="img" style="margin-left: 1080px;margin-top: 60px;">
+ <div class="img" style="margin-left: 1080px;margin-top: 115px;">
 
 <a href="" data-toggle="modal" data-target="#myModal"><i class='fa fa-comments' style="color:  red; font-size: 38px;" title="Review"></i></a>
     </div>
@@ -249,7 +249,7 @@ Idea - <?php echo $_GET['id'];?>
 
 </div>
 <div class="container">
-  <a data-toggle="collapse" data-target="#data" style="font-size: 16px;"><button class="flaticon2-arrow" style="border-radius: 25px; background-color: #86346C; color: #ffffff;">  History</button></a>
+  <a data-toggle="collapse" data-target="#data" style="font-size: 16px;"><button class="flaticon2-arrow" style="border-radius: 25px; background-color: #86346C; color: #ffffff;margin-top: -8%;">  History</button></a>
 </div><br>
 </form>
 

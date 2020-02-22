@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>payment success</title>
-	<style type="text/css">
-		.success-page{
+  <title>payment success</title>
+  <style type="text/css">
+    .success-page{
   max-width:300px;
   display:block;
   margin: 0 auto;
@@ -38,18 +38,25 @@ h2{
 a{
   text-decoration: none;
 }
-	</style>
+  </style>
 </head>
-<body>
-	<div class="success-page">
+<body style="margin-top: -500px;">
+  <?php
+    include '../siteHeader.php';
+    ?>
+  <div class="success-page">
 
   <h2>Payment Successful !</h2>
   <p>The Amount Credited On Given Blower Accounts</p>
   <img src="https://img.icons8.com/color/50/000000/bitcoin-sccepted.png">
-  <a href="payment.php" class="btn-view-orders">Return</a>
+  <a href="/blockchain/view/common/paymentoverview.php" class="btn-view-orders">Return</a>
+  
   
 </div>
-
+<?php
+include '../common/sidemenu4.php';
+ ?>
 
 </body>
+
 </html>

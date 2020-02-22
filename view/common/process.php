@@ -105,7 +105,7 @@ Payment Process
 <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
 <thead>
   <tr>
-  <th >ID/Tip</th>
+  <th >Idea/Tip No</th>
   <th>Account Number</th>
   <th>Reward</th>
   <th>Bitcoin</th>
@@ -118,21 +118,21 @@ Payment Process
   <td>83##########42</td>
   <td>10000$</td>
   <td style="color:#EC421E">1 BTC</td>
-  <td> <a href="/blockchain/view/common/success1.php?"><button class="btn btn-primary">proceed</button></a></td>
+  <td> <a href="/blockchain/view/common/success1.php?"><button class="btn btn-primary">process</button></a></td>
   </tr>
    <tr>
   <td>3732</td>
   <td>54##########92</td>
   <td>5000$</td>
   <td style="color:#EC421E">0.5 BTC</td>
- <td> <a href="/blockchain/view/common/success1.php?"><button class="btn btn-primary">proceed</button></a></td>
+ <td> <a href="/blockchain/view/common/success1.php?"><button class="btn btn-primary">process</button></a></td>
   </tr>
   <tr>
   <td>9840</td>
   <td>87##########65</td>
   <td>50000$</td>
   <td style="color:#EC421E">5 BTC</td>
-  <td> <a href="/blockchain/view/common/success1.php?"><button class="btn btn-primary">proceed</button></a></td>
+  <td> <a href="/blockchain/view/common/success1.php?"><button class="btn btn-primary">process</button></a></td>
   </tr>
   
 </tbody>

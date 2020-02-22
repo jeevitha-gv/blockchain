@@ -134,7 +134,8 @@ include 'siteHeader2.php';
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;">
-Tip - <?php echo $_GET['id'];?>
+
+Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . "  " . substr($_GET['id'],8,4) . "  " . substr($_GET['id'], 12, 4); ?>
 </h3>
 </div>        
 </div>
@@ -172,8 +173,9 @@ Tip - <?php echo $_GET['id'];?>
 
    <div class="col-md-4 input_val">
      <label><strong>Full Name</strong></label>
-    <!--<input type="text" placeholder="Name" class="form-control" id="persons" style="border-color: #216582;" >-->
-     <span id="personsInvolved" class="form-control"><?php echo $rows['namepi'];?></span>
+    <input type="text" class="form-control" id="personsInvolved" value="<?php echo $rows['namepi'];?>" >
+
+     <!-- <span id="personsInvolved" class="form-control"><?php echo $rows['namepi'];?></span> -->
    </div>
 
 <input type="hidden" name="id" value="<?php echo $rows['id'];?>">
@@ -361,21 +363,21 @@ Tip - <?php echo $_GET['id'];?>
 </div>
 </div>
 </div>
-
+<br>
     <div class="row form-group">
 
 <div class="col-md-12">
-<label><strong>Incident Informations</strong></label>
+<label><strong>Incident Informations</strong></label><br><br>
 <textarea id="nature" rows="7" class="form-control" disabled><?php echo $rows['incidentinfo'];?></textarea>
 </div>
 
     </div>
 <div class="form-group">
   <label style="font-size: 14px;  background-color: coral;"><b>Artifacts</b></label>
-      <div class="">
-   <textarea type="text" class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['artifacts'];?> </textarea>
-   <span id="apdate" style="color: red;"></span>
-</div>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
+      </div>
    </div><br>
 <div class="col-md-11">
   <button class="collapsible btn btn-success">Interaction</button>
@@ -430,7 +432,7 @@ Tip - <?php echo $_GET['id'];?>
 <a href="" data-toggle="modal" data-target="#myModal"><i class='fa fa-comments' style="color:  red; font-size: 38px;" title="Review"></i></a>
     </div>
   </div>
-</div>
+</div><br>
  <!--<div class="container hide" style="margin-top: 50px;margin-left: 80px;">
   <button data-toggle="collapse" data-target="#demo"><img src="histroy.png" style="height: 40px; width: 40px;"></button>
 
@@ -447,8 +449,6 @@ Tip - <?php echo $_GET['id'];?>
 </div>-->
 </div>
 </div>
-<hr>
-
 
 <div class="container">
                                   <!--Edit image png section-->
