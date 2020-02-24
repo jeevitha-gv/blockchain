@@ -139,7 +139,7 @@ include 'siteHeader2.php';
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;">
-Idea - <?php echo $_GET['id'];?>
+Tip - <?php echo $_GET['id'];?>
 </h3>
 </div>        
 </div>

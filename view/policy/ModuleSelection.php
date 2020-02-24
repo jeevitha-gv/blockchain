@@ -205,11 +205,11 @@ All the important stuff including what's free vs paid, how we secure your data, 
 <!-- <button type="button" class="btn btn-success" style="float: right;">Read</button> -->
 </div>
 </div>
- <div class="row" style="float: right;margin-top: -10%">
+ <!-- <div class="row" style="float: right;margin-top: -10%">
                   <div class="modal-footer">
                   <a href="view/common/overview.php"><button type="button" value="1" class="w3-btn w3-white w3-border w3-border-red w3-round-large" name="submit" data-dismiss="modal" style="font-size: 18px;" id="demo">Submit</button></a>
                   </div>
-              </div>
+              </div> -->
 </div>
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -240,7 +240,7 @@ All the important stuff including what's free vs paid, how we secure your data, 
         <iframe width="480" height="300" src="https://www.youtube.com/embed/GRrE1aZgCLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="second(this);">okay</button>
+        <button type="button" id="btn2" class="btn btn-default" onclick="second(this);">okay</button>
       </div>
     </div>
   </div>
@@ -256,7 +256,7 @@ All the important stuff including what's free vs paid, how we secure your data, 
         <iframe width="480" height="300" src="https://www.youtube.com/embed/GRrE1aZgCLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="second(this);">okay</button>
+        <button type="button" id="btn3" class="btn btn-default" onclick="second(this);">okay</button>
       </div>
     </div>
   </div>
@@ -320,7 +320,7 @@ All the important stuff including what's free vs paid, how we secure your data, 
          <iframe width="480" height="300" src="https://www.youtube.com/embed/voeNGMZ7hqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="second(this);">okay</button>
+        <button type="button" id="btn4" class="btn btn-default" onclick="second(this);">okay</button>
       </div>
     </div>
   </div>
@@ -336,7 +336,7 @@ All the important stuff including what's free vs paid, how we secure your data, 
          <iframe width="480" height="300" src="https://www.youtube.com/embed/pgy2HcHDf_g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="second(this);">okay</button>
+        <button type="button" id="btn5" class="btn btn-default" onclick="second(this);">okay</button>
       </div>
     </div>
   </div>
