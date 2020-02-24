@@ -100,16 +100,17 @@
    <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
  
 
-           <a class="kt-header__topbar-icon" title="Business Unit" href="view/common/overview.php"><i class="flaticon2-user"></i>
+           <a class="kt-header__topbar-icon" title="Business Unit" href="view/common/overview.php"><i class="flaticon-calendar-1"></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
    
          <a href="view/common/addadminuser.php" class="kt-header__topbar-icon" title="Add User">
-           <i class="flaticon-feed"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+          <i class="flaticon2-user"></i></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
             <a href="view/common/project.php" class="kt-header__topbar-icon" title="Project & Task">
            <i class="kt-menu__link-icon flaticon2-analytics-2"></i>
            <span class="kt-hidden kt-hiddenbadge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
            <a href="view/common/timeline.php" class="kt-header__topbar-icon" title="Timeline">
-           <i class="fa fa-line-chart"></i>
+                      <i class="flaticon-time
+"></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
      
            <a href="view/policy/ModuleSelection.php?i=1" class="kt-header__topbar-icon" title="Setup Guide">

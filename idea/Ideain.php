@@ -261,7 +261,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
                            
                                   <div class="form-group row">
                                        <div class="col-11">
-                                   <center><strong style="margin-left: -120px;">OR</strong></center>
+                                   <center><strong style="margin-left: -100px;">OR</strong></center>
                                    </div>  
                                  </div>
                                   <div class="form-group row">
@@ -271,11 +271,13 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
                                         <input type="text" placeholder="BitCoin Address" id="BTC" name="BTC"  class="form-control" style="background:transparent;color: white; margin-left: -7px; "><br>
                                       <center><strong style="margin-left: -10px;">OR</strong></center><br>  
                                       </div><br><br>
-                                       <img src="./blower/BTC1.png" height="47px" width="52px" alt="Bit" style="margin-left: 10px;">
+                                      <i class="fa fa-bold" style="font-size:48px;color:red;margin-left: 20px;"></i>
+                                       <!-- <img src="./blower/BTC1.png" height="47px" width="52px" alt="Bit" style="margin-left: 10px;"> -->
                                       <div class="col-10">
                                         <input type="text" placeholder="Ethereum Address" id="ETC" name="ETC" class="form-control" style="background:transparent;color: white; margin-left: -8px;">
                                       </div>
-                                   <img src="./blower/ETC.png" height="47px" width="52px" style="margin-left: 10px;">
+                                        <i class='fab fa-ethereum' style='font-size:48px;color:red;margin-left: 20px;'></i>
+                                   <!-- <img src="./blower/ETC.png" height="47px" width="52px" style="margin-left: 10px;"> -->
 
                                          </div>
                              
