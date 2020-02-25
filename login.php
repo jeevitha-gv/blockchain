@@ -1,4 +1,4 @@
- <?php
+<?php
  include 'php/common/config.php';
   if(isset($_POST['login']))
   {
@@ -95,7 +95,7 @@
                     <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
        
 
-        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
+        <link rel="shortcut icon" href=" ./assets/media/company-logos/whistle.png" />
     </head>
     <!-- end::Head -->
 
@@ -158,11 +158,19 @@
             </div>
         </div>
 
-        <div class="kt-grid__item kt-grid__item--fluid kt-grid__item--center kt-grid kt-grid--ver kt-login__content" style="background-image: url(./assets/media//bg/data.jpg);">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid__item--center kt-grid kt-grid--ver kt-login__content" style="background-image: url(./assets/media/bg/data.jpg);">
             <div class="kt-login__section">
                 <div class="kt-login__block">
-                    <h3 class="kt-login__title">Join Our Community</h3>
+                    
+                    <div id="fly-in">  
+                    <div><span>whistleblowing is </span>the disclosure of wrong doing</div>
+                    <div>whistleblowing is not<span>disloyalty</span></div>
+                    <div>Whistleblowing can<span>alert you to issues that otherwise go untreated</span></div>
+                    <div><span>whistleblowers can be</span>your greatest assets if you let them</div>
+                    <div><span>whistleblowers are not</span>Liabilties -unless you make them so</div>
+                    </div>
                    
+
                 </div>
             </div>
         </div>
@@ -170,6 +178,69 @@
 </div>         </div>
 
 <!-- end:: Page -->
+
+
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+
+
+/*body {
+  background-color: #111;
+  background-image: radial-gradient(#333, #111);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  width: 100vw;
+  font-weight: 700;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}*/
+
+#fly-in {
+  font-size: 4em;
+  margin: 40vh auto;
+  height: 20vh; 
+  text-transform: uppercase;
+}
+
+#fly-in span {
+  display: block;
+  font-size: .4em;
+  opacity: .8;
+  color: #F2F2F2;
+}
+
+#fly-in div {
+ position: fixed; <!--codepen.io/h-kod/-->
+  margin: 5vh 0;
+  opacity: 0;
+  right:-25vw;
+  width: 85vw;
+  animation: switch 32s linear infinite;
+  color: white;
+}
+
+#fly-in div:nth-child(2) { animation-delay: 25s}
+#fly-in div:nth-child(3) { animation-delay: 5s}
+#fly-in div:nth-child(4) { animation-delay: 12s}
+#fly-in div:nth-child(5) { animation-delay: 16s}
+#fly-in div:nth-child(6) { animation-delay: 20s}
+#fly-in div:nth-child(7) { animation-delay: 24s}
+#fly-in div:nth-child(8) { animation-delay: 28s}
+
+@keyframes switch {
+    0% { opacity: 0;filter: blur(20px); transform:scale(12)}
+    3% { opacity: 1;filter: blur(0); transform:scale(1)}
+    10% { opacity: 1;filter: blur(0); transform:scale(.9)}
+    13% { opacity: 0;filter: blur(10px); transform:scale(.1)}
+    80% { opacity: 0}
+    100% { opacity: 0}
+}
+</style>
 
 
         <!-- begin::Global Config(global config for global JS sciprts) -->

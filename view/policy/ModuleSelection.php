@@ -20,7 +20,7 @@ $user_role=$_SESSION['user_role'];
 <base href="/blockchain/">
         <meta charset="utf-8"/>
 
-        <title>Blockchain</title>
+        <title>SetupGuide | Blockchain</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <meta name="description" content="Latest updates and statistic charts">

@@ -92,7 +92,7 @@ $companyId=$id[0]['id'];
 <link href="assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
- <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
+        <link rel="shortcut icon" href=" ./assets/media/company-logos/whistle.png" />
  <script type="text/javascript" src="js/compliance/importLibrary.js"></script>
     </head>
     <?php 

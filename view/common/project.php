@@ -63,7 +63,7 @@ $companyId=$id[0]['id'];
 <base href="/blockchain/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Blockchain</title>
+        <title>Project & Task | Blockchain</title>
         <meta name="description" content="Wizard examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -116,7 +116,7 @@ $companyId=$id[0]['id'];
         <!--begin::Layout Skins(used by all pages) -->
                 <!--end::Layout Skins -->
 
-        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
+        <link rel="shortcut icon" href=" ./assets/media/company-logos/whistle.png" />
     </head>
     <?php
     include '../siteHeader.php';

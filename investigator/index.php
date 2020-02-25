@@ -218,7 +218,7 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
    </div>
 
    <div class="form-group">
-  <label style="font-size: 14px;"><strong> Update to Blower:</strong></label> 
+  <label style="font-size: 14px;"><strong> Update to Whistle Blower:</strong></label> 
      	<div class="">
    <textarea type="text" class="form-control" name="WBUpdate" id="WBUpdate" placeholder="Give WhistleBlower on update"  style="height: 150px; border-color:#A1E6EA"> </textarea>
    <span id="apdate" style="color: red;"></span>

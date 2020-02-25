@@ -120,6 +120,8 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css"/>
  <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
  <link rel="shortcut icon" href="blockchain/LG3.png" />
+         <link rel="shortcut icon" href="./assets/media/company-logos/whistle.png" />
+
        
     </head>
     <style>
@@ -714,13 +716,13 @@ $("#auth").show();
    if($('#div9').on('change', function() {
       $('#div10').show();
     }));
-       if($('#div10').on('change', function() {
+       if($('#div10').on('click', function() {
       $('#div11').show();
     }));
-               if($('#div11').on('change', function() {
+       if($('#div11').on('click', function() {
       $('#div12').show();
     }));
-                           if($('#div12').on('change', function() {
+       if($('#div12').on('click', function() {
       $('#div13').show();
     }));
          

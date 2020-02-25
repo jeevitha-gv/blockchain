@@ -15,7 +15,7 @@ $chats = $timeManager->timeLine(); //chat retrive
 <base href="/blockchain/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Blockchain</title>
+        <title>Timeline | Blockchain</title>
         <meta name="description" content="Base form control examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -58,7 +58,7 @@ $chats = $timeManager->timeLine(); //chat retrive
 <link href="assets/toggleButton/bootstrap-toggle.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css"/>
 <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
+        <link rel="shortcut icon" href=" ./assets/media/company-logos/whistle.png" />
 <script src="js/audit/auditCreateManagement.js"></script>
 <script src="js/common/userProfile.js"></script>  
     </head>
