@@ -57,7 +57,7 @@ $companyId=$id[0]['id'];
 <base href="/blockchain/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Blockchain</title>
+        <title>Add User| Blockchain</title>
         <meta name="description" content="Add user example">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -103,7 +103,7 @@ $companyId=$id[0]['id'];
 
  <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
 
-        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
+        <link rel="shortcut icon" href=" ./assets/media/company-logos/whistle.png" />
             <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({

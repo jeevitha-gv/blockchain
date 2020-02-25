@@ -1,9 +1,11 @@
 <?php
     include "../php/common/config.php";
-    $query = "SELECT count(status) as count FROM Idea WHERE status='New Idea' ORDER BY id DESC";
+    $query = "SELECT count(status) as count FROM Idea WHERE status='NewIdea' ORDER BY id DESC";
     $result = mysqli_query($link,$query);
       $sql = "SELECT count(status) as count FROM Idea WHERE status='Analyzed' ORDER BY id DESC";
     $result1 = mysqli_query($link,$sql);
+     $sql2 = "SELECT count(status) as count FROM Idea WHERE status='closed' ORDER BY id DESC";
+    $result3 = mysqli_query($link,$sql2);
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Idea | Dashboard</title>
+    <title>IdeaAnalyst | Dashboard</title>
     <base href="/blockchain/">
     <script src="https://code.highcharts.com/highcharts.js"></script> 
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
@@ -38,7 +40,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
                     
    <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="assets/media/logos/fixnix.png"/>
+        <link rel="shortcut icon" href=" ./assets/media/company-logos/whistle.png" />
 
   </head>
 
@@ -217,7 +219,7 @@
   </div>
 
   <div class="col-md-4">
-    <a href="idea/view.php" style="color: #5D4E4F;">
+    <a href="idea/returned.php" style="color: #5D4E4F;">
     <label style="border: 1px #ffffff;background-image: linear-gradient(to right,#ED81EE, #DE6DF1, #C74EF4, #AF2EFA); width: 100%; height: 120px; padding-left: 10%; padding-top: 6%;  ">
       <span class="kt-widget17__icon">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--warning">
@@ -229,10 +231,17 @@
         </svg> </span>
         <br><br>
           
+                 <?php
+ if($rows=mysqli_fetch_assoc($result3)) {
+  ?>
       <span class="kt-widget17__subtitle" style="font-weight: normal; font-size: 16px;">
           Returned Ideas
-      </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <span style="font-size: 16px;">3</span>
+      </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span style="font-size: 16px; color:black;" ><?php echo $rows['count'];?></span>
+      <?php
+    }
+
+    ?>
     </label>
 
   </a>
@@ -352,6 +361,9 @@
         type: 'bubble',
         plotBorderWidth: 1,
         zoomType: 'xy'
+    },
+    tooltip: {
+      enabled: false
     },
     title: {
         text: null,

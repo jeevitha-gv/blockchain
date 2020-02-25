@@ -88,7 +88,7 @@ require_once '../../php/common/dashboard.php';
 
  <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
 
-        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
+        <link rel="shortcut icon" href=" ./assets/media/company-logos/whistle.png" />
     </head>
    
   <?php

@@ -21,7 +21,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                    $ETC=$_POST['ETC'];
                    $passkey=$_POST['passkey'];
                    $tipno=$_POST['tipno'];
-                   $status="New Idea";
+                   $status="NewIdea";
                    $Artifacts=$_FILES['Artifacts']['name'];
                                    
 $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac,AHN,bankname,BAN,BTC,ETC,passkey,tipno,status,Artifacts)values('$category','$Description','$name','$email','$phone','$NPname','$bname','$bankac','$AHN','$bankname','$BAN','$BTC','$ETC','$passkey','$tipno','$status','$Artifacts')";
@@ -102,6 +102,8 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
 <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css"/>
  <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
  <link rel="shortcut icon" href="blockchain/LG3.png" />
+         <link rel="shortcut icon" href="./assets/media/company-logos/whistle.png" />
+
     </head>
     <style type="text/css">
           .text-line {
@@ -156,7 +158,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
             <label for="example-text-input" class="col-2 col-form-label" style="color: white;">Description :</label>
              <div class="col-9">
          
-           <textarea type="text" rows="8" class="form-control output" name="Description" id="Description"  placeholder="Type something here....." style="background:transparent;color: white; width: 884px;"></textarea> <span><button type="button" id="start" class="image" style="background-color: #720765;color:#720765;"><img src="mic.png" width="35px"; height="35px;"></button></span>
+           <textarea type="text" rows="8" class="form-control output" name="Description" id="Description"  placeholder="Type something here....." style="background:transparent;color: white; width: 884px;"></textarea> <span><button type="button" id="start" class="image" style="background-color: #720765;color:#720765;"><img src="mic.png" width="35px"; height="35px;"></button><button id="end">stop</button></span>
           </div>
           <div class="col-1">
             <label aria-hidden="true" style="margin-top: 114px;color: white;margin-left:-84px;">Artifacts<i class="btn btn-danger btn-block"><span class="flaticon-attachment"></span></i>
@@ -318,12 +320,12 @@ payment.onkeyup = function () {
      
      
     }));
-       if($('#div1').on('change', function() {
+       if($('#div1').on('click', function() {
       $('#div2').show();
      
      
     }));
-         if($('#div2').on('change', function() {
+         if($('#div2').on('click', function() {
       $('#div3').show();
      
      

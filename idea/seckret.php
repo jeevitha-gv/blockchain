@@ -35,6 +35,8 @@ include "../php/common/config.php";
 <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css"/>
  <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
  <link rel="shortcut icon" href="blockchain/LG3.png" />
+         <link rel="shortcut icon" href="./assets/media/company-logos/whistle.png" />
+
     </head>
     <style type="text/css">
       .copy {}
