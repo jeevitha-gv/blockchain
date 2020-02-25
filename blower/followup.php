@@ -127,7 +127,7 @@ include "../php/common/config.php";
           <div class="row form-group">
              <label  class="col-md-10">Investigator Update:</label>
                 <div class="col-md-12 " >
-              <textarea type="text" id="WBUpdate" rows="8" class="form-control" placeholder=""  style="background: transparent; color: #ffffff;"disabled=""><?php echo $rows['MUpdate'];?></textarea>
+              <textarea type="text" id="WBUpdate" rows="8" class="form-control" placeholder=""  style="background: transparent; color: #ffffff;"disabled=""><?php echo $rows['WBUpdate'];?></textarea>
             </div>
           </div>
           <div class="row">

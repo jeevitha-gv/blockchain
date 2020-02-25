@@ -1,6 +1,6 @@
 <?php
     include "../php/common/config.php";
-    $query = "SELECT * FROM Idea WHERE status='New Idea' ORDER BY id DESC";
+    $query = "SELECT * FROM Idea WHERE status='NewIdea' ORDER BY id DESC";
     $result = mysqli_query($link,$query);
 ?>
 <!DOCTYPE html>   
@@ -134,7 +134,7 @@ Idea Lists
      <td><?php echo $rows['email'];?></td>
       <td><?php echo $rows['phone'];?></td>
        <td><?php echo $rows['Description'];?></td>
-      <td><?php echo $rows['status'];?></td>
+      <td><button class="btn btn-success" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button></td>
          <td><a href="idea/index.php?id=<?php echo $rows['tipno'];?>" class="btn btn-primary">Analyze</a></td>
 </tbody>
 <?php

@@ -21,7 +21,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                    $ETC=$_POST['ETC'];
                    $passkey=$_POST['passkey'];
                    $tipno=$_POST['tipno'];
-                   $status="New Idea";
+                   $status="NewIdea";
                    $Artifacts=$_FILES['Artifacts']['name'];
                                    
 $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac,AHN,bankname,BAN,BTC,ETC,passkey,tipno,status,Artifacts)values('$category','$Description','$name','$email','$phone','$NPname','$bname','$bankac','$AHN','$bankname','$BAN','$BTC','$ETC','$passkey','$tipno','$status','$Artifacts')";
@@ -102,6 +102,8 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
 <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css"/>
  <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
  <link rel="shortcut icon" href="blockchain/LG3.png" />
+         <link rel="shortcut icon" href="./assets/media/company-logos/whistle.png" />
+
     </head>
     <style type="text/css">
           .text-line {
@@ -261,7 +263,7 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
                            
                                   <div class="form-group row">
                                        <div class="col-11">
-                                   <center><strong style="margin-left: -100px;">OR</strong></center>
+                                   <center><strong style="margin-left: -120px;">OR</strong></center>
                                    </div>  
                                  </div>
                                   <div class="form-group row">
@@ -271,13 +273,11 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
                                         <input type="text" placeholder="BitCoin Address" id="BTC" name="BTC"  class="form-control" style="background:transparent;color: white; margin-left: -7px; "><br>
                                       <center><strong style="margin-left: -10px;">OR</strong></center><br>  
                                       </div><br><br>
-                                      <i class="fa fa-bold" style="font-size:48px;color:red;margin-left: 20px;"></i>
-                                       <!-- <img src="./blower/BTC1.png" height="47px" width="52px" alt="Bit" style="margin-left: 10px;"> -->
+                                       <i class="fa fa-bold" style="font-size:48px;color:red;margin-left: 30px;"></i>
                                       <div class="col-10">
                                         <input type="text" placeholder="Ethereum Address" id="ETC" name="ETC" class="form-control" style="background:transparent;color: white; margin-left: -8px;">
                                       </div>
-                                        <i class='fab fa-ethereum' style='font-size:48px;color:red;margin-left: 20px;'></i>
-                                   <!-- <img src="./blower/ETC.png" height="47px" width="52px" style="margin-left: 10px;"> -->
+                                  <i class='fab fa-ethereum' style='font-size:48px;color:red;margin-left: 30px;'></i>
 
                                          </div>
                              
@@ -287,12 +287,17 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
 
                  <div class="mb-2">
                   <br>
-                    <input type="submit" name="submit" style="margin-left: 1135px; margin-top: 16px;" id="Submit" class="btn btn-primary"data-toggle="modal" value="Submit">
+                    <input type="submit" name="submit" style="margin-left: 1135px; margin-top: 16px;" id="Submit" onclick="reload()" class="btn btn-primary"data-toggle="modal" value="Submit">
                 </div><br><br><br><br><br>
 </div>
 
 </div>
     </form>
+    <script type="text/javascript">
+      function reload() {
+        location.reload();
+      }
+    </script>
 <script type="text/javascript">
   var payment = document.getElementById('AHN'),
   downpayment = document.getElementById('BTC'),
@@ -320,12 +325,12 @@ payment.onkeyup = function () {
      
      
     }));
-       if($('#div1').on('change', function() {
+       if($('#div1').on('click', function() {
       $('#div2').show();
      
      
     }));
-         if($('#div2').on('change', function() {
+         if($('#div2').on('click', function() {
       $('#div3').show();
      
      

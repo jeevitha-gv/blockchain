@@ -1,3 +1,15 @@
+<?php
+    include "../php/common/config.php";
+    $query = "SELECT count(status) as count FROM blower WHERE status='created' ORDER BY id DESC";
+    $result = mysqli_query($link,$query);
+      $sql = "SELECT count(status) as count FROM blower WHERE status='Reported' ORDER BY id DESC";
+    $result1 = mysqli_query($link,$sql);
+    $sql2 = "SELECT count(status) as count FROM Idea WHERE status='NewIdea' ORDER BY id DESC";
+    $result2 = mysqli_query($link,$sql2);
+      $sql3 = "SELECT count(status) as count FROM Idea WHERE status='Analyzed' ORDER BY id DESC";
+    $result3 = mysqli_query($link,$sql3);
+    
+?>
 <!DOCTYPE html>
 <html>
 
@@ -30,7 +42,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
                     
    <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="assets/media/logos/fixnix.png"/>
+        <link rel="shortcut icon" href=" ./assets/media/company-logos/whistle.png" />
 
   </head>
 
@@ -154,7 +166,7 @@
 <div class="row">
   <div class="col-md-3">
 
-    <a href="/blockchain/investigator/noOfPlan.php" style="color: #5D4E4F;">
+    <a href="/blockchain/reviewer/noOfNewWhistle.php" style="color: #5D4E4F;">
     <label style="border: 1px #ffffff; background-image: linear-gradient(to right,#F5FCFF, #DBF3FA, #B7E9F7, #92DFF3, #7AD7F0); width: 100%; height: 120px; padding-left: 10%; padding-top: 6%;  ">
       <span class="kt-widget17__icon">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--brand">
@@ -165,16 +177,21 @@
             </g>
         </svg> </span>
         <br><br>
-          
+                             <?php
+ if($rows=mysqli_fetch_assoc($result)) {
+  ?> 
       <span class="kt-widget17__subtitle" style="font-weight: normal; font-size: 16px;">
           New Whistle
       </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <span class="kt-widget17__subtitle" style="font-size: 20px;">10</span>
+      <span class="kt-widget17__subtitle" style="font-size: 20px;"><?php echo $rows['count'];?></span>
+        <?php
+    }
+    ?>
     </label>
   </a>
   </div>
   <div class="col-md-3">
-     <a href="/blockchain/investigator/noOfPlan.php" style="color: #5D4E4F;">
+     <a href="/blockchain/reviewer/noOfInvestigatedWhistle.php" style="color: #5D4E4F;">
     <label style="border: 1px #ffffff;background-image: linear-gradient(to right,#B08D57, #9C7A3C, #895E1A, #804A00); width: 100%; height: 120px; padding-left: 10%; padding-top: 6%;  ">
       <span class="kt-widget17__icon">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--success">
@@ -185,16 +202,21 @@
             </g>
         </svg> </span>
         <br><br>
-          
+          <?php
+ if($rows=mysqli_fetch_assoc($result1)) {
+  ?> 
       <span class="kt-widget17__subtitle" style="font-weight: normal; font-size: 16px;">
           Investigated Whistle
       </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <span class="kt-widget17__subtitle" style="font-size: 20px;">7</span>
+      <span class="kt-widget17__subtitle" style="font-size: 20px;"><?php echo $rows['count']; ?></span>
+      <?php
+    }
+    ?>
     </label>
   </a>
   </div>
   <div class="col-md-3">
-    <a href="/blockchain/investigator/noOfPlan.php" style="color: #5D4E4F;">
+    <a href="/blockchain/reviewer/noOfNewIdea.php" style="color: #5D4E4F;">
     <label style="border: 1px #ffffff;background-image: linear-gradient(to right,#ED81EE, #DE6DF1, #C74EF4, #AF2EFA); width: 100%; height: 120px; padding-left: 10%; padding-top: 6%;  ">
       <span class="kt-widget17__icon">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--warning">
@@ -205,17 +227,22 @@
             </g>
         </svg> </span>
         <br><br>
-          
+          <?php
+ if($rows=mysqli_fetch_assoc($result2)) {
+  ?>
       <span class="kt-widget17__subtitle" style="font-weight: normal; font-size: 16px;">
           New Idea
       </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <span class="kt-widget17__subtitle" style="font-size: 20px;">2</span>
+      <span class="kt-widget17__subtitle" style="font-size: 20px;"><?php echo $rows['count']; ?></span>
+      <?php
+    }
+    ?>
     </label>
 
   </a>
   </div>
   <div class="col-md-3">
-    <a href="/blockchain/investigator/noOfPlan.php" style="color: #5D4E4F;">
+    <a href="/blockchain/reviewer/noOfAnalystIdea.php" style="color: #5D4E4F;">
     <label style="border: 1px #ffffff; background-color: #af8c9d;background-image: linear-gradient(315deg, #af8c9d 0%, #8cacac 74%); width: 100%; height: 120px; padding-left: 10%; padding-top: 6%;">
       <!-- background color -->
       <!-- background-color: #bdd4e7; background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%); -->
@@ -228,11 +255,16 @@
             </g>
         </svg> </span>
         <br><br>
-          
+                    <?php
+ if($rows=mysqli_fetch_assoc($result3)) {
+  ?>
       <span class="kt-widget17__subtitle" style="font-weight: normal; font-size: 16px;">
          Analyst Idea
       </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <span class="kt-widget17__subtitle" style="font-size: 20px;">1</span>
+      <span class="kt-widget17__subtitle" style="font-size: 20px;"><?php echo $rows['count']; ?></span>
+      <?php 
+    }
+    ?>
     </label>
   </a>
   </div>
@@ -286,7 +318,7 @@
         enabled: false
     },
     xAxis: {
-      categories: ["Accounting & Other Financial Impropriety", "Bribery or Corruption", "Money Laundering", "Sanctions", "Theft/Fraud", "Health and Safty"],
+      categories: ["Accounting & Other Financial Impropriety", "Bribery or Corruption", "Money Laundering", "Sanctions", "Theft/Fraud", "Health and Safety"],
     },
     plotOptions: {
         series: {

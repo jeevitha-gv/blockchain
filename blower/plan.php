@@ -1,14 +1,17 @@
 <?php
    include "../php/common/config.php";
+   require_once __DIR__.'/../php/user/userManager.php';
+     $manager = new UserManager();
+  $allcompanydata = $manager->companyprofiletable($companyId);
 $target_dir = "../documents/";
 $target_file = $target_dir . basename($_FILES["Artifacts"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
   if(isset($_POST['submit']))
    {
-     $company=$_POST['company1'];
-      $category=$_POST['category1'];
-       $relationship=$_POST['relationship'];
+     $company=$_POST['company2'];
+      $category=$_POST['category4'];
+       $relationship=$_POST['relationship1'];
         $encounter=$_POST['encounter'];
          $department=$_POST['department'];
           $place=$_POST['place'];
@@ -120,6 +123,8 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css"/>
  <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
  <link rel="shortcut icon" href="blockchain/LG3.png" />
+         <link rel="shortcut icon" href="./assets/media/company-logos/whistle.png" />
+
        
     </head>
     <style>
@@ -217,8 +222,8 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
           <div class="form-group row" style="color: white;">
             <label for="example-text-input" class="col-2 col-form-label">Category</label>
              <div class="col-10">
-              <input list="company" id="searchbox" name="company1" class="text-line" placeholder="Select or Enter Business Unit......" style="width: 88%;">
-        <datalist id="company" name="company">
+              <input list="company" id="searchbox" name="company2" class="text-line" placeholder="Select or Enter Business Unit......" style="width: 88%;">
+        <datalist id="company">
           <option>Accounting and Other Financial Impropriety</option>
           <option>Bribery or Corruption</option>
           <option>Money Laundering</option>
@@ -234,11 +239,13 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
           <div class="form-group row" id="div2" style="display: none; color: white;">
             <label for="example-search-input" class="col-2 col-form-label">Business Unit</label>
               <div class="col-10">
-                <input list="category" name="category1" id="searchbox1" class="text-line" placeholder="Select Category ......" style="width: 88%;">
-        <datalist id="category" name="category">
-       <option value="Pied_Piper">Pied Piper</option>
-          <option value="Hooli">Hooli</option>
-          <option value="FixNix">FixNix</option>
+                <input list="category" name="category4" id="searchbox1" class="text-line" placeholder="Select Category ......" style="width: 88%;">
+        <datalist id="category">
+       
+         <?php foreach ($allcompanydata as $data) { ?>
+          <option><?php echo $data['category'];?></option>
+         <?php } ?>
+             
         </datalist>
          <!--    <span id="san1" style="color: red;"></span>     -->
       </div>
@@ -246,8 +253,8 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
           <div class="form-group row" id="div3" style="display: none;">
             <label for="example-email-input" class="col-2 col-form-label"style="color: white;">Relationship</label>
             <div class="col-10">
-            <input list="relationship" name="relationship" id="searchbox2" name="association" class="text-line" placeholder="Select Relationship ......." style="width: 88%;">
-        <datalist id="relationship" style="color: white;" name="relationship" >
+            <input list="relationship" name="relationship1" id="searchbox2" class="text-line" placeholder="Select Relationship ......." style="width: 88%;">
+        <datalist id="relationship" style="color: white;">
        
           <option>Employee</option>
            <option>Temporary Employee</option>
@@ -257,7 +264,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
              
 
         </datalist>
-         <span id="san2" style="color: red;"></span>  
+      
             </div>
           </div>
           <div class="form-group row" id="div4" style="display: none">
@@ -563,7 +570,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
           </div>
        <br>
 </div>
-  <input type="submit" name="submit" class="btn btn-primary mb-3" value="submit" style="float: right;">
+  <input type="submit" name="submit" class="btn btn-primary mb-3" onclick="reload()" value="submit" style="float: right;">
       </form>
 
 
@@ -572,6 +579,11 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 </div>
 </div>
 </div>
+<script type="text/javascript">
+  function reload() {
+    location.reload();
+  }
+</script>
 <script type="text/javascript">
   var payment = document.getElementById('AHN'),
   downpayment = document.getElementById('btcaddress'),
@@ -708,19 +720,19 @@ $("#auth").show();
  if($('#searchbox5').on('change', function() {
       $('#div8').show();
     }));
- if($('#searchbox6').on('change', function() {
+ if($('#searchbox6').on('click', function() {
       $('#div9').show();
     }));
-   if($('#div9').on('change', function() {
+   if($('#div9').on('click', function() {
       $('#div10').show();
     }));
-       if($('#div10').on('change', function() {
+       if($('#div10').on('click', function() {
       $('#div11').show();
     }));
-               if($('#div11').on('change', function() {
+       if($('#div11').on('click', function() {
       $('#div12').show();
     }));
-                           if($('#div12').on('change', function() {
+       if($('#div12').on('click', function() {
       $('#div13').show();
     }));
          

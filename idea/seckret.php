@@ -35,6 +35,8 @@ include "../php/common/config.php";
 <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css"/>
  <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
  <link rel="shortcut icon" href="blockchain/LG3.png" />
+         <link rel="shortcut icon" href="./assets/media/company-logos/whistle.png" />
+
     </head>
     <style type="text/css">
       .copy {}
@@ -77,6 +79,7 @@ if (mysqli_num_rows($result) > 0) {
                 <button id="cpybtn" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
             </div>
 
+
               
  <div class="form-group">
               <label style="font-size: 20px;"><b>Secret code</b></label><br>
@@ -84,6 +87,11 @@ if (mysqli_num_rows($result) > 0) {
               <input type="text" id="secCopy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['passkey']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <button id="cpySec" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
              </div>
+
+               <br>
+              <input type="text" id="together" style="position: absolute; left: -1000px; top: -1000px;" value="Idea Number: <?php echo $row['tipno']; ?>       Secret Code: <?php echo $row['passkey']; ?>">
+              <button id="tog" style="background: transparent; border-radius: 50px; width: 100px; height: 50px; color: red; margin-left: 150px;" title="Copy together to Clipboard">Copy Together</button>
+
               </div>
 
               
@@ -129,6 +137,16 @@ if (mysqli_num_rows($result) > 0) {
     document.execCommand("Copy");
   }
 
+</script>
+<script type="text/javascript">
+  const myInp2 = document.getElementById("together");
+  const btnCopy2 = document.getElementById("tog");
+
+  btnCopy2.onclick= function() {
+    myInp2.select();
+
+    document.execCommand("Copy");
+  }
 </script>
 
 

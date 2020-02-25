@@ -1,19 +1,17 @@
 <?php
-       include "../php/common/config.php";
-     $tipno = $_GET['id'];
-    $query = "SELECT * FROM Idea WHERE tipno='$tipno'";
+    include "../php/common/config.php";
+    $query = "SELECT * FROM Idea WHERE status='closed' ORDER BY id DESC";
     $result = mysqli_query($link,$query);
 ?>
+<!DOCTYPE html>   
 
-
-<!DOCTYPE html> 
 <html lang="en" >
     <!-- begin::Head -->
     <head><!--begin::Base Path (base relative path for assets of this page) -->
 <base href="/blockchain/"><!--end::Base Path -->
                <meta charset="utf-8"/>
 
-        <title>Reviewer | Idea Report</title>
+        <title>Idea | Analyze List</title>
         <meta name="description" content="Buttons examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,12 +26,12 @@
 <link href="./assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/bootstrap-datetime-picker/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
-<link href="./assets/vendors/general/bootstrap-datetipnogepicker/datetipnogepicker.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
-<link href="./assets/vendors/general/ion-tipnogeslider/css/ion.tipnogeSlider.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
@@ -57,26 +55,31 @@
   <link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css" />
     <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
     <!-- <script type="text/javascript" src="assets/jquery-ui-1.11.4/jquery-ui.js"></script>  -->
-     
+      
     <!-- <script type="text/javascript" src="assets/DataTables/DataTables-1.10.12/js/jquery.dataTables.min.js"></script> -->
-        <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/dataTables.buttons.min.js"></script>
-           <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.flash.min.js"></script>
+        <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/dataTables.buttons.min.js"></script> 
+           <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.flash.min.js"></script> 
         <script type="text/javascript" src="../../assets/DataTables/pdfmake.min.js"></script>
         <script type="text/javascript" src="../../assets/DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
         <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.html5.min.js"></script>
         <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.print.min.js"></script>
         <script type="text/javascript" src="//cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>  
- 
+  
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
            
         <link rel="shortcut icon" href=" ./assets/media/company-logos/whistle.png" />
     </head>
+ <!--    <script type="text/javascript">
+   
+    fetch('https://5d1b152edd81710014e8825d.mockapi.io/fixnix/whistle')
+    .then(res => res.json())//response type
+    .then(data => console.log(data)); //
+  </script> -->
 
-
-  <?php
+  <?php 
    include 'siteHeader2.php';
 ?>
-    <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #efefef;">
+    <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
 
        
     <!-- begin:: Page -->
@@ -85,161 +88,63 @@
 <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper"  style="margin-top:-12%;">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper"  style="margin-top:-15%;">
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-<i class="fa fa-file-archive" id="cmd1" data-toggle="tooltip" title="zip" style="font-size: 30px; float: right; color:#d6175d;margin-left: 5px;"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-<i class="fa fa-file-pdf" id="cmd" data-toggle="tooltip" title="PDF" style="font-size: 30px; float: right; color: #2a5aa8;"></i> <br><br>
 
 
-<div class="kt-portlet" id="element-to-print">
+<div class="kt-portlet">
 <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
-<i class="kt-font-btipnod flaticon2-line-chart"></i>
+<i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
-<h3 class="kt-portlet__head-title" style="color: white;font-size: 20px;">
-Idea - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . "  " . substr($_GET['id'],8,4) . "  " . substr($_GET['id'], 12, 4); ?>
+<h3 class="kt-portlet__head-title" style="color: white;">
+Idea Lists
 </h3>
 </div>
+
 </div>
 
-
-
-
-        <div class="panel-body" >
-            <form method="post">
-<!--   <div class="container" style="margin-left: 300px;" >
-      <div class="row form-group">
-      <div class="col-md-5">
-        <input type="text" name="tipno"  id="tipno" class="form-control" placeholder="Enter the Idea/Tip Number">
-       
-      </div>
-      <div class="col-md-2">
-    <input type="submit" id="search" name="submit"   style="background-color:#3e8e9d;" class="btn btn-danger" value="View Tip Details" >
-      </div>
-    </div><br><hr>
-</div>
- -->
-</form>
-
-  <?php
- while ($rows=mysqli_fetch_assoc($result)) {
-  
+<div class="kt-portlet__body" style="overflow-x: scroll;">
+<!--begin: Datatable -->
+<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+<thead>
+  <tr>
+  <th >Idea No</th>
+  <th>Created Date</th>
+  <th>Category</th>
+  <th>Name</th>
+  <th>Email Id</th>
+  <th>Phone No</th>
+  <th>Status</th>
+  <th>Action</th>
+  </tr>
+</thead>
+ <?php
+ while($rows=mysqli_fetch_assoc($result)) {
   ?>
+<tbody>
+  <td><?php echo $rows['tipno'];?></td>
+   <td><?php echo $rows['createat'];?></td>
+    <td><?php echo $rows['category'];?></td>
+      <td><?php echo $rows['name'];?></td>
+     <td><?php echo $rows['email'];?></td>
+      <td><?php echo $rows['phone'];?></td>
+      <td><button class="btn btn-warning" style="border-radius: 50px;height: 20px; padding: 1%;" >Returned</button></td>
 
-            <div id="people1" class="container">
-          <div class="row form-group">
-<div class="col-md-12">
-<label><strong>Category:</strong></label><br>
- <input type="text" class="form-control" disabled value="<?php echo $rows['category'];?>">
-</div><br>
-
-</div>
-</div>  
-
-<div id="people1" class="container">
-<br>
-<div class="row">
-  <div class="input-group">
-   <div class="col-md-4 input_val">
-     <label>FullName:</label>
-    <!--<input type="text" placeholder="Name" class="form-control" id="persons" style="border-color: #216582;" >-->
- <input type="text" class="form-control" disabled value="<?php echo $rows['name'];?>">
-   </div>
-   <div class="col-md-4 input_val">
-     <label>Email:</label>
-     <!--<input type="text" placeholder="Designation" class="form-control" style="border-color: #216582;">-->
- <input type="text" class="form-control" disabled value="<?php echo $rows['email'];?>">
-   </div>
-   <div class="col-md-4 input_val">
-     <label>PhoneNo:</label>
-    <!-- <input type="text" placeholder="Department" class="form-control" style="border-color: #216582;">-->
- <input type="text" class="form-control" disabled value="<?php echo $rows['phone'];?>">
-   </div>
- 
-<!-- <div class="input-group after-add-more col-md-1">
-           <button class="btn add-more" type="button" title="Add Row"><i style="color:green;font-size:20px;" class="fa flaticon-plus"></i></button>
-       </div> -->
-
-       </div>
-   </div>
-</div><br>
-<div class="container control-group">
-<div class="row">
-      <div class="col-md-4 input_val">
-
-      <label style="font-size: 14px;">Possible Cost Saving</label><br>
- <input type="text" class="form-control" disabled value="<?php echo $rows['PCS'];?>">
-
-   </div>
-   
-    <div class="col-md-4 input_val">
-<label>Idea</label><br>
- <input type="text" class="form-control" disabled value="<?php echo $rows['Ideai'];?>">
-</div>
-
-<!-- <div class="col-md-4 input_val">
-<label>Modus Operandi</label><br>  
- <input type="text" class="form-control" disabled value="<?php echo $rows['Ideai'];?>">
-
-</div> -->
-  </div>    
-</div>
-<br>
-<div class="container">
-<div class="form-group">
-  <label style="font-size: 14px;">Description:</label>
-      <div class="">
-<!--    <textarea type="text" class="form-control"  id="Synopsis" value="<?php echo $rows['Description'];?>" placeholder="" disabled  style="height: 150px; border-color:#A1E6EA"> </textarea> -->
-<input type="text" name="" class="form-control" disabled  value="<?php echo $rows['Description'] ;?>">
-   <span id="apdate" style="color: red;"></span>
-</div>
-   </div>
- </div>
-<div class="container">
-<div class="form-group">
-  <label style="font-size: 14px;">Synopsis:</label>
-      <div class="">
-   <textarea type="text" class="form-control"  id="Synopsis" placeholder="" disabled style="height: 150px; border-color:#A1E6EA"><?php echo $rows['Synopsis'];?></textarea>
-   <span id="apdate" style="color: red;"></span>
-</div>
-   </div>
-
-   <div class="form-group">
-  <label style="font-size: 14px;">Idea Update:</label>
-      <div class="">
-   <textarea type="text" class="form-control"  id="WBU" disabled placeholder="Give WhistleBlower on update"  style="height: 150px; border-color:#A1E6EA"><?php echo $rows['WBU'];?> </textarea>
-   <span id="apdate" style="color: red;"></span>
-</div>
-   </div>
-   <br>
-   <div class="container">
-<div class="form-group">
-  <label style="font-size: 14px;  background-color: coral;">Artifacts</label>
-  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
-        <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
-      </div>
-   </div>
- </div>  
-</div>
-
-          </div>  
-
+         <td><a href="idea/index.php?id=<?php echo $rows['tipno'];?>" class="btn btn-primary">Analyze</a></td>
+</tbody>
 <?php
-
 }
 ?>
-
-
-     
-
-      <!--   </div> -->
-        </div>
-      </div>
+</table>
+<!--end: Datatable -->
+</div>
+</div>
 
 <!-- end:: Content -->  </div>  
 
@@ -247,29 +152,21 @@ Idea - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) .
 </div>
 </div>
 </div>
-<script type="text/javascript">
-var getUrl=window.location.search.slice(1);
-getUrl=getUrl.replace(/=/g,'":"');
-   getUrl=getUrl.replace(/&/g,'":"');
- getUrl='{"'+getUrl+'"}';
- var obj=JSON.parse(getUrl);
- console.log(obj.id);
- document.getElementById("tipno").value=obj.id;
-</script>
+
 <?php
 include 'sidemenu.php';
  ?>
 
         <!-- begin::Global Config(global config for global JS sciprts) -->
         <script>
-            var KTAppOptions = {"colors":{"state":{"btipnod":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
+            var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
         <!-- end::Global Config -->
 
     <!--begin:: Global Mandatory Vendors -->
 <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-<!-- <script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script> -->
+<script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/moment/min/moment.min.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
@@ -286,7 +183,7 @@ include 'sidemenu.php';
 <script src="./assets/vendors/general/bootstrap-datetime-picker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
 <script src="./assets/vendors/custom/js/vendors/bootstrap-timepicker.init.js" type="text/javascript"></script>
-<script src="./assets/vendors/general/bootstrap-datetipnogepicker/datetipnogepicker.js" type="text/javascript"></script>
+<script src="./assets/vendors/general/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/bootstrap-maxlength/src/bootstrap-maxlength.js" type="text/javascript"></script>
 <script src="./assets/vendors/custom/vendors/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js" type="text/javascript"></script>
@@ -294,7 +191,7 @@ include 'sidemenu.php';
 <script src="./assets/vendors/general/bootstrap-switch/dist/js/bootstrap-switch.js" type="text/javascript"></script>
 <script src="./assets/vendors/custom/js/vendors/bootstrap-switch.init.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
-<script src="./assets/vendors/general/ion-tipnogeslider/js/ion.tipnogeSlider.js" type="text/javascript"></script>
+<script src="./assets/vendors/general/ion-rangeslider/js/ion.rangeSlider.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/typeahead.js/dist/typeahead.bundle.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/handlebars/dist/handlebars.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/inputmask/dist/jquery.inputmask.bundle.js" type="text/javascript"></script>
@@ -334,11 +231,10 @@ include 'sidemenu.php';
 <script src="./assets/vendors/general/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/jquery.repeater/src/repeater.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/dompurify/dist/purify.js" type="text/javascript"></script>
-<script type="text/javascript" src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script>
 <!--end:: Global Optional Vendors -->
 
 <!--begin::Global Theme Bundle(used by all pages) -->
-         
+          
       <script src="./assets/js/demo3/scripts.bundle.js" type="text/javascript"></script>
 <!--end::Global Theme Bundle -->
 
@@ -352,33 +248,3 @@ include 'sidemenu.php';
             </body>
     <!-- end::Body -->
 </html>
-</script>
-
-<script type="text/javascript">
-  $('#cmd').click(function() {
-    var element = document.getElementById('element-to-print');
-      html2pdf(element, {
-        margin:       0,
-        filename:     'Report.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { dpi: 192, letterRendering: true },
-        jsPDF:        { unit: 'in', format: 'a3', orientation: 'portrait' }
-    });
-  });
-
-</script>
-<script type="text/javascript">
-  $('#cmd1').click(function() {
-    var element = document.getElementById('element-to-print');
-      html2pdf(element, {
-        margin:       0,
-        filename:     'Report.zip',
-        image:        { type: 'jpeg', quality: 0.98 },
-        // html2canvas:  { dpi: 192, letterRendering: true },
-        // jsPDF:        { unit: 'in', format: 'a3', orientation: 'portrait' }
-    });
-  });
-const zlib = require('zlib');
-const fs = require('fs');
-
-</script>
