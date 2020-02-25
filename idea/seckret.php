@@ -85,6 +85,9 @@ if (mysqli_num_rows($result) > 0) {
                <input type="text" id="secCopy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['passkey']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                <button id="cpySec" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
               </div>
+               <br>
+              <input type="text" id="together" style="position: absolute; left: -1000px; top: -1000px;" value="Idea Number: <?php echo $row['tipno']; ?>       Secret Code: <?php echo $row['passkey']; ?>">
+              <button id="tog" style="background: transparent; border-radius: 50px; width: 100px; height: 50px; color: red; margin-left: 150px;" title="Copy together to Clipboard">Copy Together</button>
               </div>
 
               
@@ -130,6 +133,16 @@ if (mysqli_num_rows($result) > 0) {
     document.execCommand("Copy");
   }
 
+</script>
+<script type="text/javascript">
+  const myInp2 = document.getElementById("together");
+  const btnCopy2 = document.getElementById("tog");
+
+  btnCopy2.onclick= function() {
+    myInp2.select();
+
+    document.execCommand("Copy");
+  }
 </script>
 
 

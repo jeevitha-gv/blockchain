@@ -570,7 +570,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
           </div>
        <br>
 </div>
-  <input type="submit" name="submit" class="btn btn-primary mb-3" value="submit" style="float: right;">
+  <input type="submit" name="submit" class="btn btn-primary mb-3" onclick="reload()" value="submit" style="float: right;">
       </form>
 
 
@@ -579,6 +579,11 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 </div>
 </div>
 </div>
+<script type="text/javascript">
+  function reload() {
+    location.reload();
+  }
+</script>
 <script type="text/javascript">
   var payment = document.getElementById('AHN'),
   downpayment = document.getElementById('btcaddress'),
@@ -715,10 +720,10 @@ $("#auth").show();
  if($('#searchbox5').on('change', function() {
       $('#div8').show();
     }));
- if($('#searchbox6').on('change', function() {
+ if($('#searchbox6').on('click', function() {
       $('#div9').show();
     }));
-   if($('#div9').on('change', function() {
+   if($('#div9').on('click', function() {
       $('#div10').show();
     }));
        if($('#div10').on('click', function() {
