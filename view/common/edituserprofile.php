@@ -192,7 +192,7 @@ $companyId=$id[0]['id'];
                     </div>
                 </div>
             </a>
-            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
+            <!-- <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
                 <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
                         4
@@ -206,7 +206,7 @@ $companyId=$id[0]['id'];
                         </div>
                     </div>
                 </div>
-            </a>
+            </a> -->
              
         </div>
     </div>
@@ -517,7 +517,7 @@ $companyId=$id[0]['id'];
                         <!--end: Form Wizard Step 3-->
 
                         <!--begin: Form Wizard Step 4-->
-                        <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+                       <!--  <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
                             <div class="kt-heading kt-heading--md">Review your Details and Submit</div>
                             <div class="kt-form__section kt-form__section--first">
                                 <div class="kt-wizard-v4__review">
@@ -553,7 +553,7 @@ $companyId=$id[0]['id'];
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--end: Form Wizard Step 4-->
 
                         <!--begin: Form Actions -->

@@ -31,10 +31,10 @@ require_once '../../php/common/dashboard.php';
 <html lang="en" >
     <!-- begin::Head -->
     <head><!--begin::Base Path (base relative path for assets of this page) -->
-<base href="/freshgrc/"><!--end::Base Path -->
+<base href="/blockchain/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>freshGRC</title>
+        <title>Blockchain</title>
         <meta name="description" content="Add user example">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
