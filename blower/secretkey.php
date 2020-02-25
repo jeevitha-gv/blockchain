@@ -70,12 +70,13 @@ if (mysqli_num_rows($result) > 0) {
                 <input type="text" id="copy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['ran']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
                 <button id="cpybtn" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
             </div>
-              <div class="form-group">
-               <label style="font-size: 20px;"><b>Secret code</b></label><br>
-               <span id="quantity" class="no" maxlength="14" style="border-color: #30B7B7; color: #ffffff; font-size: 36px;"><?php echo $row['secretkey'];?></span>
-               <input type="text" id="secCopy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['secretkey']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <button id="cpySec" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
-              </div>
+              
+ <div class="form-group">
+              <label style="font-size: 20px;"><b>Secret code</b></label><br>
+              <span id="quantity" class="no" maxlength="14" style="border-color: #30B7B7; color: #ffffff; font-size: 36px;"><?php echo substr($row['secretkey'], 0, 4) . "  " . substr($row['secretkey'], 4, 4) . "  " . substr($row['secretkey'],8,4) . "  " . substr($row['secretkey'], 12, 4);?></span>
+              <input type="text" id="secCopy" style="position: absolute;left: -1000px; top: -1000px;" value="<?php echo $row['secretkey']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button id="cpySec" style="background: transparent; border-radius: 50px; width: 40px; height: 40px;" title="Copy to Clipboard"><i class="fa flaticon2-copy" style="color: red; font-size: 20px;"></i></button>
+             </div>
               </div>
 
               

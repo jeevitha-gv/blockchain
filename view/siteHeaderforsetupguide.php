@@ -97,7 +97,12 @@
 
    <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
   
+<div class="kt-header__topbar">
+ <?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role']== 'demo' || $_SESSION['user_role']== 'reviewer') {?>
 
+
+
+<?php } ?>
            <a class="kt-header__topbar-icon" title="Business Unit" href="view/common/overview.php"><i class="flaticon-calendar-1"></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
    
@@ -113,6 +118,8 @@
       
            <a href="view/policy/ModuleSelection.php?i=1" class="kt-header__topbar-icon" title="Setup Guide">
            <i class="flaticon-globe"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+             <a href="view/common/payment.php" class="kt-header__topbar-icon" title="Payment">
+           <i class="flaticon-presentation-1"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
 
 
