@@ -10,7 +10,8 @@
    if(isset($_POST['submit']))
     {
       $ran=$_POST['ran'];
-      // print_r($ran);
+      $id=$_POST['id'];
+      print_r($id);
         $SMLoss=$_POST['SMLoss'];
         $MOperandi=$_POST['MOperandi'];
         $WBUpdate=$_POST['WBUpdate'];
@@ -21,19 +22,31 @@
             $relationship=$_POST['relationship'];
               $encounter=$_POST['encounter'];
               $department=$_POST['department'];
-                $monetary=$_POST['monetaryvalue'];
+                $monetary=$_POST['monetary'];
                  $status="Reported";
+   $sql1="UPDATE blower SET SMLoss='$SMLoss',resolution='$resolution',WBUpdate='$MUpdate',MUpdate='$MUpdate',status='$status' WHERE id=$id";
+
+   if($rows2=mysqli_fetch_assoc($result2))
+   {
+   
+   if($rows2['status']=='reinvestigate')
+   {
+
+   
        
          $sql2="INSERT INTO blower (company,category,place,relationship,encounter,department,monetaryvalue,SMLoss,MOperandi,WBUpdate,MUpdate,status,ran)VALUES('$company','$category','$place','$relationship','$encounter','$department','$monetaryvalue','$SMLoss','$MOperandi','$WBUpdate','$MUpdate','$status','$ran')";
+       }
+     }
          
+
         if(mysqli_query($link,$sql2))
         {
 
             echo "successfully";
         }
-        else
+        else if(mysqli_query($link,$sql1))
         {
-          echo "error", $sql2;
+          echo "successfully";
         }
       }
    
@@ -198,7 +211,7 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
      <!-- <span id="personsInvolved" class="form-control"><?php echo $rows['namepi'];?></span> -->
    </div>
 
-<!-- <input type="text" name="id" value="<?php echo $rows['id'];?>"> -->
+<input type="hidden" name="id" value="<?php echo $rows['id'];?>">
 <input type="hidden" name="ran" value="<?php echo $rows['ran'];?>">
 <input type="hidden" name="category" value="<?php echo $rows['category'];?>">
 <input type="hidden" name="company" value="<?php echo $rows['company'];?>">
@@ -252,13 +265,13 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
    <span id="apdate" style="color: red;"></span>
 </div>
    </div>
-   <?php 
+   <!-- <?php 
    if($rows2=mysqli_fetch_assoc($result2))
    {
    
    if($rows2['status']=='reinvestigate')
    {
-    ?>
+    ?> -->
       <div class="form-group">
    
    
@@ -267,10 +280,10 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
    <textarea type="text" class="form-control"   style="height: 150px; border-color:#A1E6EA" disabled=""><?php echo $rows2['reinvestigate'];?> </textarea>
    <!-- <span class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['reinvestigate'];?></span> -->
 </div>
-<?php
+<!-- <?php
 }
 }
-?>
+?> -->
    </div>
 </div>
 
