@@ -3,24 +3,39 @@
       $ran = $_GET['id'];
     $query = "SELECT * FROM Idea WHERE tipno='$ran'";
   $result=mysqli_query($link,$query);
+  
    if(isset($_POST['submit']))
     {
-
+     
      $id = $_POST['id']; 
+      $tipno = $_POST['tipno']; 
      $PCS=$_POST['PCS'];
     $Ideai=$_POST['Ideai'];
      $Synopsis=$_POST['Synopsis'];
-      $WBU=$_POST['WBU'];
+     $WBU=$_POST['WBU'];
+      $category=$_POST['category'];
+       $name = $_POST['name']; 
+        $email = $_POST['email']; 
+         $phone = $_POST['phone']; 
+          $description = $_POST['description']; 
       $status="Analyzed";
-  $sql="UPDATE Idea SET PCS='$PCS',Ideai='$Ideai',Synopsis='$Synopsis',WBU='$WBU',status='$status' WHERE id=$id";
-       if(mysqli_query($link,$sql))
+  $sql1="UPDATE Idea SET PCS='$PCS',Ideai='$Ideai',Synopsis='$Synopsis',WBU='$WBU',status='$status' WHERE id=$id";
+    if($rows=mysqli_fetch_assoc($result))
+   {
+   
+   if($rows['status']=='reinvestigate')
+   {
+    $sql2="INSERT INTO Idea(category,Description,name,email,phone,PCS,Ideai,Synopsis,WBU,tipno,status) values ('$category','$Description','$name','$email','$phone','$PCS','$Ideai','$Synopsis','$WBU','$tipno','status')";
+   }
+ }
+       if(mysqli_query($link,$sql2))
        {
-          echo "Successfully";
+          header("Location:view.php");
          
         }
-       else
+       else if(mysqli_query($link,$sql1))
        {
-         echo "Error: " . $sql . "<br>" . $link->error;
+          header("Location:view.php");
        }
     }
   
@@ -155,17 +170,25 @@ Tip - <?php echo $_GET['id'];?>
 <div class="row">
   <div class="input-group">
      <?php
-   while ($rows=mysqli_fetch_assoc($result)) {
+   if ($rows=mysqli_fetch_assoc($result)) {
      # code...
 ?>
    <div class="col-md-4 input_val">
      <label><strong>FullName</strong></label>
     <!--<input type="text" placeholder="Name" class="form-control" id="persons" style="border-color: #216582;" >-->
-     <span id="name" class="form-control"><?php echo $rows['name'];?></span>
+     <input type="text" id="name" class="form-control" value="<?php echo $rows['name'];?>">
    </div>
     <input type="hidden" name="id" value="<?php echo $rows['id']; ?>">
+    <input type="hidden" name="tipno" value="<?php echo $rows['tipno']; ?>">
+    <input type="hidden" name="category" value="<?php echo $rows['category']; ?>">
+    <input type="hidden" name="name" value="<?php echo $rows['name']; ?>">
+    <input type="hidden" name="email" value="<?php echo $rows['email']; ?>">
+    <input type="hidden" name="phone" value="<?php echo $rows['phone']; ?>">
+    <input type="hidden" name="description" value="<?php echo $rows['Description']; ?>">
  
-
+<?php
+}
+?>
 
    <div class="col-md-4 input_val">
 
@@ -215,7 +238,7 @@ Tip - <?php echo $_GET['id'];?>
 </div>
    </div>
    <?php
-   if($rows['status']=='closed')
+   if($rows['status']=='reinvestigate')
    {
     ?>
       <div class="form-group">
@@ -223,7 +246,7 @@ Tip - <?php echo $_GET['id'];?>
    
   <label style="font-size: 14px;"><strong> Re-Analyze:</strong></label> 
       <div class="">
-   <textarea type="text" class="form-control"   style="height: 150px; border-color:#A1E6EA"><?php echo $rows['reinvestigate'];?> </textarea>
+   <textarea type="text" class="form-control"   style="height: 150px; border-color:#A1E6EA" disabled=""><?php echo $rows['reinvestigate'];?> </textarea>
    <!-- <span class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['reinvestigate'];?></span> -->
 </div>
 <?php
@@ -385,9 +408,7 @@ Tip - <?php echo $_GET['id'];?>
 </div>
 </div>
 
-  <?php
- }
- ?>
+
  <br>
 
 <br>
