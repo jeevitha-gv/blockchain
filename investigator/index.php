@@ -2,23 +2,43 @@
     include "../php/common/config.php";
       $ran = $_GET['id'];
     $query = "SELECT * FROM blower WHERE ran='$ran'";
-    // $result = mysqli_query($conn,$query);
-  // $query="SELECT * from blower order by id desc limit 1";
   $result=mysqli_query($link,$query);
+  $query2= "SELECT * FROM blower WHERE ran='$ran' order by id desc";
+  $result2=mysqli_query($link,$query2);
+    $query1 = "SELECT * FROM `blower` WHERE ran='$ran'";
+  $result1=mysqli_query($link,$query1);
    if(isset($_POST['submit']))
     {
-      $id=$_POST['id'];
+      $ran=$_POST['ran'];
+      // print_r($ran);
         $SMLoss=$_POST['SMLoss'];
         $MOperandi=$_POST['MOperandi'];
         $WBUpdate=$_POST['WBUpdate'];
         $MUpdate=$_POST['MUpdate'];
-        $status="Reported";
-        $sql="UPDATE blower SET SMLoss='$SMLoss',MOperandi='$MOperandi',WBUpdate='$WBUpdate',MUpdate='$MUpdate',status='$status' WHERE id=$id";
-        if(mysqli_query($link,$sql))
+          $company=$_POST['company'];
+          $category=$_POST['category'];
+            $place=$_POST['place'];
+            $relationship=$_POST['relationship'];
+              $encounter=$_POST['encounter'];
+              $department=$_POST['department'];
+                $monetary=$_POST['monetaryvalue'];
+                 $status="Reported";
+       
+         $sql2="INSERT INTO blower (company,category,place,relationship,encounter,department,monetaryvalue,SMLoss,MOperandi,WBUpdate,MUpdate,status,ran)VALUES('$company','$category','$place','$relationship','$encounter','$department','$monetaryvalue','$SMLoss','$MOperandi','$WBUpdate','$MUpdate','$status','$ran')";
+         
+        if(mysqli_query($link,$sql2))
         {
+
             echo "successfully";
         }
-    }
+        else
+        {
+          echo "error", $sql2;
+        }
+      }
+   
+    
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -162,7 +182,7 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
      <label class="" style="font-size: 14px;"><strong>People Involved:</strong></label>
  
  <?php
-   while ($rows=mysqli_fetch_assoc($result)) {
+   if ($rows=mysqli_fetch_assoc($result)) {
      # code...
 ?>
 <div id="people1" class="">
@@ -178,7 +198,15 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
      <!-- <span id="personsInvolved" class="form-control"><?php echo $rows['namepi'];?></span> -->
    </div>
 
-<input type="hidden" name="id" value="<?php echo $rows['id'];?>">
+<!-- <input type="text" name="id" value="<?php echo $rows['id'];?>"> -->
+<input type="hidden" name="ran" value="<?php echo $rows['ran'];?>">
+<input type="hidden" name="category" value="<?php echo $rows['category'];?>">
+<input type="hidden" name="company" value="<?php echo $rows['company'];?>">
+<input type="hidden" name="place" value="<?php echo $rows['place'];?>">
+<input type="hidden" name="relationship" value="<?php echo $rows['relationship'];?>">
+<input type="hidden" name="encounter" value="<?php echo $rows['encounter'];?>">
+<input type="hidden" name="department" value="<?php echo $rows['department'];?>">
+<input type="hidden" name="monetary" value="<?php echo $rows['monetaryvalue'];?>">
 
       <div class="col-md-4 input_val">
 <label><strong>Suspected Monetory loss</strong></label><br>
@@ -224,8 +252,11 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
    <span id="apdate" style="color: red;"></span>
 </div>
    </div>
-   <?php
-   if($rows['status']=='closed')
+   <?php 
+   if($rows2=mysqli_fetch_assoc($result2))
+   {
+   
+   if($rows2['status']=='reinvestigate')
    {
     ?>
       <div class="form-group">
@@ -233,10 +264,11 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
    
   <label style="font-size: 14px;"><strong> Reinvestigate:</strong></label> 
       <div class="">
-   <textarea type="text" class="form-control"   style="height: 150px; border-color:#A1E6EA"><?php echo $rows['reinvestigate'];?> </textarea>
+   <textarea type="text" class="form-control"   style="height: 150px; border-color:#A1E6EA" disabled=""><?php echo $rows2['reinvestigate'];?> </textarea>
    <!-- <span class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['reinvestigate'];?></span> -->
 </div>
 <?php
+}
 }
 ?>
    </div>
@@ -284,7 +316,7 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
 <div class="row form-group">
 <div class="col-md-6">
 <label><i class=" fa fa-podcast" style="color: red;"></i><strong>Category</strong></label><br>
-<span id="category" class="form-control"><?php echo $rows['category'];?></span>
+<span id="category" class="form-control"><?php echo $rows['company'];?></span>
 </div>
 
 <div class="col-md-6">
@@ -379,6 +411,32 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
         <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
       </div>
    </div><br>
+ <?php 
+} 
+?>
+   <?php
+   $count=1;
+   while($rows1=mysqli_fetch_assoc($result1)){
+    ?>
+   <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+       <?php echo $rows1['WBUpdate'];?>
+      </div>
+   </div><br>
+    <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Blower - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <?php echo $rows1['MUpdate'];?>
+      </div>
+   </div><br>
+ <?php 
+ $count++;
+} 
+?>
+
 <div class="col-md-11">
   <button class="collapsible btn btn-success">Interaction</button>
 
@@ -421,9 +479,7 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
 </div> -->
 
 </div>
-<?php 
-} 
-?>
+
 <div class="row">
   <div class="col-md-11"></div>
   <div class="col-md-1">

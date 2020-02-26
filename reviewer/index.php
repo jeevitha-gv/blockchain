@@ -1,15 +1,24 @@
 <?php
        include "../php/common/config.php";
      $ran = $_GET['id'];
-    $query = "SELECT * FROM blower WHERE ran='$ran'";
+    $query = "SELECT * FROM blower WHERE ran='$ran' order by id desc";
     $result = mysqli_query($link,$query);
+    $query1 = "SELECT * FROM `blower` WHERE ran='$ran'";
+  $result1=mysqli_query($link,$query1);
      if(isset($_POST['submit']))
     {
       $id=$_POST['id'];
         $reward=$_POST['reward'];
         $resolution=$_POST['resolution'];
         $reinvestigate=$_POST['reinvestigate'];
-        $status="closed";
+        if($resolution==true)
+        {
+        $status="permanentlyclosed";
+      }
+      else if($reinvestigate==true)
+      {
+       $status="reinvestigate";
+      }
         $sql="UPDATE blower SET reward='$reward',resolution='$resolution',reinvestigate='$reinvestigate',status='$status' WHERE id=$id";
         if(mysqli_query($link,$sql))
         {
@@ -132,7 +141,7 @@ include 'siteHeader2.php';
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;">
-Tip - 
+Tip -
 <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . "  " . substr($_GET['id'],8,4) . "  " . substr($_GET['id'], 12, 4); ?>
 </h3>
 </div>        
@@ -168,7 +177,7 @@ Tip -
 <br>
 <br>
 <?php
-while ($rows=mysqli_fetch_assoc($result)) {
+if ($rows=mysqli_fetch_assoc($result)) {
 ?>
 <div class="container">
 <label style="font-size: 14px;"><strong>Management Update</strong></label>
@@ -293,7 +302,7 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <div class="row form-group">
            
 
-<!-- 
+<!--
 <div class="col-md-6">
 <label>Authorities Know</label><br>
 <input type="text" class="form-control" disabled="" value="<?php echo $rows['authorityknows']; ?>">
@@ -363,7 +372,7 @@ while ($rows=mysqli_fetch_assoc($result)) {
 
        </div>  
        </div>                                  
-    
+   
 </div><br><br>
 <div class="control-group">
 <div class="row">
@@ -388,12 +397,12 @@ while ($rows=mysqli_fetch_assoc($result)) {
 
 <div class="container"><br>
 </div>
-<div class="form-group">
+<!-- <div class="form-group">
   <label style="font-size: 14px;"><strong>WhistleBlower Update:</strong></label>
       <div class="">
    <textarea type="text" class="form-control" id="WBUpdate" placeholder="Give WhistleBlower on update"  style="height: 150px;" disabled><?php echo $rows['WBUpdate'];?> </textarea>
 </div>
-   </div>
+   </div> -->
    <!-- <div class="container"> -->
   <div class="form-group">
   <label style="font-size: 14px;  background-color: coral;"><b>Artifacts</b></label>
@@ -401,8 +410,36 @@ while ($rows=mysqli_fetch_assoc($result)) {
         <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
       </div>
    </div>
+
  <!-- </div> -->
 <br>
+
+<?php
+}
+?>
+
+   <?php
+   $count=1;
+   while($rows1=mysqli_fetch_assoc($result1)){
+    ?>
+   <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+       <?php echo $rows1['WBUpdate'];?>
+      </div>
+   </div><br>
+    <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Blower - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <?php echo $rows1['MUpdate'];?>
+      </div>
+   </div><br>
+ <?php 
+ $count++;
+} 
+?>
 <div class="container">
   <div class="row">
     <div class="col-md-11">
@@ -410,17 +447,17 @@ while ($rows=mysqli_fetch_assoc($result)) {
 
   <div id="demo" class="collapse">
     &nbsp;
-    <h3>Chat History </h3> 
+    <h3>Chat History </h3>
   <div style="min-height: 200px; width: 1119px; max-height: 100px; overflow: auto;border:1px solid #C3C8C6;">
           <div class="conversations"></div>
-      
+     
       </div>
    </div>
 </div>
 </div>
 </div>
   <div class="form-group">
-    
+   
       <script type="text/javascript">
 
         $(document).ready(function() {
@@ -467,9 +504,6 @@ while ($rows=mysqli_fetch_assoc($result)) {
 </div>
 </div>
 
-<?php
-}
-?>
 <br>
 <div class="container">
   <div class="row">
@@ -479,13 +513,13 @@ while ($rows=mysqli_fetch_assoc($result)) {
   <div id="demo" class="collapse">
   <div style="min-height: 200px; width: 1119px; max-height: 100px; overflow: auto;border:1px solid #C3C8C6;">
           <div class="conversations"></div>
-      
+     
       </div>
    </div>
 </div> -->
 <div class="col-md-1">
     <div class="img" style="margin-left: 1090px;margin-top: -45px;">
-        
+       
           <a href="" data-toggle="modal" data-target="#myModal"><i class='fa fa-comments' style="color:  red; font-size: 38px;" title="Review"></i></a>
             </div>
 </div>
@@ -632,10 +666,10 @@ $("#people").hide();
                  window.location="/blockchain/reviewer/report.php";
               }, 5000);
             });
-            
+           
 
 }
-</script>                                             
+</script>                                            
  <!-- update part-->
 
 
