@@ -3,13 +3,24 @@
      $tipno = $_GET['id'];
     $query = "SELECT * FROM Idea WHERE tipno='$tipno'";
     $result = mysqli_query($link,$query);
+    $query1 = "SELECT * FROM Idea WHERE tipno='$tipno' order by id desc";
+    $result1 = mysqli_query($link,$query1);
+     $query2 = "SELECT * FROM Idea WHERE tipno='$tipno'";
+    $result2 = mysqli_query($link,$query2);
        if(isset($_POST['submit']))
     {
       $id=$_POST['id'];
         $reward=$_POST['reward'];
         $resolution=$_POST['resolution'];
         $reinvestigate=$_POST['reinvestigate'];
-        $status="closed";
+        if($resolution==true)
+        {
+        $status="permanentlyclosed";
+      }
+      else if($reinvestigate==true){
+        $status="reinvestigate";
+
+      }
         $sql="UPDATE Idea SET reward='$reward',resolution='$resolution',reinvestigate='$reinvestigate',status='$status' WHERE id=$id";
         if(mysqli_query($link,$sql))
         {
@@ -144,9 +155,7 @@ Idea - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) .
 
 
 <form method="post" action="">
-<?php
-while ($rows=mysqli_fetch_assoc($result)) {
-?><br><br>
+<br><br>
  <div class="container" style="margin-right: -12%;">
      <label style="font-size: 14px;"><strong>Reward</strong></label>
     <div class="row">
@@ -160,13 +169,20 @@ while ($rows=mysqli_fetch_assoc($result)) {
 </div>
 <br>
 <br>
+<?php
+if($rows1=mysqli_fetch_assoc($result1)) {
+?>
+
 <div class="container">
 <label style="font-size: 14px;"><strong>Idea Update</strong></label>
 <div class="">
-<textarea type="text" class="form-control" style="height: 150px;" disabled><?php echo $rows['WBU'];?></textarea>
+<textarea type="text" class="form-control" style="height: 150px;" disabled><?php echo $rows1['Synopsis'];?></textarea>
 
 </div>
 </div>
+<?php
+}
+?>
 <input type="hidden" name="id" value="<?php echo $rows['id'];?>">
 <br>
   <div class="container">
@@ -187,7 +203,8 @@ while ($rows=mysqli_fetch_assoc($result)) {
 <div class="rad ra2" style="display: none;">
 
 <!--  <span id="resolution" class="form-control" style="font-size: 13px;height: 150px;"></span> -->
-<textarea id="reinvestigation" name="reinvestigate" class="form-control" style="font-size: 13px;height: 150px;border-color: #A1E6EA;" placeholder="Re-Analyze"></textarea>
+
+<textarea name="reinvestigate" class="form-control" style="font-size: 13px;height: 150px;border-color: #A1E6EA;" placeholder="Re-Analyze"></textarea>
 <!-- <span id="reinvestigation" class="form-control" style="font-size: 13px;height: 150px;"></span>
  -->        </div>
 
@@ -220,16 +237,19 @@ while ($rows=mysqli_fetch_assoc($result)) {
 
 }
 </script> 
+
   <div class="container">
 <button type="button" id="toggle" class="flaticon2-arrow" style="border-radius: 25px; background-color: #86346C; color: #ffffff; font-size: 16px;margin-top: 8%;">  History</button>
 <input type="submit" name="submit" value="Review" class="btn btn-danger" style="float: right;" data-toggle="modal" data-target="#update" onclick="alert()">
 </div>
 
-
 <div id="toggleData" class="collapse">
 <div>
 <div class="container" id="data"><br>
 <!-- <div class="container hide" id="data" style="border:1px solid #C3C8C6; margin-left: -18px; height: 90px;"> -->
+<?php
+if ($rows=mysqli_fetch_assoc($result)) {
+?>
 
   <div class="container">
   <div class="row form-group">
@@ -413,8 +433,36 @@ while ($rows=mysqli_fetch_assoc($result)) {
         <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
       </div>
    </div>
- </div>  
-<br>
+ </div>
+ <?php
+}
+?>
+<BR>
+
+   <?php
+   $count=1;
+   while($rows2=mysqli_fetch_assoc($result2)){
+    ?>
+    <div class="container">
+   <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+       <?php echo $rows2['Synopsis'];?>
+      </div>
+   </div><br>
+    <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Blower - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <?php echo $rows2['WBU'];?>
+      </div>
+   </div>
+ </div><br>
+ <?php 
+ $count++;
+} 
+?>
 <div class="container">
   <div class="row">
     <div class="col-md-11">
@@ -432,11 +480,8 @@ while ($rows=mysqli_fetch_assoc($result)) {
 </div>
 </div>
 </div>
+ 
 
-
-<?php
-}
-?>
 <br>
 <div class="container">
   <div class="row">
