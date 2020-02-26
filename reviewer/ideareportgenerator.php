@@ -3,6 +3,8 @@
      $tipno = $_GET['id'];
     $query = "SELECT * FROM Idea WHERE tipno='$tipno'";
     $result = mysqli_query($link,$query);
+    $query1 = "SELECT * FROM Idea WHERE tipno='$tipno'";
+    $result1 = mysqli_query($link,$query1);
 ?>
 
 
@@ -127,7 +129,7 @@ Idea - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) .
 </form>
 
   <?php
- while ($rows=mysqli_fetch_assoc($result)) {
+ if ($rows=mysqli_fetch_assoc($result)) {
   
   ?>
 
@@ -209,13 +211,7 @@ Idea - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) .
 </div>
    </div>
 
-   <div class="form-group">
-  <label style="font-size: 14px;">Idea Update:</label>
-      <div class="">
-   <textarea type="text" class="form-control"  id="WBU" disabled placeholder="Give WhistleBlower on update"  style="height: 150px; border-color:#A1E6EA"><?php echo $rows['WBU'];?> </textarea>
-   <span id="apdate" style="color: red;"></span>
-</div>
-   </div>
+
    <br>
    <div class="container">
 <div class="form-group">
@@ -224,15 +220,36 @@ Idea - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) .
         <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
       </div>
    </div>
- </div>  
+ </div> 
+ <?php
+ }
+ ?>
+  <?php
+   $count=1;
+   while($rows1=mysqli_fetch_assoc($result1)){
+    ?>
+   <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+       <?php echo $rows1['Synopsis'];?>
+      </div>
+   </div><br>
+    <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Idea - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <?php echo $rows1['WBU'];?>
+      </div>
+   </div><br>
+ <?php 
+ $count++;
+} 
+?> 
 </div>
 
           </div>  
 
-<?php
-
-}
-?>
 
 
      
