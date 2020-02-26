@@ -1,8 +1,12 @@
 <?php
     include "../php/common/config.php";
      $tipno = $_GET['tipno'];
-    $query = "SELECT * FROM Idea WHERE tipno='$tipno'";
+    $query = "SELECT * FROM Idea WHERE tipno='$tipno' order by id desc";
     $result = mysqli_query($link,$query);
+    $query1 = "SELECT * FROM Idea WHERE tipno='$tipno'";
+    $result1 = mysqli_query($link,$query1);
+     $query2 = "SELECT * FROM Idea WHERE tipno='$tipno'";
+    $result2 = mysqli_query($link,$query2);
 ?>
 
 <!DOCTYPE html>
@@ -118,18 +122,16 @@ include 'siteHeader2.php';
     </div><br><hr>
 </div> -->
 </form>
- <?php
- while($rows=mysqli_fetch_assoc($result)) {
-  ?>
+
 <div class="container ">
- <!--  <div class="container">
-  <label>Synopsis :</label>
-  <textarea type="text" class="form-control"  id="synopsis" placeholder=""  style="height: 130px;background: transparent;color: white;" disabled=""><?php echo $rows['Synopsis'];?> </textarea>
-</div><br> -->
+ <?php
+ if($rows=mysqli_fetch_assoc($result)) {
+  ?>
  <div class="container">
   <label>Idea Update:</label>
   <textarea type="text" class="form-control" rows="8"  id="update" placeholder=""  style="background: transparent;color: white;" disabled=""><?php echo $rows['WBU'];?> </textarea>
-</div><br>
+</div>
+<?php } ?>
  <div class="container">
 <button type="button" data-toggle="collapse" data-target="#demo" class="flaticon2-arrow" style="border-radius: 25px; background-color: #86346C; color: #ffffff; font-size: 16px;">  History</button>
 </div><br>
@@ -152,21 +154,24 @@ include 'siteHeader2.php';
 <div class="panel-body"style="border: 1px solid #e2e5ec;border-color:#A1E6EA">
 <div id="people1" class="">
 <br>
+ <?php
+ if($rows1=mysqli_fetch_assoc($result1)) {
+  ?>
 <div class="row">
   <div class="input-group" style="margin:20px;">
    <div class="col-md-4 input_val">
      <label>Full Name :</label>
-  <input type="text" name="email" class="form-control" disabled value="<?php echo $rows['name'];?>" style="background: transparent;color: white;">
+  <input type="text" name="email" class="form-control" disabled value="<?php echo $rows1['name'];?>" style="background: transparent;color: white;">
    </div>
    <div class="col-md-4 input_val">
      <label>Email :</label>
      <!--<input type="text" placeholder="Designation" class="form-control" style="border-color: #216582;">-->
-    <input type="text" name="email" class="form-control" disabled value="<?php echo $rows['email'];?>" style="background: transparent;color: white;">
+    <input type="text" name="email" class="form-control" disabled value="<?php echo $rows1['email'];?>" style="background: transparent;color: white;">
    </div>
    <div class="col-md-4 input_val">
      <label>Phone No :</label>
     <!-- <input type="text" placeholder="Department" class="form-control" style="border-color: #216582;">-->
-  <input type="text" name="email" class="form-control" disabled value="<?php echo $rows['phone'];?>" style="background: transparent;color: white;">   </div>
+  <input type="text" name="email" class="form-control" disabled value="<?php echo $rows1['phone'];?>" style="background: transparent;color: white;">   </div>
  
 <!-- <div class="input-group after-add-more col-md-1">
            <button class="btn add-more" type="button" title="Add Row"><i style="color:green;font-size:20px;" class="fa flaticon-plus"></i></button>
@@ -194,15 +199,15 @@ include 'siteHeader2.php';
    <div class="col-md-4 input_val">
      <label>Account Holder Name :</label>
     <!--<input type="text" placeholder="Name" class="form-control" id="persons" style="border-color: #216582;" >-->
-      <input type="text" name="name" class="form-control" disabled value="<?php echo $rows['AHN'];?>" style="background: transparent;color: white;">
+      <input type="text" name="name" class="form-control" disabled value="<?php echo $rows1['AHN'];?>" style="background: transparent;color: white;">
    </div>
    <div class="col-md-4 input_val">
      <label>Bank Name :</label>
-  <input type="text" name="name" class="form-control" disabled value="<?php echo $rows['bankname'];?>" style="background: transparent;color: white;">
+  <input type="text" name="name" class="form-control" disabled value="<?php echo $rows1['bankname'];?>" style="background: transparent;color: white;">
    </div>
    <div class="col-md-4 input_val">
      <label>Bank Account No. :</label>
-    <input type="text" name="name" class="form-control" disabled value="<?php echo $rows['BAN'];?>" style="background: transparent;color: white;">
+    <input type="text" name="name" class="form-control" disabled value="<?php echo $rows1['BAN'];?>" style="background: transparent;color: white;">
    </div>
 
        </div> 
@@ -212,11 +217,11 @@ include 'siteHeader2.php';
   <div class="input-group" style="margin: 20px;">
    <div class="col-md-4 input_val">
      <label>Non-Profit Name :</label>
-       <input type="text" name="name" class="form-control" disabled value="<?php echo $rows['NPname'];?>" style="background: transparent;color: white;">
+       <input type="text" name="name" class="form-control" disabled value="<?php echo $rows1['NPname'];?>" style="background: transparent;color: white;">
    </div>
    <div class="col-md-4 input_val">
      <label>Bank Name :</label>
-        <input type="text" name="name" class="form-control" disabled value="<?php echo $rows['bname'];?>" style="background: transparent;color: white;">
+        <input type="text" name="name" class="form-control" disabled value="<?php echo $rows1['bname'];?>" style="background: transparent;color: white;">
    </div>
    <div class="col-md-4 input_val">
      <label>Bank Account No. :</label>
@@ -244,6 +249,25 @@ include 'siteHeader2.php';
 </div>
 </div>
 </div>
+<?php
+}
+?>
+<br>
+    <?php
+      $count=1;
+   while($rows2=mysqli_fetch_assoc($result2)){
+    ?>
+    <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Idea - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <?php echo $rows2['WBU'];?>
+      </div>
+   </div><br>
+ <?php 
+ $count++;
+} 
+?>
 </div>
 <br>
 <div class="container">
@@ -268,10 +292,6 @@ include 'siteHeader2.php';
 </div>
 </div>
 <br>
-
-<?php
-}
-?>
 
 </div>
   

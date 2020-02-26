@@ -1,6 +1,6 @@
 <?php
     include "../php/common/config.php";
-    $query = "SELECT * FROM Idea where status='closed' order by id desc";
+    $query = "SELECT * FROM Idea  order by id desc";
     $result = mysqli_query($link,$query);
 ?>
 <!DOCTYPE html>   

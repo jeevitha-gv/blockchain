@@ -3,7 +3,8 @@
       $ran = $_GET['id'];
     $query = "SELECT * FROM Idea WHERE tipno='$ran'";
   $result=mysqli_query($link,$query);
-  
+     $query1 = "SELECT * FROM Idea WHERE tipno='$ran'";
+  $result1=mysqli_query($link,$query1);
    if(isset($_POST['submit']))
     {
      
@@ -394,6 +395,29 @@ Tip - <?php echo $_GET['id'];?>
    <span id="apdate" style="color: red;"></span>
 </div>
    </div>
+   <br>
+ <?php
+   $count=1;
+   while($rows1=mysqli_fetch_assoc($result1)){
+    ?>
+   <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+       <?php echo $rows1['Synopsis'];?>
+      </div>
+   </div><br>
+    <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Idea - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <?php echo $rows1['WBU'];?>
+      </div>
+   </div><br>
+ <?php 
+ $count++;
+} 
+?>
 <br>
 <div class="col-md-11">
   <button class="collapsible btn btn-success">Interaction</button>

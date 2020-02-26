@@ -10,6 +10,7 @@
        if(isset($_POST['submit']))
     {
       $id=$_POST['id'];
+      echo $id;
         $reward=$_POST['reward'];
         $resolution=$_POST['resolution'];
         $reinvestigate=$_POST['reinvestigate'];
@@ -26,10 +27,7 @@
         {
             echo "successfully";
         }
-        else
-        {
-           // echo "error" .$sql;
-        }
+       
     }
 ?>
 
@@ -138,7 +136,6 @@ include 'siteHeader2.php';
 
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item">
- 
 
 <div class="kt-portlet">
 <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
@@ -180,10 +177,11 @@ if($rows1=mysqli_fetch_assoc($result1)) {
 
 </div>
 </div>
+
+
 <?php
 }
 ?>
-<input type="hidden" name="id" value="<?php echo $rows['id'];?>">
 <br>
   <div class="container">
   <label class="kt-radio kt-radio--solid kt-radio--success">
@@ -255,6 +253,7 @@ if ($rows=mysqli_fetch_assoc($result)) {
   <div class="row form-group">
 <div class="col-md-6">
 <label><i class=" fa fa-podcast" style="color: red;"></i><strong>Category</strong></label><br>
+<input type="hidden" name="id" value="<?php echo $rows['id'];?>">
 <input type="text" name="email" class="form-control" disabled value="<?php echo $rows['category'];?>">
 
 </div>
@@ -452,7 +451,7 @@ if ($rows=mysqli_fetch_assoc($result)) {
       </div>
    </div><br>
     <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Blower - <?php echo $count;?></b></label>
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Idea - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
         <?php echo $rows2['WBU'];?>

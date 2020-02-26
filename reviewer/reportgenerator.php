@@ -3,6 +3,8 @@
      $ran = $_GET['id'];
     $query = "SELECT * FROM blower WHERE ran='$ran'";
     $result = mysqli_query($link,$query);
+     $query1 = "SELECT * FROM blower WHERE ran='$ran'";
+    $result1 = mysqli_query($link,$query1);
 ?>
 
 
@@ -129,7 +131,7 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
 
 
 <?php
-while ($rows=mysqli_fetch_assoc($result)) {
+if ($rows=mysqli_fetch_assoc($result)) {
 ?>
 
 <div class="row form-group">
@@ -217,12 +219,7 @@ while ($rows=mysqli_fetch_assoc($result)) {
 </div>
 </div><br><br>
       
-<div class="row form-group">
-<div class="col-md-12 input_val">
-<label><strong>Management Update</strong></label>
- <textarea type="text" class="form-control" disabled="" id="MUpdate"style="height: 150px; border-color:#A1E6EA" ><?php echo $rows['MUpdate'];?></textarea>
-</div>
-</div>
+
 <div class="row form-group">
 <div class="col-md-12 input_val">
 <label style="  background-color: coral;"><strong>Artifacts</strong></label>
@@ -231,6 +228,32 @@ while ($rows=mysqli_fetch_assoc($result)) {
       </div>
 </div>
 </div>
+<?php
+}
+?>
+<br>
+ <?php
+   $count=1;
+   while($rows1=mysqli_fetch_assoc($result1)){
+    ?>
+   <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+       <?php echo $rows1['WBUpdate'];?>
+      </div>
+   </div><br>
+    <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Blower - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <?php echo $rows1['MUpdate'];?>
+      </div>
+   </div><br>
+ <?php 
+ $count++;
+} 
+?>
 </div>
 
 
@@ -270,9 +293,6 @@ while ($rows=mysqli_fetch_assoc($result)) {
 </div>
 </div>
 </div>
-<?php
-}
-?>
 
 <?php
 include 'sidemenu.php';
