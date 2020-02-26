@@ -3,6 +3,10 @@ include "../php/common/config.php";
   $ran = $_GET['ran'];
     $query = "SELECT * FROM blower WHERE ran='$ran'";
     $result = mysqli_query($link, $query);
+       $query1 = "SELECT * FROM `blower` WHERE ran='$ran'";
+  $result1=mysqli_query($link,$query1);
+       $query2 = "SELECT * FROM `blower` WHERE ran='$ran' order by id desc";
+  $result2=mysqli_query($link,$query2);
 ?>
 
 <!DOCTYPE html>  
@@ -120,16 +124,24 @@ include "../php/common/config.php";
 
 
   <div class="container" id="data" style="border:0px solid #C3C8C6;"  ><br>
-         <?php
-   while($rows=mysqli_fetch_assoc($result)) {
+              <?php
+   if($rows2=mysqli_fetch_assoc($result2)) {
      # code...
   ?>
-          <div class="row form-group">
+     <div class="row form-group">
              <label  class="col-md-10">Investigator Update:</label>
                 <div class="col-md-12 " >
-              <textarea type="text" id="WBUpdate" rows="8" class="form-control" placeholder=""  style="background: transparent; color: #ffffff;"disabled=""><?php echo $rows['WBUpdate'];?></textarea>
+              <textarea type="text" id="WBUpdate" rows="8" class="form-control" placeholder=""  style="background: transparent; color: #ffffff;"disabled=""><?php echo $rows2['WBUpdate'];?></textarea>
             </div>
           </div>
+          <?php
+        }
+          ?>
+                <?php
+   if($rows=mysqli_fetch_assoc($result)) {
+     # code...
+  ?>
+        
           <div class="row">
            <div class="container">
 <a data-toggle="collapse" data-target="#demo" style="font-size: 16px;"><button class="flaticon2-arrow" style="border-radius: 25px; background-color: #86346C; color: #ffffff;">  History</button></a>
@@ -241,7 +253,27 @@ include "../php/common/config.php";
 </div>
 </div>
 </div>
+<br>
+   <?php }
+    ?>
+      <?php
+      $count=1;
+   while($rows1=mysqli_fetch_assoc($result1)){
+    ?>
+    <div class="form-group">
+  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Blower - <?php echo $count;?></b></label>
+   
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+        <?php echo $rows1['WBUpdate'];?>
       </div>
+   </div><br>
+ <?php 
+ $count++;
+} 
+?>
+
+      </div>
+ 
       <br>
             <div class="modal fade" id="myModal" role="dialog" >
             <div class="modal-dialog">
@@ -297,9 +329,7 @@ include "../php/common/config.php";
 </div>
 </div>
 
-  <?php
-}
-?>
+
  </div>
 </div>
 </div>  
