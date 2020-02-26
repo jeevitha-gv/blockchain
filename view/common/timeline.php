@@ -77,12 +77,13 @@ include "../siteHeader.php";
 
                             <div class="kt-portlet__head-label">
                                 <span class="kt-portlet__head-icon">
-                                    <i class="kt-font-brand flaticon2-line-chart" ></i>
+                                    <!-- <i class="kt-font-brand flaticon2-line-chart" ></i> -->
                                 </span>
+                                <br>
                                 <h3 class="kt-portlet__head-title" style="color: white;">
                                     <span class="caption-subject bold" style="color: #EA535A; text-transform: uppercase;"> Timeline</span>
-                                    <span class="caption-helper" style="font-size: 13px;">user timeline</span>
-                                </h3>
+                                    <span class="caption-helper" style="font-size: 13px;"></span>
+                                <!-- </h3> --><br>
                             </div>        
                            </div>
         <div class="kt-portlet__body" >
@@ -107,9 +108,9 @@ include "../siteHeader.php";
                                                 <img src="assets/img/shan.jpg" class="rounded-circle" alt="Cinque Terre" >  
                                             </div>
                                             <div class="kt-widget4__info">
-                                                <a href="#" class="kt-widget4__username" style="color: #ffffff;">
+                                                <h4 style="color: #ffffff;">
                                                     Shanmugavel Sankaran
-                                                </a>
+                                                </h4>
                                                 <p class="kt-widget4__text">
                                                     Added office location at 2:50 PM
                                                 </p>                                    
