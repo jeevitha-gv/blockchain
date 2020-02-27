@@ -58,7 +58,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
            
            if (move_uploaded_file($_FILES["Artifacts"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["Artifacts"]["name"]). " has been uploaded.";
-            } 
+            }
               echo "successfully";
            header("location:secretkey.php");
         }
@@ -181,108 +181,11 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     }
 
     .image {
-      position: relative;
-       right: -900px;
-      
-      bottom: 190px;
+      position: absolute;
+      right: 24px;
+      bottom: 149px;
     }
-   .image1 {
-      position: relative;
-      right: -900px;
-
-      bottom: 210px;
-    }
-    .artifact {
-      position: relative;
-      right: -890px;
-      bottom: 90px;
-    }
-      ul {
-    }
-    list-style: none;
-    padding: 0;
-}
-
-p {
-    color: #444;
-}
-
-button:focus {
-    outline: 0;
-}
-
-.container1 {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 100px 50px;
-    text-align: center;
-}
-
-.container h1 {
-    margin-bottom: 20px;
-}
-
-.page-description {
-    font-size: 1.1rem;
-    margin: 0 auto;
-}
-
-.tz-link {
-    font-size: 1em;
-    color: #1da7da;
-    text-decoration: none;
-}
-
-.no-browser-support {
-    display: none;
-    font-size: 1.2rem;
-    color: #e64427;
-    margin-top: 35px;
-}
-
-.app {
-    margin: 40px auto;
-}
-
-#note-textarea {
-    margin: 20px 0;
-}
-
-#recording-instructions {
-    margin: 15px auto 60px;
-}
-
-#notes {
-    padding-top: 20px;
-}
-
-.note .header {
-    font-size: 0.9em;
-    color: #888;
-    margin-bottom: 10px;
-}
-
-.note .delete-note,
-.note .listen-note {
-    text-decoration: none;
-    margin-left: 15px;
-}
-
-.note .content {
-    margin-bottom: 40px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 50px 25px;
-    }
-
-    button {
-        margin-bottom: 10px;
-    }
-
-}  
-
+ 
 
 </style>
 
@@ -311,7 +214,7 @@ button:focus {
 
   <form class="kt-form kt-form" method="POST" enctype="multipart/form-data" target="_blank">
         <div class="kt-portlet__body" style="margin-left: 100px; margin-top:-100px;" >
-          <div class="container1">
+          <div class="container">
            <h3 style="text-align: center;color: white;"> Want to SpeakUp for an Issue?</h3>
           </div>
           <br><br>
@@ -327,7 +230,7 @@ button:focus {
           <option>Sanctions</option>
           <option>Theft/Fraud</option>
           <option>Health & Safety</option>
-          
+         
          <!--  <option value="Other">Other</option> -->
         </datalist>
          
@@ -361,7 +264,7 @@ button:focus {
              
 
         </datalist>
-      
+     
             </div>
           </div>
           <div class="form-group row" id="div4" style="display: none">
@@ -589,14 +492,14 @@ button:focus {
           <div class="form-group row" id="div12" style="display: none;">
             <label for="example-time-input" class="col-2 col-form-label"style="color: white;">Incident Information</label>
             <div class="col-9">
-              <textarea type="text" rows="9" placeholder="Incident Information" class="form-control" id="nature" name="incidentinfo" style="background: transparent;color: white;"></textarea>
-          <span><button type="button" id="start-record-btn"  class="image" style="background-color: #720765;color:#720765;"><img src="mic.png" width="30px"; height="30px;"></button></span><br><br>
-                <span><button type="button" id="pause-record-btn" class="image1" style="background-color: #720765;color:#720765; display:none;"><img src="mic1.jpeg" width="30px"; height="30px;"></button></span>
+              <textarea type="text" rows="9" placeholder="Incident Information" class="form-control" id="nature" name="incidentinfo" style="background: transparent;color: white;width:835px;"></textarea>
+           <span><button type="button" id="start" class="image" style="background-color: #720765;color:#720765;"><img src="mic.png" width="35px"; height="35px;"></button></span>
+            </div>
 
-            <label aria-hidden="true" class="artifact">Artifacts<i class="btn btn-danger btn-block"><span class="flaticon-attachment"></span></i>
+            <div class="col-1">
+            <label aria-hidden="true" style="margin-top: 121px;color: white;margin-left:7px; ">Artifacts<i class="btn btn-danger btn-block"><span class="flaticon-attachment"></span></i>
           <input type="file" name="Artifacts" hidden=""></label>
-                      </div>
-
+            </div>
           </div>
           <div class="form-group row" id="div13" style="display: none;">
             <label for="example-color-input" class="col-2 col-form-label"style="color: white;">In case of reward</label>
@@ -637,7 +540,7 @@ button:focus {
                                    <div class="col-2.1">
                                       <input type="text" name="BANo" id="BANo" placeholder="Bank Account No." class="form-control" style="background: transparent;color: white;">
                                   </div>
-                                
+                               
                                 </div>
                                  <div class="form-group row">
                                        <div class="col-11">
@@ -648,7 +551,7 @@ button:focus {
                                    
                                
                                    <div class="col-md-11 input_val">
-         <input type="text" placeholder="BitCoin Address" name="btcaddress" id="btcaddress" class="form-control" style="background: transparent;color: white;width:840px;margin-left: -7px;"><br><center><strong style="margin-left: -30%;">OR</strong></center></div><br><br><br><br>
+         <input type="text" placeholder="BitCoin Address" name="btcaddress" id="btcaddress" class="form-control" style="background: transparent;color: white;width:840px;margin-left: -7px;"><br><center><strong style="margin-left: -30%;">OR</strong></center>></div><br><br><br><br>
   <i class="fa fa-bold" style="font-size:48px;color:red;margin-left: -13%;"></i>
                                        <!-- <img src="./blower/BTC1.png" height="47px" width="52px" alt="Bit" style="margin-left: -13%;"> -->
                                       <div class="col-md-11 input_val">
@@ -941,214 +844,7 @@ window.onload = function() {
   })
 }
 </script>
-<script type="text/javascript">
-  try {
-  var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  var recognition = new SpeechRecognition();
-}
-catch(e) {
-  console.error(e);
-  $('.no-browser-support').show();
-  $('.app').hide();
-}
 
-
-var noteTextarea = $('#note-textarea');
-var instructions = $('#recording-instructions');
-var notesList = $('ul#notes');
-
-var noteContent = '';
-
-// Get all notes from previous sessions and display them.
-var notes = getAllNotes();
-renderNotes(notes);
-
-
-
-/*-----------------------------
-      Voice Recognition
-------------------------------*/
-
-// If false, the recording will stop after a few seconds of silence.
-// When true, the silence period is longer (about 15 seconds),
-// allowing us to keep recording even when the user pauses.
-recognition.continuous = true;
-
-// This block is called every time the Speech APi captures a line.
-recognition.onresult = function(event) {
-
-  // event is a SpeechRecognitionEvent object.
-  // It holds all the lines we have captured so far.
-  // We only need the current one.
-  var current = event.resultIndex;
-
-  // Get a transcript of what was said.
-  var transcript = event.results[current][0].transcript;
-
-  // Add the current transcript to the contents of our Note.
-  // There is a weird bug on mobile, where everything is repeated twice.
-  // There is no official solution so far so we have to handle an edge case.
-  var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
-
-  if(!mobileRepeatBug) {
-    noteContent += transcript;
-    noteTextarea.val(noteContent);
-  }
-};
-
-recognition.onstart = function() {
-  instructions.text('Voice recognition activated. Try speaking into the microphone.');
-}
-
-recognition.onspeechend = function() {
-  instructions.text('You were quiet for a while so voice recognition turned itself off.');
-}
-
-recognition.onerror = function(event) {
-  if(event.error == 'no-speech') {
-    instructions.text('No speech was detected. Try again.');  
-  };
-}
-
-
-
-/*-----------------------------
-      App buttons and input
-------------------------------*/
-
-$('#start-record-btn').on('click', function(e) {
-  if (noteContent.length) {
-    noteContent += ' ';
-  }
-   $("#pause-record-btn").show();
-  recognition.start();
-});
-
-
-$('#pause-record-btn').on('click', function(e) {
-  recognition.stop();
-
-  instructions.text('Voice recognition paused.');
-});
-
-// Sync the text inside the text area with the noteContent variable.
-noteTextarea.on('input', function() {
-  noteContent = $(this).val();
-})
-
-$('#save-note-btn').on('click', function(e) {
-  recognition.stop();
-
-  if(!noteContent.length) {
-    instructions.text('Could not save empty note. Please add a message to your note.');
-  }
-  else {
-    // Save note to localStorage.
-    // The key is the dateTime with seconds, the value is the content of the note.
-    saveNote(new Date().toLocaleString(), noteContent);
-
-    // Reset variables and update UI.
-    noteContent = '';
-    renderNotes(getAllNotes());
-    noteTextarea.val('');
-    instructions.text('Note saved successfully.');
-  }
-     
-})
-
-
-notesList.on('click', function(e) {
-  e.preventDefault();
-  var target = $(e.target);
-
-  // Listen to the selected note.
-  if(target.hasClass('listen-note')) {
-    var content = target.closest('.note').find('.content').text();
-    readOutLoud(content);
-  }
-
-  // Delete note.
-  if(target.hasClass('delete-note')) {
-    var dateTime = target.siblings('.date').text();  
-    deleteNote(dateTime);
-    target.closest('.note').remove();
-  }
-});
-
-
-
-/*-----------------------------
-      Speech Synthesis
-------------------------------*/
-
-function readOutLoud(message) {
-  var speech = new SpeechSynthesisUtterance();
-
-  // Set the text and voice attributes.
-  speech.text = message;
-  speech.volume = 1;
-  speech.rate = 1;
-  speech.pitch = 1;
- 
-  window.speechSynthesis.speak(speech);
-}
-
-
-
-/*-----------------------------
-      Helper Functions
-------------------------------*/
-
-function renderNotes(notes) {
-  var html = '';
-  if(notes.length) {
-    notes.forEach(function(note) {
-      html+= `<li class="note">
-        <p class="header">
-          <span class="date">${note.date}</span>
-          <a href="#" class="listen-note" title="Listen to Note">Listen to Note</a>
-          <a href="#" class="delete-note" title="Delete">Delete</a>
-        </p>
-        <p class="content">${note.content}</p>
-      </li>`;    
-    });
-  }
-  else {
-    html = '<li><p class="content">You don\'t have any notes yet.</p></li>';
-  }
-  notesList.html(html);
-}
-
-
-function saveNote(dateTime, content) {
-  localStorage.setItem('note-' + dateTime, content);
-}
-
-
-function getAllNotes() {
-  var notes = [];
-  var key;
-  for (var i = 0; i < localStorage.length; i++) {
-    key = localStorage.key(i);
-
-    if(key.substring(0,5) == 'note-') {
-      notes.push({
-        date: key.replace('note-',''),
-        content: localStorage.getItem(localStorage.key(i))
-      });
-    }
-  }
-  return notes;
-}
-
-
-function deleteNote(dateTime) {
-  localStorage.removeItem('note-' + dateTime);
-}
-
-
-</script>
-<!--  -->
             </body>
     <!-- end::Body -->
 </html>
