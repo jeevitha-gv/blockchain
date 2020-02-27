@@ -1,6 +1,6 @@
 <?php
     include "../php/common/config.php";
-    $query = "SELECT * FROM Idea  order by id desc";
+    $query = "SELECT * FROM Idea where status='permanentlyclosed' order by id desc";
     $result = mysqli_query($link,$query);
 ?>
 <!DOCTYPE html>   
@@ -120,7 +120,7 @@ Idea Lists
   <th>Email Id</th>
   <th>Phone No</th>
   <th>Description</th>
-  <!-- <th>Status</th> -->
+  <th>Status</th>
   <th>Action</th>
   </tr>
 </thead>
@@ -134,7 +134,7 @@ Idea Lists
      <td><?php echo $rows['email'];?></td>
       <td><?php echo $rows['phone'];?></td>
        <td><?php echo $rows['Description'];?></td>
-        <!-- <td><?php echo $rows['status'];?></td> -->
+         <td><button class="btn btn-success" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button></td>
          <td><a href="reviewer/ideareportgenerator.php?id=<?php echo $rows['tipno'];?>" class="btn btn-primary">Report</a></td>
 </tbody>
 <?php
