@@ -26,7 +26,7 @@
         $sql="UPDATE Idea SET reward='$reward',resolution='$resolution',reinvestigate='$reinvestigate',status='$status' WHERE id=$id";
         if(mysqli_query($link,$sql))
         {
-          
+         header("Location:ideaview.php"); 
         }
        
     }
