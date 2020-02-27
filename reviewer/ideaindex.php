@@ -13,19 +13,20 @@
       echo $id;
         $reward=$_POST['reward'];
         $resolution=$_POST['resolution'];
+         echo $resolution;
         $reinvestigate=$_POST['reinvestigate'];
         if($resolution==true)
         {
         $status="permanentlyclosed";
       }
       else if($reinvestigate==true){
-        $status="reinvestigate";
+        $status="reanalyze";
 
       }
         $sql="UPDATE Idea SET reward='$reward',resolution='$resolution',reinvestigate='$reinvestigate',status='$status' WHERE id=$id";
         if(mysqli_query($link,$sql))
         {
-            echo "successfully";
+          
         }
        
     }
@@ -173,6 +174,7 @@ if($rows1=mysqli_fetch_assoc($result1)) {
 <div class="container">
 <label style="font-size: 14px;"><strong>Idea Update</strong></label>
 <div class="">
+  <input type="text" name="id" value="<?php echo $rows1['id'];?>">
 <textarea type="text" class="form-control" style="height: 150px;" disabled><?php echo $rows1['Synopsis'];?></textarea>
 
 </div>
@@ -253,7 +255,7 @@ if ($rows=mysqli_fetch_assoc($result)) {
   <div class="row form-group">
 <div class="col-md-6">
 <label><i class=" fa fa-podcast" style="color: red;"></i><strong>Category</strong></label><br>
-<input type="hidden" name="id" value="<?php echo $rows['id'];?>">
+
 <input type="text" name="email" class="form-control" disabled value="<?php echo $rows['category'];?>">
 
 </div>

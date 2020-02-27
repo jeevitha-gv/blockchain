@@ -1,6 +1,6 @@
 <?php
     include "../php/common/config.php";
-    $query = "SELECT * FROM Idea order by id desc";
+    $query = "SELECT * FROM `Idea` WHERE status='NewIdea' OR status='Analyzed' OR status='reanalyze' ORDER BY id DESC";
     $result = mysqli_query($link,$query);
 ?>
 <!DOCTYPE html>   
@@ -120,7 +120,7 @@ Idea Lists
   <th>Name</th>
   <th>Email Id</th>
   <th>Phone No</th>
-  <th>Description</th>
+  <th>Status</th>
   <th>Action</th>
   </tr>
 </thead>
@@ -134,9 +134,26 @@ Idea Lists
       <td><?php echo $rows['name'];?></td>
      <td><?php echo $rows['email'];?></td>
       <td><?php echo $rows['phone'];?></td>
-       <td><?php echo $rows['Description'];?></td>
+      <td>
+      <?php
+      if($rows['status']=="NewIdea"){
+        ?>
+       <button class="btn btn-success" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button>
+     <?php } ?>
+      <?php
+    if($rows['status']=="Analyzed"){
+        ?>
+       <button class="btn btn-warning" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button>
+     <?php } ?>
+      <?php
+      if($rows['status']=="reanalyze"){
+        ?>
+       <button class="btn btn-danger" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button>
+     <?php } ?>
 
+</td>
          <td><a href="idea/index.php?id=<?php echo $rows['tipno'];?>" class="btn btn-primary">Analyze</a></td>
+      
 </tbody>
 <?php
 }

@@ -5,6 +5,8 @@
   $result=mysqli_query($link,$query);
      $query1 = "SELECT * FROM Idea WHERE tipno='$ran'";
   $result1=mysqli_query($link,$query1);
+   $query2 = "SELECT * FROM Idea WHERE tipno='$ran' order by id desc";
+  $result2 = mysqli_query($link,$query2);
    if(isset($_POST['submit']))
     {
      
@@ -26,7 +28,7 @@
    
    if($rows['status']=='reinvestigate')
    {
-    $sql2="INSERT INTO Idea(category,Description,name,email,phone,PCS,Ideai,Synopsis,WBU,tipno,status) values ('$category','$Description','$name','$email','$phone','$PCS','$Ideai','$Synopsis','$WBU','$tipno','status')";
+    $sql2="INSERT INTO Idea(category,Description,name,email,phone,PCS,Ideai,Synopsis,WBU,tipno,status) values ('$category','$Description','$name','$email','$phone','$PCS','$Ideai','$Synopsis','$WBU','$tipno','Analyzed')";
    }
  }
        if(mysqli_query($link,$sql2))
@@ -187,9 +189,7 @@ Tip - <?php echo $_GET['id'];?>
     <input type="hidden" name="phone" value="<?php echo $rows['phone']; ?>">
     <input type="hidden" name="description" value="<?php echo $rows['Description']; ?>">
  
-<?php
-}
-?>
+
 
    <div class="col-md-4 input_val">
 
@@ -238,19 +238,23 @@ Tip - <?php echo $_GET['id'];?>
    <span id="apdate" style="color: red;"></span>
 </div>
    </div>
-   <?php
-   if($rows['status']=='reinvestigate')
+   <?php 
+   if($rows2=mysqli_fetch_assoc($result2))
+   {
+   
+   if($rows2['status']=='reanalyze')
    {
     ?>
       <div class="form-group">
    
    
-  <label style="font-size: 14px;"><strong> Re-Analyze:</strong></label> 
+  <label style="font-size: 14px;"><strong> Reinvestigate:</strong></label> 
       <div class="">
-   <textarea type="text" class="form-control"   style="height: 150px; border-color:#A1E6EA" disabled=""><?php echo $rows['reinvestigate'];?> </textarea>
+   <textarea type="text" class="form-control"   style="height: 150px; border-color:#A1E6EA" disabled=""><?php echo $rows2['reinvestigate'];?> </textarea>
    <!-- <span class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['reinvestigate'];?></span> -->
 </div>
 <?php
+}
 }
 ?>
 </div>
@@ -395,6 +399,9 @@ Tip - <?php echo $_GET['id'];?>
    <span id="apdate" style="color: red;"></span>
 </div>
    </div>
+   <?php
+}
+?>
    <br>
  <?php
    $count=1;

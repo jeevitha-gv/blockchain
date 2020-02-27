@@ -1,6 +1,6 @@
 <?php
     include "../php/common/config.php";
-  $query="SELECT * from blower order by id desc";
+  $query="SELECT * from blower where status='created' or status='Reported' or status='reinvestigate' order by id desc";
   $result=mysqli_query($link,$query);
 ?>
 <!DOCTYPE html>   
@@ -115,7 +115,7 @@ My Lists
   <th>Relationship</th>
   <th>Place</th>
   <th>MonetaryValue</th>
-  <th>Department</th>
+  <th>Status</th>
   <th>Action</th>
   </tr>
 </thead>
@@ -132,7 +132,21 @@ My Lists
        <td><?php echo $rows['relationship'];?></td>
         <td><?php echo $rows['place'];?></td>
          <td><?php echo $rows['monetaryvalue'];?></td>
-          <td><?php echo $rows['department'];?></td>
+          <td>      <?php
+      if($rows['status']=="created"){
+        ?>
+       <button class="btn btn-success" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button>
+     <?php } ?>
+      <?php
+    if($rows['status']=="Reported"){
+        ?>
+       <button class="btn btn-warning" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button>
+     <?php } ?>
+      <?php
+      if($rows['status']=="reinvestigate"){
+        ?>
+       <button class="btn btn-danger" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button>
+     <?php } ?></td>
       <td><button type="button" class="btn btn-primary"><a href="investigator/index.php?id=<?php echo $rows['ran'];?>" style="color: white;"> Investigate</a></button></td>
   </tr>
 </tbody>

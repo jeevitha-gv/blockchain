@@ -34,7 +34,7 @@
 
    
        
-         $sql2="INSERT INTO blower (company,category,place,relationship,encounter,department,monetaryvalue,SMLoss,MOperandi,WBUpdate,MUpdate,status,ran)VALUES('$company','$category','$place','$relationship','$encounter','$department','$monetary','$SMLoss','$MOperandi','$WBUpdate','$MUpdate','$status','$ran')";
+         $sql2="INSERT INTO blower (company,category,place,relationship,encounter,department,monetaryvalue,SMLoss,MOperandi,WBUpdate,MUpdate,status,ran)VALUES('$company','$category','$place','$relationship','$encounter','$department','$monetary','$SMLoss','$MOperandi','$WBUpdate','$MUpdate','Reported','$ran')";
        }
      }
          
@@ -42,11 +42,11 @@
         if(mysqli_query($link,$sql2))
         {
 
-            echo "successfully";
+          header("Location:view.php");
         }
         else if(mysqli_query($link,$sql1))
         {
-          echo "successfully";
+          header("Location:view.php");
         }
       }
    

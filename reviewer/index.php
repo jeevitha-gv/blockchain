@@ -22,7 +22,7 @@
         $sql="UPDATE blower SET reward='$reward',resolution='$resolution',reinvestigate='$reinvestigate',status='$status' WHERE id=$id";
         if(mysqli_query($link,$sql))
         {
-            echo "successfully";
+            header("Location:reviewerview.php");
         }
     }
 ?>

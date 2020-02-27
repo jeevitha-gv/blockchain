@@ -1,6 +1,6 @@
 <?php
 include "../php/common/config.php";
-  $query="SELECT * FROM blower order by id desc";
+  $query="SELECT * FROM blower where status='permanentlyclosed' order by id desc";
   $result=mysqli_query($link,$query);
 ?>
 <!DOCTYPE html>     
@@ -121,7 +121,7 @@ My Lists
   <th>Category</th>
   <th>Relationship</th>
   <th>Place</th>
-  <th>MonetaryValue</th>
+  <th>Status</th>
 
   <th>Action</th>
   </tr>
@@ -138,7 +138,7 @@ My Lists
       <td><?php echo $rows['category'];?></td>
        <td><?php echo $rows['relationship'];?></td>
         <td><?php echo $rows['place'];?></td>
-         <td><?php echo $rows['monetaryvalue'];?></td>
+         <td><button class="btn btn-success" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button></td>
   
            <td><button type="button" class="btn btn-primary"><a href="reviewer/reportgenerator.php?id=<?php echo $rows['ran'];?>" style="color: white;"> Report</a></button></td>
   </tr>
