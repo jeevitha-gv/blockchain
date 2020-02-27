@@ -174,7 +174,7 @@ if($rows1=mysqli_fetch_assoc($result1)) {
 <div class="container">
 <label style="font-size: 14px;"><strong>Idea Update</strong></label>
 <div class="">
-  <input type="text" name="id" value="<?php echo $rows1['id'];?>">
+  <input type="hidden" name="id" value="<?php echo $rows1['id'];?>">
 <textarea type="text" class="form-control" style="height: 150px;" disabled><?php echo $rows1['Synopsis'];?></textarea>
 
 </div>
