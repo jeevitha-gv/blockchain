@@ -10,10 +10,10 @@
        if(isset($_POST['submit']))
     {
       $id=$_POST['id'];
-      echo $id;
+    
         $reward=$_POST['reward'];
         $resolution=$_POST['resolution'];
-         echo $resolution;
+ 
         $reinvestigate=$_POST['reinvestigate'];
         if($resolution==true)
         {
