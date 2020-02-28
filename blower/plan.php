@@ -492,7 +492,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
           <div class="form-group row" id="div12" style="display: none;">
             <label for="example-time-input" class="col-2 col-form-label"style="color: white;">Incident Information</label>
             <div class="col-9">
-              <textarea type="text" rows="9" placeholder="Incident Information" class="form-control" id="nature" name="incidentinfo" style="background: transparent;color: white;width:835px;"></textarea>
+              <textarea type="text" rows="9" placeholder="Incident Information" class="form-control output" id="nature" name="incidentinfo" style="background: transparent;color: white;width:835px;"></textarea>
            <span><button type="button" id="start" class="image" style="background-color: #720765;color:#720765;"><img src="mic.png" width="35px"; height="35px;"></button></span>
             </div>
 
