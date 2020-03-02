@@ -24,7 +24,7 @@
               $department=$_POST['department'];
                 $monetary=$_POST['monetary'];
                  $status="Reported";
-   $sql1="UPDATE blower SET SMLoss='$SMLoss',resolution='$resolution',WBUpdate='$MUpdate',MUpdate='$MUpdate',status='$status' WHERE id=$id";
+   $sql1="UPDATE blower SET SMLoss='$SMLoss',resolution='$resolution',WBUpdate='$WBUpdate',MUpdate='$MUpdate',status='$status' WHERE id=$id";
 
    if($rows2=mysqli_fetch_assoc($result2))
    {
