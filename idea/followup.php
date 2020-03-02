@@ -260,7 +260,7 @@ include 'siteHeader2.php';
     <div class="form-group">
   <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Idea - <?php echo $count;?></b></label>
    
-  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;color: white;">
         <?php echo $rows2['WBU'];?>
       </div>
    </div><br>
