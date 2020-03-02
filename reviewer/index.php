@@ -8,6 +8,7 @@
      if(isset($_POST['submit']))
     {
       $id=$_POST['id'];
+      print_r($id);
         $reward=$_POST['reward'];
         $resolution=$_POST['resolution'];
         $reinvestigate=$_POST['reinvestigate'];

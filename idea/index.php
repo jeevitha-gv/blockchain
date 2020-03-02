@@ -26,7 +26,7 @@
     if($rows=mysqli_fetch_assoc($result))
    {
    
-   if($rows['status']=='reinvestigate')
+   if($rows['status']=='reanalyze')
    {
     $sql2="INSERT INTO Idea(category,Description,name,email,phone,PCS,Ideai,Synopsis,WBU,tipno,status) values ('$category','$Description','$name','$email','$phone','$PCS','$Ideai','$Synopsis','$WBU','$tipno','Analyzed')";
    }
