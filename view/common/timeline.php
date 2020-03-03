@@ -94,7 +94,7 @@ include "../siteHeader.php";
                                
                                 <div class="form-group">
                                   <label for="comment"></label>
-                                  <textarea onclick="document.getElementById('modal-wrapper').style.display='block'" name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control" rows="4"></textarea>
+                                  <textarea onclick="document.getElementById('modal-wrapper').style.display='block'" placeholder="Type Something Here...!" class="form-control" rows="4"></textarea>
                                 </div>
                                
                                 <!-- <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
@@ -137,7 +137,7 @@ include "../siteHeader.php";
                     </div>
         <div id="modal-wrapper" style="width: 66%;margin-left: 20.5%;margin-top:9%; height: 35%;"class="modal">
          
-                      <form method="POST" onsubmit="return validate1();" action="view/common/chatProcess.php" class="modal-content animate" >
+                      <form method="POST" action="view/common/chatProcess.php" class="modal-content animate" >
                
                         <div class="imgcontainer">
                              <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
@@ -166,9 +166,9 @@ include "../siteHeader.php";
                                   <select name="to_id" class="form-control select2-selection arrow" style="margin-top:-3%;">
                                      <option></option>
                                         <?php foreach($users as $user){
-                                           if($_SESSION['user_id']!=$user['id']){ ?>
+                                          ?>
                                        <option value="<?php echo $user['id']; ?>"><?php echo htmlspecialchars($user['last_name']); ?></option>
-                                   <?php } } ?>
+                                   <?php  } ?>
                                    </select>
                                    
                                      

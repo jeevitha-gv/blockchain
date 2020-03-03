@@ -5,7 +5,7 @@ require_once __DIR__.'/../../php/common/dbOperations.php';
 class TimeManager{
 	public function users()
 	{
-		$sql = 'SELECT id, last_name FROM user';
+		$sql = 'SELECT id, last_name, first_name FROM user';
         $dbOps = new DBOperations();    
         return $dbOps->fetchData($sql); 
 	}
@@ -22,15 +22,14 @@ class TimeManager{
         return $dbOps->fetchData($sql);
 	}
 
-	 public function insertChat($to,$from,$message){
+	 public function insertChat($to,$message){
     
-        $sql = 'INSERT INTO timeline (from_id,to_id,message) VALUES (?,?,?)';
+        $sql = 'INSERT INTO timeline (to_Id,message) VALUES (?,?)';
         $paramArray = array();
-        $paramArray[] = $from;
         $paramArray[] = $to;
         $paramArray[] = $message;
         $dbOps = new DBOperations();    
-        return $dbOps->cudData($sql,'iis',$paramArray);        
+        return $dbOps->cudData($sql,'is',$paramArray);        
     }
 }
 ?>
