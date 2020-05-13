@@ -50,7 +50,9 @@
 <link href="./assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
-
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css
+">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css"> -->
 
   <link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css" />
     <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
@@ -126,11 +128,11 @@ My Lists
   <th>Action</th>
   </tr>
 </thead>
-<?php
-   while ($rows=mysqli_fetch_assoc($result)) {
-     # code...
-?>
+
 <tbody>
+  <?php
+   while ($rows=mysqli_fetch_assoc($result)) {
+?>
   <tr>
     <td><?php echo $rows['ran'];?></td>  
     <td><?php echo $rows['createat'];?></td>
@@ -142,10 +144,11 @@ My Lists
          <td><button class="btn btn-warning" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button></td>
            <td><button type="button" class="btn btn-primary"><a href="reviewer/index.php?id=<?php echo $rows['ran'];?>" style="color: white;"> Reward</a></button></td>
   </tr>
-</tbody>
-<?php
+  <?php
 }
 ?>
+</tbody>
+
 </table>
 <!--end: Datatable -->
 </div>
@@ -248,7 +251,7 @@ include 'sidemenu.php';
                         <!--end::Page Vendors -->
          
                     <!--begin::Page Scripts(used by this page) -->
-                            <script src="./assets/js/demo3/pages/crud/datatables/extensions/buttons.js" type="text/javascript"></script>
+                            <script src="./assets/js/demo1/pages/crud/datatables/extensions/buttons.js" type="text/javascript"></script>
                         <!--end::Page Scripts -->
             </body>
     <!-- end::Body -->

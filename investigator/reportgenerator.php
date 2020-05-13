@@ -233,8 +233,8 @@ Idea - <?php echo $_GET['id'];?>
   <div class="container">
    <div class="row form-group">
 <div class="col-md-12">
-<label style="  background-color: coral;"><b>Artifacts</b></label>
-<div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+<label style=""><b>Artifacts</b></label>
+<div style="min-height: 90px; max-height: 100px;border:1px solid #C3C8C6;">
         <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
       </div>
 </div>
@@ -251,14 +251,14 @@ Idea - <?php echo $_GET['id'];?>
     ?>
     <div class="container">
    <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+  <label style="font-size: 14px; "><b>Management Synopsis - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
        <?php echo $rows1['WBUpdate'];?>
       </div>
    </div><br>
     <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Blower - <?php echo $count;?></b></label>
+  <label style="font-size: 14px; "><b>Updated to Blower - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
         <?php echo $rows1['MUpdate'];?>

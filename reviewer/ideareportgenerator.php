@@ -215,8 +215,8 @@ Idea - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) .
    <br>
    <div class="container">
 <div class="form-group">
-  <label style="font-size: 14px;  background-color: coral;">Artifacts</label>
-  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+  <label style="font-size: 14px;"><b>Artifacts</b></label>
+  <div style="min-height: 90px; max-height: 100px;border:1px solid #C3C8C6;">
         <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
       </div>
    </div>
@@ -229,14 +229,14 @@ Idea - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) .
    while($rows1=mysqli_fetch_assoc($result1)){
     ?>
    <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+  <label style="font-size: 14px;"><b>Management Synopsis - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
        <?php echo $rows1['Synopsis'];?>
       </div>
    </div><br>
     <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Idea - <?php echo $count;?></b></label>
+  <label style="font-size: 14px;"><b>Updated to Idea - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
         <?php echo $rows1['WBU'];?>

@@ -219,13 +219,41 @@ Idea-<?php echo $_GET['id'];?>
 </div>
    </div>
 
+
+    <label class="" style="font-size: 14px;"><strong>Artifacts</strong></label>
+ <div class="panel-body"style="border: 1px solid #e2e5ec;border-color:#A1E6EA">
+<div id="" class="">
+<div class="row">
+  <div class="input-group" style="margin: 20px;">
+<a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;color: white;"><?php echo $rows['Artifacts'];?></a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
    <div class="form-group">
-  <label style="font-size: 14px;  background-color: coral;"><b>Artifacts</b></label>
+  <label style="font-size: 14px;"><b>Artifacts</b></label>
       <div class="">
-   <textarea type="text" class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['artifacts'];?> </textarea>
+        <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;color"><?php echo $rows['Artifacts'];?></a>
+
+   <textarea type="text" class="form-control" style="height: 150px; border-color:#A1E6EA"><?php echo $rows['Artifacts'];?> </textarea>
    <span id="apdate" style="color: red;"></span>
 </div>
-   </div>
+   </div> -->
 
 </div>
 <?php
@@ -238,14 +266,14 @@ Idea-<?php echo $_GET['id'];?>
     ?>
     <div class="container">
    <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+  <label style="font-size: 14px;"><b>Management Synopsis - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
        <?php echo $rows1['Synopsis'];?>
       </div>
    </div><br>
     <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Idea - <?php echo $count;?></b></label>
+  <label style="font-size: 14px;  "><b>Updated to Idea - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
         <?php echo $rows1['WBU'];?>

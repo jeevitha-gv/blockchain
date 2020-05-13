@@ -124,10 +124,12 @@ Idea Lists
   <th>Action</th>
   </tr>
 </thead>
- <?php
+
+<tbody>
+   <?php
  while($rows=mysqli_fetch_assoc($result)) {
   ?>
-<tbody>
+  <tr>
   <td><?php echo $rows['tipno'];?></td>
    <td><?php echo $rows['createat'];?></td>
     <td><?php echo $rows['category'];?></td>
@@ -136,10 +138,12 @@ Idea Lists
        <td><?php echo $rows['Description'];?></td>
 <td><button class="btn btn-success" style="border-radius: 50px;height: 20px; padding: 1%;" ><?php echo $rows['status'];?></button></td>
          <td><a href="idea/reportgenerator.php?id=<?php echo $rows['tipno'];?>" class="btn btn-primary">Report</a></td>
+          </tr>
+            <?php
+             }
+          ?>
 </tbody>
-<?php
-}
-?>
+
 </table>
 <!--end: Datatable -->
 </div>

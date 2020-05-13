@@ -429,8 +429,8 @@ if ($rows=mysqli_fetch_assoc($result)) {
 </div>
 <div class="container">
 <div class="form-group">
-  <label style="font-size: 14px;  background-color: coral;">Artifacts</label>
-  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+  <label style="font-size: 14px; "><b>Artifacts</b></label>
+  <div style="min-height: 90px; max-height: 100px;border:1px solid #C3C8C6;">
         <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
       </div>
    </div>
@@ -446,14 +446,14 @@ if ($rows=mysqli_fetch_assoc($result)) {
     ?>
     <div class="container">
    <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+  <label style="font-size: 14px;  "><b>Management Synopsis - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
        <?php echo $rows2['Synopsis'];?>
       </div>
    </div><br>
     <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Idea - <?php echo $count;?></b></label>
+  <label style="font-size: 14px; "><b>Updated to Idea - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
         <?php echo $rows2['WBU'];?>

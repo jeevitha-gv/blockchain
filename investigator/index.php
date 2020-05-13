@@ -206,7 +206,7 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
 
    <div class="col-md-4 input_val">
      <label><strong>Full Name</strong></label>
-    <input type="text" class="form-control" id="personsInvolved" value="<?php echo $rows['namepi'];?>" >
+    <input type="text" class="form-control" id="personsInvolved" disabled="" value="<?php echo $rows['namepi'];?>" >
 
      <!-- <span id="personsInvolved" class="form-control"><?php echo $rows['namepi'];?></span> -->
    </div>
@@ -418,9 +418,9 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
 
     </div>
 <div class="form-group">
-  <label style="font-size: 14px;  background-color: coral;"><b>Artifacts</b></label>
+  <label style="font-size: 14px; "><b>Artifacts</b></label>
    
-  <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
+  <div style="min-height: 90px; max-height: 100px;border:1px solid #C3C8C6;">
         <a href="./documents/<?php echo $rows['Artifacts']; ?>" style="font-size: 16px;"><?php echo $rows['Artifacts'];?></a>
       </div>
    </div><br>
@@ -432,14 +432,14 @@ Tip - <?php echo substr($_GET['id'], 0, 4) . "  " . substr($_GET['id'], 4, 4) . 
    while($rows1=mysqli_fetch_assoc($result1)){
     ?>
    <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Management Synopsis - <?php echo $count;?></b></label>
+  <label style="font-size: 14px;"><b>Management Synopsis - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
        <?php echo $rows1['WBUpdate'];?>
       </div>
    </div><br>
     <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Blower - <?php echo $count;?></b></label>
+  <label style="font-size: 14px;"><b>Updated to Blower - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;">
         <?php echo $rows1['MUpdate'];?>

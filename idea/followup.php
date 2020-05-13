@@ -236,6 +236,7 @@ include 'siteHeader2.php';
 </div>
 </div>
 <br>
+
 <div class="container">
 
      <label class="" style="font-size: 14px;"><strong>Artifacts</strong></label>
@@ -249,6 +250,9 @@ include 'siteHeader2.php';
 </div>
 </div>
 </div>
+
+
+
 <?php
 }
 ?>
@@ -258,7 +262,7 @@ include 'siteHeader2.php';
    while($rows2=mysqli_fetch_assoc($result2)){
     ?>
     <div class="form-group">
-  <label style="font-size: 14px;  background-color: #f71462;color: white;"><b>Updated to Idea - <?php echo $count;?></b></label>
+  <label style="font-size: 14px;  background-color:;color: white;"><b>Updated to Idea - <?php echo $count;?></b></label>
    
   <div style="min-height: 200px; max-height: 100px;border:1px solid #C3C8C6;color: white;">
         <?php echo $rows2['WBU'];?>

@@ -158,11 +158,14 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
             <label for="example-text-input" class="col-2 col-form-label" style="color: white;">Description :</label>
              <div class="col-9">
          
-           <textarea type="text" rows="8" class="form-control output" name="Description" id="Description"  placeholder="Type something here....." style="background:transparent;color: white; width: 884px;"></textarea> <span><button type="button" id="start" class="image" style="background-color: #720765;color:#720765;"><img src="mic.png" width="35px"; height="35px;"></button></span>
+           <textarea type="text" rows="9" class="form-control output" name="Description" id="Description"  placeholder="Type something here....." style="background:transparent;color: white; width: 884px;"></textarea> <span><button type="button" id="start" class="image" style="background-color: #720765;color:#720765;"><img src="mic.png" width="39px"; height="44px;" ></button></span>
           </div>
           <div class="col-1">
-            <label aria-hidden="true" style="margin-top: 114px;color: white;margin-left:-84px;">Artifacts<i class="btn btn-danger btn-block"><span class="flaticon-attachment"></span></i>
-           <input type="file" name="Artifacts" hidden=""></label>
+  <!--           <label aria-hidden="true" style="margin-top: 114px;color: white;margin-left:-84px;">Artifacts<i class="btn btn-danger btn-block"><span class="flaticon-attachment"></span></i>
+           <input type="file" name="Artifacts" hidden=""></label> -->
+
+            <label aria-hidden="true" style="margin-top: 114px;color: white;margin-left:-84px;">Artifacts
+           <input type="file" name="Artifacts" ></label>
           </div>
         </div><br>
         <div id="div2" style="display: none;">
@@ -273,11 +276,11 @@ $sql="INSERT INTO Idea(category,Description,name,email,phone,NPname,bname,bankac
                                         <input type="text" placeholder="BitCoin Address" id="BTC" name="BTC"  class="form-control" style="background:transparent;color: white; margin-left: -7px; "><br>
                                       <center><strong style="margin-left: -10px;">OR</strong></center><br>  
                                       </div><br><br>
-                                       <i class="fa fa-bold" style="font-size:48px;color:red;margin-left: 30px;"></i>
+                                     <!--   <i class="fa fa-bold" style="font-size:48px;color:red;margin-left: 30px;"></i> -->
                                       <div class="col-10">
                                         <input type="text" placeholder="Ethereum Address" id="ETC" name="ETC" class="form-control" style="background:transparent;color: white; margin-left: -8px;">
                                       </div>
-                                  <i class='fab fa-ethereum' style='font-size:48px;color:red;margin-left: 30px;'></i>
+                                 <!--  <i class='fab fa-ethereum' style='font-size:48px;color:red;margin-left: 30px;'></i> -->
 
                                          </div>
                              
@@ -399,6 +402,7 @@ $("#donates").show();
 });
 </script>
 <script type="text/javascript">
+
   class SpeechRecognitionApi{
   constructor(options) {
     const SpeechToText = window.speechRecogniton || window.webkitSpeechRecognition;
@@ -427,11 +431,11 @@ window.onload = function() {
   document.querySelector("#start").addEventListener("click", () => {
     speech.init();
   })
-
   document.querySelector("#end").addEventListener("click", () =>{
     speech.stop();
   })
 }
 </script>
+
 </body>
 </html>

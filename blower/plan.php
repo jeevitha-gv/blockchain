@@ -159,7 +159,6 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 }
 
-
 .content {
   display: none;
   overflow: hidden;
@@ -497,8 +496,13 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             </div>
 
             <div class="col-1">
-            <label aria-hidden="true" style="margin-top: 121px;color: white;margin-left:7px; ">Artifacts<i class="btn btn-danger btn-block"><span class="flaticon-attachment"></span></i>
-          <input type="file" name="Artifacts" hidden=""></label>
+       <!--      <label aria-hidden="true" style="margin-top: 121px;color: white;margin-left:7px; ">Artifacts<i class="btn btn-danger btn-block"><span class="flaticon-attachment"></span></i>
+          <input type="file" name="Artifacts" hidden=""></label> -->
+
+       <label aria-hidden="true" style="margin-top: 121px;color: white;margin-left:7px; ">Artifacts<!-- i class="btn btn-danger btn-block"><span class="flaticon-attachment"></span></i> -->
+          <input type="file" name="Artifacts" ></label>
+
+
             </div>
           </div>
           <div class="form-group row" id="div13" style="display: none;">
@@ -551,13 +555,13 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                                    
                                
                                    <div class="col-md-11 input_val">
-         <input type="text" placeholder="BitCoin Address" name="btcaddress" id="btcaddress" class="form-control" style="background: transparent;color: white;width:840px;margin-left: -7px;"><br><center><strong style="margin-left: -30%;">OR</strong></center>></div><br><br><br><br>
-  <i class="fa fa-bold" style="font-size:48px;color:red;margin-left: -13%;"></i>
+         <input type="text" placeholder="BitCoin Address" name="btcaddress" id="btcaddress" class="form-control" style="background: transparent;color: white;width:840px;margin-left: -7px;"><br><center><strong style="margin-left: -30%;">OR</strong></center></div><br><br><br><br>
+  <!-- <i class="fa fa-bold" style="font-size:44px;color:red;margin-left: -13%;"></i> -->
                                        <!-- <img src="./blower/BTC1.png" height="47px" width="52px" alt="Bit" style="margin-left: -13%;"> -->
                                       <div class="col-md-11 input_val">
          <input type="text" placeholder="Ethereum Address" id="ethaddress" name="ethaddress" class="form-control" style="background: transparent;color: white;width:840px;margin-left: -7px;">
                                       </div>
-        <i class='fab fa-ethereum' style='font-size:48px;color:red;margin-left: -13%;'></i>
+        <!-- <i class='fab fa-ethereum' style='font-size:48px;color:red;margin-left: -13%;'></i> -->
                       <input type="hidden" name="ran" id="ran">
  <input type="hidden" name="secretkey" id="secretkey">
 
@@ -639,7 +643,6 @@ $("#people").show();
 </script>
 <script type="text/javascript">
   $(document).ready(function(){
-
   var x = Math.floor((Math.random() * 10000000) + 1000080000000000);
   document.getElementById("ran").value=x;
   var result = '';

@@ -119,11 +119,11 @@ My Lists
   <th>Action</th>
   </tr>
 </thead>
-<?php
-   while ($rows=mysqli_fetch_assoc($result)) {
-     # code...
-?>
+
 <tbody>
+  <?php
+   while ($rows=mysqli_fetch_assoc($result)) {
+?>
   <tr>
     <td><?php echo $rows['ran'];?></td>
      <td><?php echo $rows['createat'];?></td>
@@ -149,10 +149,11 @@ My Lists
      <?php } ?></td>
       <td><button type="button" class="btn btn-primary"><a href="investigator/index.php?id=<?php echo $rows['ran'];?>" style="color: white;"> Investigate</a></button></td>
   </tr>
-</tbody>
-<?php
+  <?php
 }
 ?>
+</tbody>
+
 </table>
 <!--end: Datatable -->
 </div>
